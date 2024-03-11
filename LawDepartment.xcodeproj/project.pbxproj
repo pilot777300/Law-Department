@@ -1,0 +1,529 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		042200C12B9C8F02008210F6 /* LawDepartmentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200C02B9C8F02008210F6 /* LawDepartmentApp.swift */; };
+		042200C52B9C8F04008210F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042200C42B9C8F04008210F6 /* Assets.xcassets */; };
+		042200C92B9C8F04008210F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042200C82B9C8F04008210F6 /* Preview Assets.xcassets */; };
+		042200D12B9C910C008210F6 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 042200D02B9C910C008210F6 /* iPhoneNumberField */; };
+		042200D82B9C931E008210F6 /* LawyerAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200D72B9C931E008210F6 /* LawyerAvatarView.swift */; };
+		042200DA2B9C9390008210F6 /* ContentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200D92B9C9390008210F6 /* ContentMessage.swift */; };
+		042200DC2B9C93D1008210F6 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200DB2B9C93D1008210F6 /* MessageView.swift */; };
+		042200DE2B9C944D008210F6 /* OtpModifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200DD2B9C944D008210F6 /* OtpModifer.swift */; };
+		042200E02B9C9492008210F6 /* OnBoardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200DF2B9C9492008210F6 /* OnBoardingData.swift */; };
+		042200E22B9C94D6008210F6 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200E12B9C94D6008210F6 /* GlobalVariables.swift */; };
+		042200E42B9C94F6008210F6 /* Lawyer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200E32B9C94F6008210F6 /* Lawyer.swift */; };
+		042200E62B9C9523008210F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200E52B9C9523008210F6 /* User.swift */; };
+		042200E82B9C954E008210F6 /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200E72B9C954E008210F6 /* Instructions.swift */; };
+		042200EA2B9C9593008210F6 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200E92B9C9593008210F6 /* Message.swift */; };
+		042200EC2B9C95BE008210F6 /* ChatDataSouce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200EB2B9C95BE008210F6 /* ChatDataSouce.swift */; };
+		042200EE2B9C95EF008210F6 /* OnBoardingObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200ED2B9C95EE008210F6 /* OnBoardingObserver.swift */; };
+		042200F02B9C9C39008210F6 /* AuthorizedUserMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200EF2B9C9C39008210F6 /* AuthorizedUserMainScreen.swift */; };
+		042200F22B9C9C83008210F6 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200F12B9C9C83008210F6 /* ChatScreen.swift */; };
+		042200F42B9C9CC5008210F6 /* ChoiseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200F32B9C9CC5008210F6 /* ChoiseScreen.swift */; };
+		042200F62B9C9CEC008210F6 /* InstructionDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200F52B9C9CEC008210F6 /* InstructionDetailScreen.swift */; };
+		042200F82B9C9D17008210F6 /* InstructionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200F72B9C9D17008210F6 /* InstructionsScreen.swift */; };
+		042200FA2B9C9D4A008210F6 /* LawyerMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200F92B9C9D4A008210F6 /* LawyerMainScreen.swift */; };
+		042200FC2B9C9D80008210F6 /* LawyerRegistrationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200FB2B9C9D80008210F6 /* LawyerRegistrationScreen.swift */; };
+		042200FE2B9C9DAA008210F6 /* OnBoardingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200FD2B9C9DAA008210F6 /* OnBoardingScreen.swift */; };
+		042201002B9C9DDB008210F6 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200FF2B9C9DDB008210F6 /* OnBoardingView.swift */; };
+		042201022B9C9E05008210F6 /* OrderDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042201012B9C9E05008210F6 /* OrderDetailScreen.swift */; };
+		042201042B9C9E35008210F6 /* RequestHasSentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042201032B9C9E35008210F6 /* RequestHasSentScreen.swift */; };
+		042201062B9C9E71008210F6 /* SmsVerificationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042201052B9C9E71008210F6 /* SmsVerificationScreen.swift */; };
+		042201082B9C9EE0008210F6 /* TemplatesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042201072B9C9EE0008210F6 /* TemplatesScreen.swift */; };
+		0422010A2B9C9F07008210F6 /* UserAutorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042201092B9C9F07008210F6 /* UserAutorizationScreen.swift */; };
+		045135272B9D851700F3113D /* TemplateOfDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045135262B9D851700F3113D /* TemplateOfDocument.swift */; };
+		045135292B9D871200F3113D /* RowOfTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045135282B9D871100F3113D /* RowOfTemplate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		042200BD2B9C8F02008210F6 /* LawDepartment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LawDepartment.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		042200C02B9C8F02008210F6 /* LawDepartmentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawDepartmentApp.swift; sourceTree = "<group>"; };
+		042200C42B9C8F04008210F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		042200C62B9C8F04008210F6 /* LawDepartment.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LawDepartment.entitlements; sourceTree = "<group>"; };
+		042200C82B9C8F04008210F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		042200D72B9C931E008210F6 /* LawyerAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerAvatarView.swift; sourceTree = "<group>"; };
+		042200D92B9C9390008210F6 /* ContentMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMessage.swift; sourceTree = "<group>"; };
+		042200DB2B9C93D1008210F6 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		042200DD2B9C944D008210F6 /* OtpModifer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpModifer.swift; sourceTree = "<group>"; };
+		042200DF2B9C9492008210F6 /* OnBoardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingData.swift; sourceTree = "<group>"; };
+		042200E12B9C94D6008210F6 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		042200E32B9C94F6008210F6 /* Lawyer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lawyer.swift; sourceTree = "<group>"; };
+		042200E52B9C9523008210F6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		042200E72B9C954E008210F6 /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
+		042200E92B9C9593008210F6 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		042200EB2B9C95BE008210F6 /* ChatDataSouce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataSouce.swift; sourceTree = "<group>"; };
+		042200ED2B9C95EE008210F6 /* OnBoardingObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingObserver.swift; sourceTree = "<group>"; };
+		042200EF2B9C9C39008210F6 /* AuthorizedUserMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedUserMainScreen.swift; sourceTree = "<group>"; };
+		042200F12B9C9C83008210F6 /* ChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreen.swift; sourceTree = "<group>"; };
+		042200F32B9C9CC5008210F6 /* ChoiseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseScreen.swift; sourceTree = "<group>"; };
+		042200F52B9C9CEC008210F6 /* InstructionDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionDetailScreen.swift; sourceTree = "<group>"; };
+		042200F72B9C9D17008210F6 /* InstructionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsScreen.swift; sourceTree = "<group>"; };
+		042200F92B9C9D4A008210F6 /* LawyerMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerMainScreen.swift; sourceTree = "<group>"; };
+		042200FB2B9C9D80008210F6 /* LawyerRegistrationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerRegistrationScreen.swift; sourceTree = "<group>"; };
+		042200FD2B9C9DAA008210F6 /* OnBoardingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingScreen.swift; sourceTree = "<group>"; };
+		042200FF2B9C9DDB008210F6 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		042201012B9C9E05008210F6 /* OrderDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailScreen.swift; sourceTree = "<group>"; };
+		042201032B9C9E35008210F6 /* RequestHasSentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHasSentScreen.swift; sourceTree = "<group>"; };
+		042201052B9C9E71008210F6 /* SmsVerificationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerificationScreen.swift; sourceTree = "<group>"; };
+		042201072B9C9EE0008210F6 /* TemplatesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesScreen.swift; sourceTree = "<group>"; };
+		042201092B9C9F07008210F6 /* UserAutorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAutorizationScreen.swift; sourceTree = "<group>"; };
+		0422010E2B9CDD64008210F6 /* Appeal.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Appeal.docx; sourceTree = "<group>"; };
+		045135262B9D851700F3113D /* TemplateOfDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateOfDocument.swift; sourceTree = "<group>"; };
+		045135282B9D871100F3113D /* RowOfTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowOfTemplate.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		042200BA2B9C8F02008210F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				042200D12B9C910C008210F6 /* iPhoneNumberField in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		042200B42B9C8F02008210F6 = {
+			isa = PBXGroup;
+			children = (
+				042200BF2B9C8F02008210F6 /* LawDepartment */,
+				042200BE2B9C8F02008210F6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		042200BE2B9C8F02008210F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				042200BD2B9C8F02008210F6 /* LawDepartment.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		042200BF2B9C8F02008210F6 /* LawDepartment */ = {
+			isa = PBXGroup;
+			children = (
+				0422010B2B9CA1AC008210F6 /* TxtFiles */,
+				042200D62B9C9299008210F6 /* Screens */,
+				042200D52B9C928E008210F6 /* Views */,
+				042200D42B9C9282008210F6 /* Models */,
+				042200C02B9C8F02008210F6 /* LawDepartmentApp.swift */,
+				042200C42B9C8F04008210F6 /* Assets.xcassets */,
+				042200C62B9C8F04008210F6 /* LawDepartment.entitlements */,
+				042200C72B9C8F04008210F6 /* Preview Content */,
+			);
+			path = LawDepartment;
+			sourceTree = "<group>";
+		};
+		042200C72B9C8F04008210F6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				042200C82B9C8F04008210F6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		042200D42B9C9282008210F6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				042200DD2B9C944D008210F6 /* OtpModifer.swift */,
+				042200DF2B9C9492008210F6 /* OnBoardingData.swift */,
+				042200E12B9C94D6008210F6 /* GlobalVariables.swift */,
+				042200E32B9C94F6008210F6 /* Lawyer.swift */,
+				042200E52B9C9523008210F6 /* User.swift */,
+				042200E72B9C954E008210F6 /* Instructions.swift */,
+				042200E92B9C9593008210F6 /* Message.swift */,
+				042200EB2B9C95BE008210F6 /* ChatDataSouce.swift */,
+				042200ED2B9C95EE008210F6 /* OnBoardingObserver.swift */,
+				045135262B9D851700F3113D /* TemplateOfDocument.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		042200D52B9C928E008210F6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				042200D72B9C931E008210F6 /* LawyerAvatarView.swift */,
+				042200D92B9C9390008210F6 /* ContentMessage.swift */,
+				042200DB2B9C93D1008210F6 /* MessageView.swift */,
+				045135282B9D871100F3113D /* RowOfTemplate.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		042200D62B9C9299008210F6 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				042200EF2B9C9C39008210F6 /* AuthorizedUserMainScreen.swift */,
+				042200F12B9C9C83008210F6 /* ChatScreen.swift */,
+				042200F32B9C9CC5008210F6 /* ChoiseScreen.swift */,
+				042200F52B9C9CEC008210F6 /* InstructionDetailScreen.swift */,
+				042200F72B9C9D17008210F6 /* InstructionsScreen.swift */,
+				042200F92B9C9D4A008210F6 /* LawyerMainScreen.swift */,
+				042200FB2B9C9D80008210F6 /* LawyerRegistrationScreen.swift */,
+				042200FD2B9C9DAA008210F6 /* OnBoardingScreen.swift */,
+				042200FF2B9C9DDB008210F6 /* OnBoardingView.swift */,
+				042201012B9C9E05008210F6 /* OrderDetailScreen.swift */,
+				042201032B9C9E35008210F6 /* RequestHasSentScreen.swift */,
+				042201052B9C9E71008210F6 /* SmsVerificationScreen.swift */,
+				042201072B9C9EE0008210F6 /* TemplatesScreen.swift */,
+				042201092B9C9F07008210F6 /* UserAutorizationScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		0422010B2B9CA1AC008210F6 /* TxtFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0422010E2B9CDD64008210F6 /* Appeal.docx */,
+			);
+			path = TxtFiles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		042200BC2B9C8F02008210F6 /* LawDepartment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 042200CC2B9C8F04008210F6 /* Build configuration list for PBXNativeTarget "LawDepartment" */;
+			buildPhases = (
+				042200B92B9C8F02008210F6 /* Sources */,
+				042200BA2B9C8F02008210F6 /* Frameworks */,
+				042200BB2B9C8F02008210F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LawDepartment;
+			packageProductDependencies = (
+				042200D02B9C910C008210F6 /* iPhoneNumberField */,
+			);
+			productName = LawDepartment;
+			productReference = 042200BD2B9C8F02008210F6 /* LawDepartment.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		042200B52B9C8F02008210F6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					042200BC2B9C8F02008210F6 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 042200B82B9C8F02008210F6 /* Build configuration list for PBXProject "LawDepartment" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 042200B42B9C8F02008210F6;
+			packageReferences = (
+				042200CF2B9C910C008210F6 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
+			);
+			productRefGroup = 042200BE2B9C8F02008210F6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				042200BC2B9C8F02008210F6 /* LawDepartment */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		042200BB2B9C8F02008210F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				042200C92B9C8F04008210F6 /* Preview Assets.xcassets in Resources */,
+				042200C52B9C8F04008210F6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		042200B92B9C8F02008210F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				042200F82B9C9D17008210F6 /* InstructionsScreen.swift in Sources */,
+				042201022B9C9E05008210F6 /* OrderDetailScreen.swift in Sources */,
+				042200D82B9C931E008210F6 /* LawyerAvatarView.swift in Sources */,
+				042201002B9C9DDB008210F6 /* OnBoardingView.swift in Sources */,
+				042200FA2B9C9D4A008210F6 /* LawyerMainScreen.swift in Sources */,
+				042200EC2B9C95BE008210F6 /* ChatDataSouce.swift in Sources */,
+				042200E22B9C94D6008210F6 /* GlobalVariables.swift in Sources */,
+				042200E42B9C94F6008210F6 /* Lawyer.swift in Sources */,
+				042200E02B9C9492008210F6 /* OnBoardingData.swift in Sources */,
+				042201042B9C9E35008210F6 /* RequestHasSentScreen.swift in Sources */,
+				042200FC2B9C9D80008210F6 /* LawyerRegistrationScreen.swift in Sources */,
+				042200F42B9C9CC5008210F6 /* ChoiseScreen.swift in Sources */,
+				042200C12B9C8F02008210F6 /* LawDepartmentApp.swift in Sources */,
+				042200DA2B9C9390008210F6 /* ContentMessage.swift in Sources */,
+				0422010A2B9C9F07008210F6 /* UserAutorizationScreen.swift in Sources */,
+				042201062B9C9E71008210F6 /* SmsVerificationScreen.swift in Sources */,
+				042200F02B9C9C39008210F6 /* AuthorizedUserMainScreen.swift in Sources */,
+				042200DE2B9C944D008210F6 /* OtpModifer.swift in Sources */,
+				042201082B9C9EE0008210F6 /* TemplatesScreen.swift in Sources */,
+				042200F62B9C9CEC008210F6 /* InstructionDetailScreen.swift in Sources */,
+				042200E62B9C9523008210F6 /* User.swift in Sources */,
+				045135292B9D871200F3113D /* RowOfTemplate.swift in Sources */,
+				042200F22B9C9C83008210F6 /* ChatScreen.swift in Sources */,
+				042200EE2B9C95EF008210F6 /* OnBoardingObserver.swift in Sources */,
+				045135272B9D851700F3113D /* TemplateOfDocument.swift in Sources */,
+				042200EA2B9C9593008210F6 /* Message.swift in Sources */,
+				042200DC2B9C93D1008210F6 /* MessageView.swift in Sources */,
+				042200FE2B9C9DAA008210F6 /* OnBoardingScreen.swift in Sources */,
+				042200E82B9C954E008210F6 /* Instructions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		042200CA2B9C8F04008210F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		042200CB2B9C8F04008210F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		042200CD2B9C8F04008210F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LawDepartment/LawDepartment.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LawDepartment/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AK.LawDepartment;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		042200CE2B9C8F04008210F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LawDepartment/LawDepartment.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"LawDepartment/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = AK.LawDepartment;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		042200B82B9C8F02008210F6 /* Build configuration list for PBXProject "LawDepartment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				042200CA2B9C8F04008210F6 /* Debug */,
+				042200CB2B9C8F04008210F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		042200CC2B9C8F04008210F6 /* Build configuration list for PBXNativeTarget "LawDepartment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				042200CD2B9C8F04008210F6 /* Debug */,
+				042200CE2B9C8F04008210F6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		042200CF2B9C910C008210F6 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MojtabaHs/iPhoneNumberField.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		042200D02B9C910C008210F6 /* iPhoneNumberField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 042200CF2B9C910C008210F6 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
+			productName = iPhoneNumberField;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 042200B52B9C8F02008210F6 /* Project object */;
+}
