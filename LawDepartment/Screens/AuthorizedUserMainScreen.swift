@@ -24,7 +24,7 @@ struct AuthorizedUserMainScreen: View {
                                 .foregroundColor(.blue)
                                 .underline()
                         }
-                        NavigationLink(destination: TemplatesScreen()) {
+                        NavigationLink(destination: RowOfTemplate()) {
                             
                         Image("templates")
                             }

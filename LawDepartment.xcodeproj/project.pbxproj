@@ -39,7 +39,21 @@
 		0422010A2B9C9F07008210F6 /* UserAutorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042201092B9C9F07008210F6 /* UserAutorizationScreen.swift */; };
 		045135272B9D851700F3113D /* TemplateOfDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045135262B9D851700F3113D /* TemplateOfDocument.swift */; };
 		045135292B9D871200F3113D /* RowOfTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045135282B9D871100F3113D /* RowOfTemplate.swift */; };
+		04A2CDE52B9EFBB1002CA7DE /* Appeal.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0422010E2B9CDD64008210F6 /* Appeal.docx */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		04A2CDE42B9EFB91002CA7DE /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				04A2CDE52B9EFBB1002CA7DE /* Appeal.docx in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		042200BD2B9C8F02008210F6 /* LawDepartment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LawDepartment.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +210,7 @@
 				042200B92B9C8F02008210F6 /* Sources */,
 				042200BA2B9C8F02008210F6 /* Frameworks */,
 				042200BB2B9C8F02008210F6 /* Resources */,
+				04A2CDE42B9EFB91002CA7DE /* CopyFiles */,
 			);
 			buildRules = (
 			);
