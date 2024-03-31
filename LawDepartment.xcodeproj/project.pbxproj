@@ -37,8 +37,12 @@
 		042201062B9C9E71008210F6 /* SmsVerificationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042201052B9C9E71008210F6 /* SmsVerificationScreen.swift */; };
 		042201082B9C9EE0008210F6 /* TemplatesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042201072B9C9EE0008210F6 /* TemplatesScreen.swift */; };
 		0422010A2B9C9F07008210F6 /* UserAutorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042201092B9C9F07008210F6 /* UserAutorizationScreen.swift */; };
+		04470E472BB997BE00F4E299 /* TxtModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04470E462BB997BE00F4E299 /* TxtModifiers.swift */; };
 		045135272B9D851700F3113D /* TemplateOfDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045135262B9D851700F3113D /* TemplateOfDocument.swift */; };
 		045135292B9D871200F3113D /* RowOfTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045135282B9D871100F3113D /* RowOfTemplate.swift */; };
+		045F81062BB059EF00028F26 /* Razdel.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 045F81052BB0598400028F26 /* Razdel.docx */; };
+		0468A3512BA603720092087B /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468A3502BA603720092087B /* AppState.swift */; };
+		046E40022BAF524B00BE6F59 /* Divorce.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 046E40012BAF420F00BE6F59 /* Divorce.docx */; };
 		04A2CDE52B9EFBB1002CA7DE /* Appeal.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0422010E2B9CDD64008210F6 /* Appeal.docx */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +53,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				045F81062BB059EF00028F26 /* Razdel.docx in CopyFiles */,
+				046E40022BAF524B00BE6F59 /* Divorce.docx in CopyFiles */,
 				04A2CDE52B9EFBB1002CA7DE /* Appeal.docx in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,8 +94,12 @@
 		042201072B9C9EE0008210F6 /* TemplatesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplatesScreen.swift; sourceTree = "<group>"; };
 		042201092B9C9F07008210F6 /* UserAutorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAutorizationScreen.swift; sourceTree = "<group>"; };
 		0422010E2B9CDD64008210F6 /* Appeal.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Appeal.docx; sourceTree = "<group>"; };
+		04470E462BB997BE00F4E299 /* TxtModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxtModifiers.swift; sourceTree = "<group>"; };
 		045135262B9D851700F3113D /* TemplateOfDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateOfDocument.swift; sourceTree = "<group>"; };
 		045135282B9D871100F3113D /* RowOfTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowOfTemplate.swift; sourceTree = "<group>"; };
+		045F81052BB0598400028F26 /* Razdel.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Razdel.docx; sourceTree = "<group>"; };
+		0468A3502BA603720092087B /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		046E40012BAF420F00BE6F59 /* Divorce.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Divorce.docx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +166,8 @@
 				042200EB2B9C95BE008210F6 /* ChatDataSouce.swift */,
 				042200ED2B9C95EE008210F6 /* OnBoardingObserver.swift */,
 				045135262B9D851700F3113D /* TemplateOfDocument.swift */,
+				0468A3502BA603720092087B /* AppState.swift */,
+				04470E462BB997BE00F4E299 /* TxtModifiers.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -195,6 +207,8 @@
 		0422010B2B9CA1AC008210F6 /* TxtFiles */ = {
 			isa = PBXGroup;
 			children = (
+				046E40012BAF420F00BE6F59 /* Divorce.docx */,
+				045F81052BB0598400028F26 /* Razdel.docx */,
 				0422010E2B9CDD64008210F6 /* Appeal.docx */,
 			);
 			path = TxtFiles;
@@ -283,6 +297,7 @@
 				042201002B9C9DDB008210F6 /* OnBoardingView.swift in Sources */,
 				042200FA2B9C9D4A008210F6 /* LawyerMainScreen.swift in Sources */,
 				042200EC2B9C95BE008210F6 /* ChatDataSouce.swift in Sources */,
+				04470E472BB997BE00F4E299 /* TxtModifiers.swift in Sources */,
 				042200E22B9C94D6008210F6 /* GlobalVariables.swift in Sources */,
 				042200E42B9C94F6008210F6 /* Lawyer.swift in Sources */,
 				042200E02B9C9492008210F6 /* OnBoardingData.swift in Sources */,
@@ -298,6 +313,7 @@
 				042201082B9C9EE0008210F6 /* TemplatesScreen.swift in Sources */,
 				042200F62B9C9CEC008210F6 /* InstructionDetailScreen.swift in Sources */,
 				042200E62B9C9523008210F6 /* User.swift in Sources */,
+				0468A3512BA603720092087B /* AppState.swift in Sources */,
 				045135292B9D871200F3113D /* RowOfTemplate.swift in Sources */,
 				042200F22B9C9C83008210F6 /* ChatScreen.swift in Sources */,
 				042200EE2B9C95EF008210F6 /* OnBoardingObserver.swift in Sources */,

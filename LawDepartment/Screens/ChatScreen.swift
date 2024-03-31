@@ -4,25 +4,17 @@ import SwiftUI
 struct ChatScreen: View {
     @State var typingMessage: String = ""
     @ObservedObject var viewModel = ChatDataSouce()
-
+    @Binding var isUserWriting: Bool
+    
     var body: some View {
    
             VStack {
                 List {
                     ForEach(viewModel.DataSource, id: \.self) { msg in
-                   
-                        HStack(alignment: .bottom, spacing: 15) {
-                              Image("noPicture")
-                                        .resizable()
-                                        .frame(width: 40, height: 40, alignment: .center)
-                                        .cornerRadius(20)
-                           
-                            ContentMessage(contentMessage: msg, isCurrentUser: false)
+                        ContentMessage(contentMessage: msg, isUserWriting: isUserWriting)
                         }
-                       
                     }
                     .listRowSeparator(.hidden)
-
                 }
                 .scrollContentBackground(.hidden)
                 HStack {
@@ -31,7 +23,10 @@ struct ChatScreen: View {
                         .frame(minHeight: CGFloat(30))
                     
                     Button {
+                        print(isUserWriting)
+                        isUserWriting = true
                         viewModel.SendMessage(chatMessage: typingMessage)
+                        print(isUserWriting)
                             } label: {
                        Text("Send")
                     }
@@ -39,8 +34,7 @@ struct ChatScreen: View {
                 .frame(minHeight: CGFloat(50)).padding()
             }
         }
-    }
 
-#Preview {
-    ChatScreen()
-}
+//#Preview {
+//    ChatScreen()
+//}

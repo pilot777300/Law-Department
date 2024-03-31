@@ -4,11 +4,10 @@ import SwiftUI
 
 struct OnBoardingView: View {
     var data: OnboardingData
-    @State private var isAnimating: Bool = false
-    @ObservedObject var state = OnBoardingObserver()
-    
+    @State private  var isAnimating: Bool = false
+        @Binding var appState: AppState
     var body: some View {
-    
+        
             VStack(spacing: 30) {
                 ZStack {
                     Image(data.backgroundImage)
@@ -24,7 +23,6 @@ struct OnBoardingView: View {
                 
                 Spacer()
                 Spacer()
-                
                 Text(data.primaryText)
                     .font(.title2)
                     .bold()
@@ -41,10 +39,7 @@ struct OnBoardingView: View {
                 
                 
                 Button(action: {
-                    print("Before Tap =\(state.isStopDemostratingOnboard)")
-                    state.isStopDemostratingOnboard = true
-                    print("After Tap \(state.isStopDemostratingOnboard)")
-                    
+                    appState = .autorized
                 }, label: {
                     Text("Начать")
                         .font(.headline)
@@ -63,13 +58,7 @@ struct OnBoardingView: View {
                         )
                 })
                 .shadow(radius: 10)
-//               .sheet(isPresented: $showingDetail) {
-//                    ContentView()
-                  
-     //          }
-                
-                
-                Spacer()
+            Spacer()
             }
             .onAppear(perform: {
                 isAnimating = false
@@ -77,11 +66,10 @@ struct OnBoardingView: View {
                     self.isAnimating = true
                 }
             })
-           // .hidden()
     }
 }
 
 
-#Preview {
-    OnBoardingView(data: OnboardingData.list[2])
-}
+//#Preview {
+//    OnBoardingView(data: OnboardingData.list[2], appState: $appState)
+//}

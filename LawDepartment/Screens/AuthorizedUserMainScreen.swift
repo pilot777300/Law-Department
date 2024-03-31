@@ -2,6 +2,7 @@
 import SwiftUI
 
 struct AuthorizedUserMainScreen: View {
+    @State var isUserWriting = false
     var body: some View {
         NavigationView {
             ZStack {
@@ -19,10 +20,7 @@ struct AuthorizedUserMainScreen: View {
                     HStack(spacing: -75){
                         NavigationLink(destination: InstructionsScreen()) {
                             Image("instructions")
-                                .font(.caption)
                                 .padding()
-                                .foregroundColor(.blue)
-                                .underline()
                         }
                         NavigationLink(destination: RowOfTemplate()) {
                             
@@ -31,7 +29,7 @@ struct AuthorizedUserMainScreen: View {
                     }
                     .padding(5)
                     
-                    NavigationLink(destination: ChatScreen())
+                    NavigationLink(destination: ChatScreen( isUserWriting: $isUserWriting))
                             {
                         Image("chatButton")
                             }
@@ -42,22 +40,15 @@ struct AuthorizedUserMainScreen: View {
                             }
                         
                     Text("О приложении")
-                        .font(.caption)
-                        .padding()
-                        .foregroundColor(.blue)
-                        .underline()
-                    
+                        .modifier(TxtModifiers())
+
                     NavigationLink(destination: LawyerRegistrationScreen()) {
                         Text("Вход для адвокатов")
-                            .font(.caption)
-                            .padding()
-                            .foregroundColor(.blue)
-                            .underline()
+                            .modifier(TxtModifiers())
                     }
-
                 }
             }
-       }
+        }
     }
 }
 

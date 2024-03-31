@@ -7,3 +7,9 @@ struct User {
     var phoneNumber: String
     var isCurrentUser: Bool = false
 }
+
+
+// class Chat {
+//var author: User
+//var text: String
+//}

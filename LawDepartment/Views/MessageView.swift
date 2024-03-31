@@ -1,22 +1,23 @@
-
-
-import SwiftUI
-
-struct MessageView: View {
-    var currentMessage: Message
-    @ObservedObject var assignment = ChatDataSouce()
-    var body: some View {
-        HStack(alignment: .bottom, spacing: 15) {
-              Image("noPicture")
-                        .resizable()
-                        .frame(width: 40, height: 40, alignment: .center)
-                        .cornerRadius(20)
-            ContentMessage(contentMessage: assignment.DataSource.last ?? "NO msgg", isCurrentUser: false)
-            
-        }
-    }
-}
-
-#Preview {
-    MessageView(currentMessage: Message(id: UUID(), user: User(name: "Vala", phoneNumber: "fffff"), content: "JJJJJJJJ"))
-}
+//
+//
+//import SwiftUI
+//
+//struct MessageView: View {
+//    var currentMessage: Message
+//    @ObservedObject var assignment = ChatDataSouce()
+//    @State  var isUserWriting: Bool //= false
+//    var body: some View {
+//        HStack(alignment: .bottom, spacing: 15) {
+//            
+//            if isUserWriting {
+//                Spacer()
+//            }
+//            ContentMessage(contentMessage: assignment.DataSource.last ?? "NO msgg", isUserWriting: isUserWriting)
+//            
+//        }
+//    }
+//}
+//
+//#Preview {
+//    MessageView(currentMessage: Message(id: UUID(), user: User(name: "", phoneNumber: ""), content: ""), isUserWriting: true)
+//}
