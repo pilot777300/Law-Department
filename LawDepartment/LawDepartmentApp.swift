@@ -6,8 +6,10 @@ import SwiftUI
 struct LawDepartmentApp: App {
     var body: some Scene {
         WindowGroup {
-           // AuthorizedUserMainScreen()
-            OnBoardingScreen(state: .onbrd)
+          //  FirstAutorizationScreen()
+           AuthorizedUserMainScreen()
+          //  OnBoardingScreen(state: .onbrd)
+          //  UserAutorizationScreen()
         }
     }
 }

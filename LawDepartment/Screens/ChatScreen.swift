@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct ChatScreen: View {
-    @State var typingMessage: String = ""
+    @State private  var typingMessage: String = ""
     @ObservedObject var viewModel = ChatDataSouce()
     @Binding var isUserWriting: Bool
     

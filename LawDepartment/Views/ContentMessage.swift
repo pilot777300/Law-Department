@@ -4,7 +4,6 @@ import SwiftUI
 
 struct ContentMessage: View {
     var contentMessage: String
-  
     @State var isUserWriting: Bool
     
     var body: some View {

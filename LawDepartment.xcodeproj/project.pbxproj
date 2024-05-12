@@ -13,7 +13,6 @@
 		042200D12B9C910C008210F6 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 042200D02B9C910C008210F6 /* iPhoneNumberField */; };
 		042200D82B9C931E008210F6 /* LawyerAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200D72B9C931E008210F6 /* LawyerAvatarView.swift */; };
 		042200DA2B9C9390008210F6 /* ContentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200D92B9C9390008210F6 /* ContentMessage.swift */; };
-		042200DC2B9C93D1008210F6 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200DB2B9C93D1008210F6 /* MessageView.swift */; };
 		042200DE2B9C944D008210F6 /* OtpModifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200DD2B9C944D008210F6 /* OtpModifer.swift */; };
 		042200E02B9C9492008210F6 /* OnBoardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200DF2B9C9492008210F6 /* OnBoardingData.swift */; };
 		042200E22B9C94D6008210F6 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200E12B9C94D6008210F6 /* GlobalVariables.swift */; };
@@ -38,10 +37,18 @@
 		042201082B9C9EE0008210F6 /* TemplatesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042201072B9C9EE0008210F6 /* TemplatesScreen.swift */; };
 		0422010A2B9C9F07008210F6 /* UserAutorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042201092B9C9F07008210F6 /* UserAutorizationScreen.swift */; };
 		04470E472BB997BE00F4E299 /* TxtModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04470E462BB997BE00F4E299 /* TxtModifiers.swift */; };
+		044F8D542BE174160072E344 /* FirstAutorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F8D532BE174150072E344 /* FirstAutorizationScreen.swift */; };
+		044FA9A92BE107110097E4F2 /* Autorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FA9A82BE107110097E4F2 /* Autorization.swift */; };
 		045135272B9D851700F3113D /* TemplateOfDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045135262B9D851700F3113D /* TemplateOfDocument.swift */; };
 		045135292B9D871200F3113D /* RowOfTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045135282B9D871100F3113D /* RowOfTemplate.swift */; };
+		045B84442BEE5017006AE761 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B84432BEE5017006AE761 /* Token.swift */; };
+		045B84462BEE8AA8006AE761 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B84452BEE8AA7006AE761 /* KeychainHelper.swift */; };
 		045F81062BB059EF00028F26 /* Razdel.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 045F81052BB0598400028F26 /* Razdel.docx */; };
+		046735002BCADD55001E1406 /* Network Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046734FF2BCADD55001E1406 /* Network Manager.swift */; };
+		046735022BCAE302001E1406 /* RequestForVoiceHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046735012BCAE302001E1406 /* RequestForVoiceHelp.swift */; };
+		046735042BCAF1DF001E1406 /* VoiceHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046735032BCAF1DF001E1406 /* VoiceHelp.swift */; };
 		0468A3512BA603720092087B /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468A3502BA603720092087B /* AppState.swift */; };
+		046CF08D2BE675A500B3029A /* SmsVerifNewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CF08C2BE675A500B3029A /* SmsVerifNewScreen.swift */; };
 		046E40022BAF524B00BE6F59 /* Divorce.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 046E40012BAF420F00BE6F59 /* Divorce.docx */; };
 		04A2CDE52B9EFBB1002CA7DE /* Appeal.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0422010E2B9CDD64008210F6 /* Appeal.docx */; };
 /* End PBXBuildFile section */
@@ -69,7 +76,6 @@
 		042200C82B9C8F04008210F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		042200D72B9C931E008210F6 /* LawyerAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerAvatarView.swift; sourceTree = "<group>"; };
 		042200D92B9C9390008210F6 /* ContentMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMessage.swift; sourceTree = "<group>"; };
-		042200DB2B9C93D1008210F6 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 		042200DD2B9C944D008210F6 /* OtpModifer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpModifer.swift; sourceTree = "<group>"; };
 		042200DF2B9C9492008210F6 /* OnBoardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingData.swift; sourceTree = "<group>"; };
 		042200E12B9C94D6008210F6 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
@@ -95,10 +101,18 @@
 		042201092B9C9F07008210F6 /* UserAutorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAutorizationScreen.swift; sourceTree = "<group>"; };
 		0422010E2B9CDD64008210F6 /* Appeal.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Appeal.docx; sourceTree = "<group>"; };
 		04470E462BB997BE00F4E299 /* TxtModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxtModifiers.swift; sourceTree = "<group>"; };
+		044F8D532BE174150072E344 /* FirstAutorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAutorizationScreen.swift; sourceTree = "<group>"; };
+		044FA9A82BE107110097E4F2 /* Autorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autorization.swift; sourceTree = "<group>"; };
 		045135262B9D851700F3113D /* TemplateOfDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateOfDocument.swift; sourceTree = "<group>"; };
 		045135282B9D871100F3113D /* RowOfTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowOfTemplate.swift; sourceTree = "<group>"; };
+		045B84432BEE5017006AE761 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		045B84452BEE8AA7006AE761 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		045F81052BB0598400028F26 /* Razdel.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Razdel.docx; sourceTree = "<group>"; };
+		046734FF2BCADD55001E1406 /* Network Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Manager.swift"; sourceTree = "<group>"; };
+		046735012BCAE302001E1406 /* RequestForVoiceHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestForVoiceHelp.swift; sourceTree = "<group>"; };
+		046735032BCAF1DF001E1406 /* VoiceHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceHelp.swift; sourceTree = "<group>"; };
 		0468A3502BA603720092087B /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		046CF08C2BE675A500B3029A /* SmsVerifNewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerifNewScreen.swift; sourceTree = "<group>"; };
 		046E40012BAF420F00BE6F59 /* Divorce.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Divorce.docx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +182,12 @@
 				045135262B9D851700F3113D /* TemplateOfDocument.swift */,
 				0468A3502BA603720092087B /* AppState.swift */,
 				04470E462BB997BE00F4E299 /* TxtModifiers.swift */,
+				046734FF2BCADD55001E1406 /* Network Manager.swift */,
+				046735012BCAE302001E1406 /* RequestForVoiceHelp.swift */,
+				046735032BCAF1DF001E1406 /* VoiceHelp.swift */,
+				044FA9A82BE107110097E4F2 /* Autorization.swift */,
+				045B84432BEE5017006AE761 /* Token.swift */,
+				045B84452BEE8AA7006AE761 /* KeychainHelper.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -177,7 +197,6 @@
 			children = (
 				042200D72B9C931E008210F6 /* LawyerAvatarView.swift */,
 				042200D92B9C9390008210F6 /* ContentMessage.swift */,
-				042200DB2B9C93D1008210F6 /* MessageView.swift */,
 				045135282B9D871100F3113D /* RowOfTemplate.swift */,
 			);
 			path = Views;
@@ -200,6 +219,8 @@
 				042201052B9C9E71008210F6 /* SmsVerificationScreen.swift */,
 				042201072B9C9EE0008210F6 /* TemplatesScreen.swift */,
 				042201092B9C9F07008210F6 /* UserAutorizationScreen.swift */,
+				044F8D532BE174150072E344 /* FirstAutorizationScreen.swift */,
+				046CF08C2BE675A500B3029A /* SmsVerifNewScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -294,20 +315,27 @@
 				042200F82B9C9D17008210F6 /* InstructionsScreen.swift in Sources */,
 				042201022B9C9E05008210F6 /* OrderDetailScreen.swift in Sources */,
 				042200D82B9C931E008210F6 /* LawyerAvatarView.swift in Sources */,
+				046735022BCAE302001E1406 /* RequestForVoiceHelp.swift in Sources */,
 				042201002B9C9DDB008210F6 /* OnBoardingView.swift in Sources */,
 				042200FA2B9C9D4A008210F6 /* LawyerMainScreen.swift in Sources */,
 				042200EC2B9C95BE008210F6 /* ChatDataSouce.swift in Sources */,
 				04470E472BB997BE00F4E299 /* TxtModifiers.swift in Sources */,
 				042200E22B9C94D6008210F6 /* GlobalVariables.swift in Sources */,
+				044F8D542BE174160072E344 /* FirstAutorizationScreen.swift in Sources */,
 				042200E42B9C94F6008210F6 /* Lawyer.swift in Sources */,
+				046CF08D2BE675A500B3029A /* SmsVerifNewScreen.swift in Sources */,
 				042200E02B9C9492008210F6 /* OnBoardingData.swift in Sources */,
 				042201042B9C9E35008210F6 /* RequestHasSentScreen.swift in Sources */,
+				044FA9A92BE107110097E4F2 /* Autorization.swift in Sources */,
 				042200FC2B9C9D80008210F6 /* LawyerRegistrationScreen.swift in Sources */,
+				046735042BCAF1DF001E1406 /* VoiceHelp.swift in Sources */,
 				042200F42B9C9CC5008210F6 /* ChoiseScreen.swift in Sources */,
 				042200C12B9C8F02008210F6 /* LawDepartmentApp.swift in Sources */,
 				042200DA2B9C9390008210F6 /* ContentMessage.swift in Sources */,
 				0422010A2B9C9F07008210F6 /* UserAutorizationScreen.swift in Sources */,
+				045B84442BEE5017006AE761 /* Token.swift in Sources */,
 				042201062B9C9E71008210F6 /* SmsVerificationScreen.swift in Sources */,
+				045B84462BEE8AA8006AE761 /* KeychainHelper.swift in Sources */,
 				042200F02B9C9C39008210F6 /* AuthorizedUserMainScreen.swift in Sources */,
 				042200DE2B9C944D008210F6 /* OtpModifer.swift in Sources */,
 				042201082B9C9EE0008210F6 /* TemplatesScreen.swift in Sources */,
@@ -315,11 +343,11 @@
 				042200E62B9C9523008210F6 /* User.swift in Sources */,
 				0468A3512BA603720092087B /* AppState.swift in Sources */,
 				045135292B9D871200F3113D /* RowOfTemplate.swift in Sources */,
+				046735002BCADD55001E1406 /* Network Manager.swift in Sources */,
 				042200F22B9C9C83008210F6 /* ChatScreen.swift in Sources */,
 				042200EE2B9C95EF008210F6 /* OnBoardingObserver.swift in Sources */,
 				045135272B9D851700F3113D /* TemplateOfDocument.swift in Sources */,
 				042200EA2B9C9593008210F6 /* Message.swift in Sources */,
-				042200DC2B9C93D1008210F6 /* MessageView.swift in Sources */,
 				042200FE2B9C9DAA008210F6 /* OnBoardingScreen.swift in Sources */,
 				042200E82B9C954E008210F6 /* Instructions.swift in Sources */,
 			);

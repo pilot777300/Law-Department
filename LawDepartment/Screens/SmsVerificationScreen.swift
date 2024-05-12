@@ -39,6 +39,7 @@ struct OtpFormFieldView: View {
                                 }
                             }
                             .focused($pinFocusState, equals: .pinOne)
+                            .textContentType(.oneTimeCode) // ?
 
                         TextField("", text:  $pinTwo)
                             .modifier(OtpModifer(pin:$pinTwo))
@@ -48,7 +49,7 @@ struct OtpFormFieldView: View {
                                 }
                             }
                             .focused($pinFocusState, equals: .pinTwo)
-
+                            .textContentType(.oneTimeCode) // ?
 
                         TextField("", text:$pinThree)
                             .modifier(OtpModifer(pin:$pinThree))
@@ -58,18 +59,22 @@ struct OtpFormFieldView: View {
                                 }
                             }
                             .focused($pinFocusState, equals: .pinThree)
-
+                            .textContentType(.oneTimeCode) // ?
 
                         TextField("", text:$pinFour)
                             .modifier(OtpModifer(pin:$pinFour))
                             .focused($pinFocusState, equals: .pinFour)
-
+                            .textContentType(.oneTimeCode) // ?
 
                     })
                     .padding(.vertical)
 
 
-                    Button(action: {}, label: {
+                    Button(action: {
+                        
+                        if pinOne + pinTwo + pinThree + pinFour == "" {
+                            print("DAAAA") } else {print("NOOO")}
+                    }, label: {
                         Spacer()
                         Text("Подтвердить")
                             .font(.system(.title3, design: .rounded))

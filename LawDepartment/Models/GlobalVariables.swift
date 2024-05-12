@@ -1,7 +1,11 @@
 
 import Foundation
 
-// var isStopDemostratingOnboard = false
-// var isUserAuthorized = false
+var userName: String = "Пользователь"
+var userCity: String = ""
+var userPhone: String = ""
 
- //var isUserWriting = false
+
+var userToken = ""
+
+

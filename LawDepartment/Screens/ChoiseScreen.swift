@@ -5,7 +5,8 @@ import SwiftUI
 struct ChoiseScreen: View {
     
     @State var isChoiseBtnPressed = false
-   // @Binding var activateRootLink: Bool
+   private  let checker = NetworkManager()
+    
     
     var body: some View {
         
@@ -25,33 +26,58 @@ struct ChoiseScreen: View {
                     Image("forCivil")
                         .onTapGesture {
                             print("Гражданское нажато")
+                            
                             isChoiseBtnPressed.toggle()
+                            
                         }
                     Image("forCriminal")
                         .onTapGesture {
                             print("Уголовное нажато")
+                            isChoiseBtnPressed.toggle()
 
                         }
                 }
                 .padding(-60)
                 HStack(spacing: -70) {
+                    
                     Image("forBusiness")
+                        .onTapGesture {
+                            print("Для бизнеса нажато")
+                            isChoiseBtnPressed.toggle()
+                        }
+                    
                     Image("forFamily")
+                        .onTapGesture {
+                            print("Семейное нажато")
+                            isChoiseBtnPressed.toggle()
+                        }
                 }
               //  .padding(-20)
                 HStack(spacing: -70) {
                     Image("forDTP")
+                        .onTapGesture {
+                            print("По ДТП нажато")
+                            isChoiseBtnPressed.toggle()
+                        }
+                   
                     Image("forAnother")
+                        .onTapGesture {
+                            print("Уголовное нажато")
+                            isChoiseBtnPressed.toggle()
+
+                        }
                 }
                 .padding(-60)
             }
             .sheet(isPresented: $isChoiseBtnPressed) {
-                RequestHasSentScreen()
+                if userName != "Пользователь" {
+                    RequestHasSentScreen()
+                } else {
+                    FirstAutorizationScreen()
+                }
             }
-            
         }
     }
-    
 }
 
 

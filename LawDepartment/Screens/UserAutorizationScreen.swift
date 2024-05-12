@@ -9,6 +9,7 @@ struct UserAutorizationScreen: View {
     @State private var userPhoneNumber: String = ""
     @State var isEditing: Bool = false
    @State var isVerificationScreenTapped = false
+    private let sender = NetworkManager()
     
     var body: some View {
         ZStack {
@@ -48,7 +49,7 @@ struct UserAutorizationScreen: View {
                           .flagHidden(false)
                           .flagSelectable(true)
                           .font(UIFont(size: 14, weight: .light, design: .monospaced))
-                          .maximumDigits(10)
+                          .maximumDigits(11)
                           .foregroundColor(Color.black)
                           .clearButtonMode(.whileEditing)
                           .onClear { _ in isEditing.toggle() }
@@ -71,7 +72,9 @@ struct UserAutorizationScreen: View {
                 Image("AutorizeButton")
                     .position(x:190, y: 430)
                     .onTapGesture {
+                        print("TAPPED")
                         isVerificationScreenTapped.toggle()
+                        sender.sendSms(ApiURL: "https://api.6709.ru/v1/user/client/sign-up", Name: userName, City: "", Phone: userPhoneNumber)
                     }
         }
     }
