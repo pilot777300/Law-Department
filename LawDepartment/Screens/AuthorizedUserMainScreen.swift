@@ -1,10 +1,12 @@
 
 import SwiftUI
+import KeychainSwift
 
 struct AuthorizedUserMainScreen: View {
     @State private var isUserWriting = false
     private let internet = NetworkManager()
-    private let keychain = KeychainHelper.standart
+    private let keychain = KeychainSwift()
+    @State var nameOne = userName//"Пользователь"
   //  @Binding var  state: AppState
     var body: some View {
         NavigationView {
@@ -14,7 +16,7 @@ struct AuthorizedUserMainScreen: View {
                 
                 VStack(alignment: .center, spacing: -10) {
                    
-                        Text("Здравствуйте, \(userName)")
+                        Text("Здравствуйте, \(nameOne)")
                         .font(.system(.subheadline))
                         .fontWeight(.black)
                         .padding(10)
@@ -53,29 +55,36 @@ struct AuthorizedUserMainScreen: View {
             }
         }
         .onAppear{
+            let tokenInPhone = keychain.get("token")
+            let name = keychain.get("username")
             print("LOADED MAIN SCREEN")
-//            internet.fetchData(urlString:"https://api.6709.ru/v1/user/client/sign-up") { (tokenChecker: Token?) in
-//                let tokenOnServer = tokenChecker?.token
-//                print(tokenOnServer!)
+            print("Keychain Token = \(tokenInPhone ?? "00000")")
+            print(".........END OF TOKEN..........")
+            print("'''''''KeychAIN USER====::::::::::")
+            print(name!)
+            print(";;;;;;;END OF NAME::::::::")
+            userName = name!
+            nameOne = name!
+//            let isTokenActive = internet.checkResponce()
+//            print(isTokenActive)
+//            if isTokenActive {
+//                nameOne = name!
+//            }
+//            nameOne = name!
+//           internet.fetchData(urlString: "https://api.6709.ru/v1/user/token-status") { (tokenStatus: TokenStatus?) in
+//               let isTokenValid = tokenStatus?.valid
+//               print(isTokenValid!)
 //                
              //   let data = keychain.read(service: "token")
            //     let tokenInPhone = String(data: data!, encoding: .utf8)
               //  let nameData = keychain.read(service: "name")
              //   let user = String(data: nameData!, encoding: .utf8)
-             //   if tokenOnServer == tokenInPhone {
-                  //  userName = user!
-                    print("TOKEN ON SERVER:::::::")
-                  //  print(tokenOnServer!)
-                    print(":::::END OF TOKEN ON SERVER:::::")
-                    print("-----TOKEN ON PHONE:---------")
-                //    print(tokenInPhone!)
-                    print("-------END OF TOKEN ON PHONE---- ")
-                    print("-----USER NAME:------")
-                    print(userName)
-                    print("----END OF USERNAME-------")
-
-             //  }
-          //  }
+//               if isTokenValid! {
+//                   nameOne = name!
+//
+//               }
+            
+       //     }
             
         }
     }

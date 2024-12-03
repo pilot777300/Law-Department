@@ -3,11 +3,12 @@ import SwiftUI
 import iPhoneNumberField
 
 struct FirstAutorizationScreen: View {
+  //  @Environment(\.dismiss) var dismiss
     @State private var userName: String = ""
     @State private var city: String = ""
     @State private var userPhoneNumber: String = ""
     @State var isEditing: Bool = false
-   @State var isVerificationScreenTapped = false
+ //  @State var isVerificationScreenTapped = false
     private let sender = NetworkManager()
     
     var body: some View {
@@ -62,6 +63,7 @@ struct FirstAutorizationScreen: View {
                         .onAppear {
                 sender.sendSms(ApiURL: "https://api.6709.ru/v1/user/client/sign-up", Name: userName, City: "", Phone: userPhoneNumber)
                             print("TAPPED")
+                          //  dismiss()
                         })
                     {
                         Image("AutorizeButton")
