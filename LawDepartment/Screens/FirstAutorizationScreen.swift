@@ -3,16 +3,16 @@ import SwiftUI
 import iPhoneNumberField
 
 struct FirstAutorizationScreen: View {
-  //  @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss) var dismiss
+    @State var isShowSmsScr = false
     @State private var userName: String = ""
     @State private var city: String = ""
     @State private var userPhoneNumber: String = ""
     @State var isEditing: Bool = false
- //  @State var isVerificationScreenTapped = false
     private let sender = NetworkManager()
     
     var body: some View {
-       NavigationView {
+      NavigationStack {
             ZStack {
                 Color(UIColor.systemGray6)
                     .ignoresSafeArea()
@@ -26,8 +26,6 @@ struct FirstAutorizationScreen: View {
                     Text("Авторизация необходима чтобы адвокат мог с вами связаться")
                         .font(.footnote)
                         .padding(5)
-                  //  Spacer()
-                    
                     TextField(
                         "Ваше имя",text: $userName)
                     .disableAutocorrection(true)
@@ -57,37 +55,40 @@ struct FirstAutorizationScreen: View {
                               .cornerRadius(10)
                               .shadow(color: isEditing ? .blue : .white, radius: 10)
                               .padding(15)
-   
                     
-                    NavigationLink(destination: SmsVerifNewScreen()
+        NavigationLink(destination: SmsVerifNewScreen()
                         .onAppear {
-                sender.sendSms(ApiURL: "https://api.6709.ru/v1/user/client/sign-up", Name: userName, City: "", Phone: userPhoneNumber)
+//                sender.sendSms(ApiURL: "https://api.6709.ru/v1/user/client/sign-up", Name: userName, City: "", Phone: userPhoneNumber)
                             print("TAPPED")
-                          //  dismiss()
-                        })
+                           })
                     {
                         Image("AutorizeButton")
                     }
 
                        
-                  //  Image("AutorizeButton")
-//                            .padding()
-//                                .onTapGesture {
-//                                    
-//                                    print("TAPЗЗЗЗЗЗPED")
-//                                   sender.sendSms(ApiURL: "https://api.6709.ru/v1/user/client/sign-up", Name: userName, City: "", Phone: userPhoneNumber)
-//                        isVerificationScreenTapped.toggle()
+                //    Image("AutorizeButton")
+                   //         .padding()
+                             ////   .onTapGesture {
+                               //     print("TAPЗЗЗЗЗЗPED")
+                               //    sender.sendSms(ApiURL: "https://api.6709.ru/v1/user/client/sign-up", Name: userName, City: "", Phone: userPhoneNumber)
+                       // isVerificationScreenTapped.toggle()
                                     
-                          //  }
-                //   }
+              //              }
+              //     }
                     Spacer()
+            }
+                .navigationBarBackButtonHidden(true)
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button (action: {
+                            dismiss()
+                        }) {
+                            Label("Back", systemImage: "chevron.left.circle")
+                        }
+                    }
                 }
-//                .sheet(isPresented: $isVerificationScreenTapped) {
-//                   //OtpFormFieldView()
-//                    SmsVerifNewScreen()
-                }
-      //      }
-        }
+          }
+       }
     }
 }
 

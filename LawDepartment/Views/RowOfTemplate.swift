@@ -18,6 +18,7 @@ struct RowOfTemplate: View {
                         } .quickLookPreview($url)
                 }
             }
+            
         }
     }
 }

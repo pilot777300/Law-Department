@@ -7,9 +7,12 @@ struct LawDepartmentApp: App {
     var body: some Scene {
         WindowGroup {
           //  FirstAutorizationScreen()
-           AuthorizedUserMainScreen()
+          // AuthorizedUserMainScreen()
           //  OnBoardingScreen(state: .onbrd)
           //  UserAutorizationScreen()
+           // LawyerMainScreen()
+            LawyerStartigScreen()
+          //  OrdersScreen()
         }
     }
 }

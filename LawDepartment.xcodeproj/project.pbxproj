@@ -39,17 +39,27 @@
 		04470E472BB997BE00F4E299 /* TxtModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04470E462BB997BE00F4E299 /* TxtModifiers.swift */; };
 		044F8D542BE174160072E344 /* FirstAutorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F8D532BE174150072E344 /* FirstAutorizationScreen.swift */; };
 		044FA9A92BE107110097E4F2 /* Autorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FA9A82BE107110097E4F2 /* Autorization.swift */; };
+		0450CCA82BF101ED006B77A4 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0450CCA72BF101ED006B77A4 /* KeychainSwift */; };
+		0450CCAA2BF12E0D006B77A4 /* TokenStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0450CCA92BF12E0D006B77A4 /* TokenStatus.swift */; };
 		045135272B9D851700F3113D /* TemplateOfDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045135262B9D851700F3113D /* TemplateOfDocument.swift */; };
 		045135292B9D871200F3113D /* RowOfTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045135282B9D871100F3113D /* RowOfTemplate.swift */; };
+		045227532D4FC0CE006589BF /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045227522D4FC0CE006589BF /* Order.swift */; };
+		045227552D4FC9BF006589BF /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045227542D4FC9BF006589BF /* OrderView.swift */; };
 		045B84442BEE5017006AE761 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B84432BEE5017006AE761 /* Token.swift */; };
 		045B84462BEE8AA8006AE761 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B84452BEE8AA7006AE761 /* KeychainHelper.swift */; };
 		045F81062BB059EF00028F26 /* Razdel.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 045F81052BB0598400028F26 /* Razdel.docx */; };
+		0464951C2D50AB5300EEC269 /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464951B2D50AB5300EEC269 /* Orders.swift */; };
 		046735002BCADD55001E1406 /* Network Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046734FF2BCADD55001E1406 /* Network Manager.swift */; };
 		046735022BCAE302001E1406 /* RequestForVoiceHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046735012BCAE302001E1406 /* RequestForVoiceHelp.swift */; };
 		046735042BCAF1DF001E1406 /* VoiceHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046735032BCAF1DF001E1406 /* VoiceHelp.swift */; };
 		0468A3512BA603720092087B /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468A3502BA603720092087B /* AppState.swift */; };
+		046AF4172D3FD764001C121B /* LawyerStartigScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AF4162D3FD764001C121B /* LawyerStartigScreen.swift */; };
+		046C0EBC2D34172B00830070 /* RequestForHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C0EBB2D34172B00830070 /* RequestForHelp.swift */; };
+		046C6A522D1D939200F9D151 /* HeaderTxtModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C6A512D1D939200F9D151 /* HeaderTxtModifier.swift */; };
 		046CF08D2BE675A500B3029A /* SmsVerifNewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CF08C2BE675A500B3029A /* SmsVerifNewScreen.swift */; };
 		046E40022BAF524B00BE6F59 /* Divorce.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 046E40012BAF420F00BE6F59 /* Divorce.docx */; };
+		04770EE72D44D5FE000B7BE2 /* OrdersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770EE62D44D5FE000B7BE2 /* OrdersScreen.swift */; };
+		048625A02D6090EC00DB106C /* Skyblue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486259F2D6090EC00DB106C /* Skyblue.swift */; };
 		04A2CDE52B9EFBB1002CA7DE /* Appeal.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0422010E2B9CDD64008210F6 /* Appeal.docx */; };
 /* End PBXBuildFile section */
 
@@ -103,17 +113,26 @@
 		04470E462BB997BE00F4E299 /* TxtModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxtModifiers.swift; sourceTree = "<group>"; };
 		044F8D532BE174150072E344 /* FirstAutorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAutorizationScreen.swift; sourceTree = "<group>"; };
 		044FA9A82BE107110097E4F2 /* Autorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autorization.swift; sourceTree = "<group>"; };
+		0450CCA92BF12E0D006B77A4 /* TokenStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStatus.swift; sourceTree = "<group>"; };
 		045135262B9D851700F3113D /* TemplateOfDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateOfDocument.swift; sourceTree = "<group>"; };
 		045135282B9D871100F3113D /* RowOfTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowOfTemplate.swift; sourceTree = "<group>"; };
+		045227522D4FC0CE006589BF /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		045227542D4FC9BF006589BF /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		045B84432BEE5017006AE761 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		045B84452BEE8AA7006AE761 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		045F81052BB0598400028F26 /* Razdel.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Razdel.docx; sourceTree = "<group>"; };
+		0464951B2D50AB5300EEC269 /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
 		046734FF2BCADD55001E1406 /* Network Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Manager.swift"; sourceTree = "<group>"; };
 		046735012BCAE302001E1406 /* RequestForVoiceHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestForVoiceHelp.swift; sourceTree = "<group>"; };
 		046735032BCAF1DF001E1406 /* VoiceHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceHelp.swift; sourceTree = "<group>"; };
 		0468A3502BA603720092087B /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		046AF4162D3FD764001C121B /* LawyerStartigScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerStartigScreen.swift; sourceTree = "<group>"; };
+		046C0EBB2D34172B00830070 /* RequestForHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestForHelp.swift; sourceTree = "<group>"; };
+		046C6A512D1D939200F9D151 /* HeaderTxtModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTxtModifier.swift; sourceTree = "<group>"; };
 		046CF08C2BE675A500B3029A /* SmsVerifNewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerifNewScreen.swift; sourceTree = "<group>"; };
 		046E40012BAF420F00BE6F59 /* Divorce.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Divorce.docx; sourceTree = "<group>"; };
+		04770EE62D44D5FE000B7BE2 /* OrdersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersScreen.swift; sourceTree = "<group>"; };
+		0486259F2D6090EC00DB106C /* Skyblue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skyblue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0450CCA82BF101ED006B77A4 /* KeychainSwift in Frameworks */,
 				042200D12B9C910C008210F6 /* iPhoneNumberField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,6 +190,7 @@
 		042200D42B9C9282008210F6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0486259E2D6090D000DB106C /* Colors */,
 				042200DD2B9C944D008210F6 /* OtpModifer.swift */,
 				042200DF2B9C9492008210F6 /* OnBoardingData.swift */,
 				042200E12B9C94D6008210F6 /* GlobalVariables.swift */,
@@ -188,6 +209,11 @@
 				044FA9A82BE107110097E4F2 /* Autorization.swift */,
 				045B84432BEE5017006AE761 /* Token.swift */,
 				045B84452BEE8AA7006AE761 /* KeychainHelper.swift */,
+				0450CCA92BF12E0D006B77A4 /* TokenStatus.swift */,
+				046C6A512D1D939200F9D151 /* HeaderTxtModifier.swift */,
+				046C0EBB2D34172B00830070 /* RequestForHelp.swift */,
+				045227522D4FC0CE006589BF /* Order.swift */,
+				0464951B2D50AB5300EEC269 /* Orders.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,6 +224,7 @@
 				042200D72B9C931E008210F6 /* LawyerAvatarView.swift */,
 				042200D92B9C9390008210F6 /* ContentMessage.swift */,
 				045135282B9D871100F3113D /* RowOfTemplate.swift */,
+				045227542D4FC9BF006589BF /* OrderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -221,6 +248,8 @@
 				042201092B9C9F07008210F6 /* UserAutorizationScreen.swift */,
 				044F8D532BE174150072E344 /* FirstAutorizationScreen.swift */,
 				046CF08C2BE675A500B3029A /* SmsVerifNewScreen.swift */,
+				046AF4162D3FD764001C121B /* LawyerStartigScreen.swift */,
+				04770EE62D44D5FE000B7BE2 /* OrdersScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -233,6 +262,14 @@
 				0422010E2B9CDD64008210F6 /* Appeal.docx */,
 			);
 			path = TxtFiles;
+			sourceTree = "<group>";
+		};
+		0486259E2D6090D000DB106C /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				0486259F2D6090EC00DB106C /* Skyblue.swift */,
+			);
+			path = Colors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +291,7 @@
 			name = LawDepartment;
 			packageProductDependencies = (
 				042200D02B9C910C008210F6 /* iPhoneNumberField */,
+				0450CCA72BF101ED006B77A4 /* KeychainSwift */,
 			);
 			productName = LawDepartment;
 			productReference = 042200BD2B9C8F02008210F6 /* LawDepartment.app */;
@@ -285,6 +323,7 @@
 			mainGroup = 042200B42B9C8F02008210F6;
 			packageReferences = (
 				042200CF2B9C910C008210F6 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
+				0450CCA62BF101ED006B77A4 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = 042200BE2B9C8F02008210F6 /* Products */;
 			projectDirPath = "";
@@ -320,10 +359,14 @@
 				042200FA2B9C9D4A008210F6 /* LawyerMainScreen.swift in Sources */,
 				042200EC2B9C95BE008210F6 /* ChatDataSouce.swift in Sources */,
 				04470E472BB997BE00F4E299 /* TxtModifiers.swift in Sources */,
+				0450CCAA2BF12E0D006B77A4 /* TokenStatus.swift in Sources */,
 				042200E22B9C94D6008210F6 /* GlobalVariables.swift in Sources */,
+				046C6A522D1D939200F9D151 /* HeaderTxtModifier.swift in Sources */,
 				044F8D542BE174160072E344 /* FirstAutorizationScreen.swift in Sources */,
 				042200E42B9C94F6008210F6 /* Lawyer.swift in Sources */,
+				046C0EBC2D34172B00830070 /* RequestForHelp.swift in Sources */,
 				046CF08D2BE675A500B3029A /* SmsVerifNewScreen.swift in Sources */,
+				046AF4172D3FD764001C121B /* LawyerStartigScreen.swift in Sources */,
 				042200E02B9C9492008210F6 /* OnBoardingData.swift in Sources */,
 				042201042B9C9E35008210F6 /* RequestHasSentScreen.swift in Sources */,
 				044FA9A92BE107110097E4F2 /* Autorization.swift in Sources */,
@@ -331,12 +374,17 @@
 				046735042BCAF1DF001E1406 /* VoiceHelp.swift in Sources */,
 				042200F42B9C9CC5008210F6 /* ChoiseScreen.swift in Sources */,
 				042200C12B9C8F02008210F6 /* LawDepartmentApp.swift in Sources */,
+				04770EE72D44D5FE000B7BE2 /* OrdersScreen.swift in Sources */,
+				045227552D4FC9BF006589BF /* OrderView.swift in Sources */,
 				042200DA2B9C9390008210F6 /* ContentMessage.swift in Sources */,
 				0422010A2B9C9F07008210F6 /* UserAutorizationScreen.swift in Sources */,
+				045227532D4FC0CE006589BF /* Order.swift in Sources */,
 				045B84442BEE5017006AE761 /* Token.swift in Sources */,
 				042201062B9C9E71008210F6 /* SmsVerificationScreen.swift in Sources */,
+				0464951C2D50AB5300EEC269 /* Orders.swift in Sources */,
 				045B84462BEE8AA8006AE761 /* KeychainHelper.swift in Sources */,
 				042200F02B9C9C39008210F6 /* AuthorizedUserMainScreen.swift in Sources */,
+				048625A02D6090EC00DB106C /* Skyblue.swift in Sources */,
 				042200DE2B9C944D008210F6 /* OtpModifer.swift in Sources */,
 				042201082B9C9EE0008210F6 /* TemplatesScreen.swift in Sources */,
 				042200F62B9C9CEC008210F6 /* InstructionDetailScreen.swift in Sources */,
@@ -574,6 +622,14 @@
 				minimumVersion = 0.10.1;
 			};
 		};
+		0450CCA62BF101ED006B77A4 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 24.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -581,6 +637,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 042200CF2B9C910C008210F6 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
 			productName = iPhoneNumberField;
+		};
+		0450CCA72BF101ED006B77A4 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0450CCA62BF101ED006B77A4 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

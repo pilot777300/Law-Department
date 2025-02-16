@@ -3,7 +3,6 @@ import SwiftUI
 
 struct RequestHasSentScreen: View {
     @Environment(\.dismiss) var dismiss
-   // @Binding var activateRootLink: Bool
     var body: some View {
         
         ZStack {

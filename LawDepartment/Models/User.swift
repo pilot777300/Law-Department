@@ -9,7 +9,3 @@ struct User {
 }
 
 
-// class Chat {
-//var author: User
-//var text: String
-//}

@@ -2,6 +2,7 @@
 import SwiftUI
 
 struct InstructionsScreen: View {
+    @Environment(\.dismiss) var dismiss
    var detail = Instructions(name: "", description: "")
    var body: some View {
        ZStack {
@@ -19,6 +20,17 @@ struct InstructionsScreen: View {
                            }
                }
            }
+           .navigationBarBackButtonHidden(true)
+           .toolbar {
+               ToolbarItem(placement: .topBarLeading) {
+                   Button (action: {
+                       dismiss()
+                   }) {
+                       Label("Back", systemImage: "chevron.left.circle")
+                   }
+               }
+           }
+
        }
    }
 }
