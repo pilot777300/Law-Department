@@ -3,30 +3,31 @@
 import SwiftUI
 
 struct OrderDetailScreen: View {
+    var orderData: Order
     var body: some View {
         ZStack {
 
             VStack(alignment:.leading, spacing: 5){
                 Text("Сведения о заявке ")
                     .padding(.leading, 80)
+                    .padding(20)
                     .font(.title2)
-                Text("№ заявки:")
+                Text("№ заявки: \(orderData.id)")
                     .padding(.leading, 10)
                 HStack {
-                    
-                    Text("Дата: 18.02.2024")
+                    Text("Дата: \(orderData.date)")
                         .padding(.leading, 10)
-                    Text("Время: 18.56")
+                    Text("Время: \(orderData.time)")
                         .padding(.leading, 10)
                 }
-                Text("Имя пользователя: Виктор")
+                Text("Имя клиента: \(orderData.userName)")
                     .padding(.leading, 10)
-                Text("Телефон пользователя: 8(999)9999993")
+                Text("Телефон клиента: \(orderData.phoneNumber)")
                     .padding(.leading, 10)
-                Text("Нужна помощь по делу: Уголовное")
+                Text("Нужна помощь по делу: \(orderData.typeOfHelp)")
                     .padding(.leading, 10)
                 Button {
-                    print("")
+                    print("rrrr")
                 } label: {
                     Text("Завершить работу по заявке")
                         .frame(maxWidth: .infinity)
@@ -42,5 +43,5 @@ struct OrderDetailScreen: View {
 }
 
 #Preview {
-    OrderDetailScreen()
+    OrderDetailScreen(orderData: Order(date: "", time: "", userName: "", phoneNumber: "", typeOfHelp: ""))
 }

@@ -4,11 +4,12 @@ import SwiftUI
 
 struct LawyerRegistrationScreen: View {
     
-    @State var person = Lawyer(firstName: "", secondName: "", surname: "", city: "", phoneNumber: "", avatar: "")
-    
-    
+    @State var person = Lawyer(name: "", patronymic: "", surname: "", city: "", phone: "")
+    @Environment(\.dismiss) var dismiss
+
     
     var body: some View {
+        NavigationStack {
         ZStack {
             Color(UIColor.systemGray6)
                 .ignoresSafeArea()
@@ -21,24 +22,21 @@ struct LawyerRegistrationScreen: View {
                     .padding(.top, -50)
                     .padding(15)
                 
-                LawyerAvatarView(image: Image("noPicture"))
-                    .padding(15)
-                
                 TextField(
-                    "Имя",text: $person.firstName)
+                    "Имя",text: $person.name)
                 .disableAutocorrection(true)
                 .frame(height: 5)
                 .font(.footnote)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                 .padding()
+                .padding()
                 
                 TextField(
-                    "Отчество",text: $person.secondName)
+                    "Отчество",text: $person.patronymic)
                 .disableAutocorrection(true)
                 .frame(height: 5)
                 .font(.footnote)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                 .padding()
+                .padding()
                 
                 TextField(
                     "Фамилия",text: $person.surname)
@@ -46,23 +44,15 @@ struct LawyerRegistrationScreen: View {
                 .frame(height: 5)
                 .font(.footnote)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                 .padding()
+                .padding()
                 
                 TextField(
-                    "Номер телефона",text: $person.phoneNumber)
+                    "Номер телефона",text: $person.phone)
                 .disableAutocorrection(true)
                 .frame(height: 5)
                 .font(.footnote)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                 .padding()
-                
-                TextField(
-                    "Город",text: $person.city)
-                .disableAutocorrection(true)
-                .frame(height: 5)
-                .font(.footnote)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                 .padding()
+                .padding()
                 
                 Button {
                     print("")
@@ -76,6 +66,17 @@ struct LawyerRegistrationScreen: View {
                 .padding(15)
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button (action: {
+                    dismiss()
+                }) {
+                    Label("Back", systemImage: "chevron.left")
+                }
+            }
+        }
+    }
     }
 }
 

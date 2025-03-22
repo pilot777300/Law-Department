@@ -46,25 +46,6 @@ struct SmsVerifNewScreen: View {
                     .background(Color.blue)
                     .clipShape(Capsule())
                 .padding(20)
-                    
-                    
-                   
-//                    NavigationLink(destination: AuthorizedUserMainScreen()) {
-//                        Button(action: {
-//                            confirmator.confirmCode(VerificationCode: codeFromSms)
-//                        }, label: {
-//                            Spacer()
-//                            Text("Подтвердить")
-//                                .font(.system(.title3, design: .rounded))
-//                                .fontWeight(.semibold)
-//                                .foregroundColor(.white)
-//                            Spacer()
-//                        })
-//                        .padding(15)
-//                        .background(Color.blue)
-//                        .clipShape(Capsule())
-//                    .padding()
-//                    }
                 }
                 .navigationBarBackButtonHidden(true)
                 .toolbar {
@@ -72,7 +53,7 @@ struct SmsVerifNewScreen: View {
                         Button (action: {
                             dismiss()
                         }) {
-                            Label("Back", systemImage: "chevron.left.circle")
+                            Label("Back", systemImage: "chevron.left")
                         }
                     }
                 }

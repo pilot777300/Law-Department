@@ -9,6 +9,8 @@ struct AuthorizedUserMainScreen: View {
     private let keychain = KeychainSwift()
     @State private var name = ""
     @State private var  state: AppState = .notAutorized
+    @State var txt: URL?
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -65,9 +67,11 @@ struct AuthorizedUserMainScreen: View {
                         
                     Text("О приложении")
                         .modifier(TxtModifiers())
-
+                        .onTapGesture {
+                            txt = txtFile[0].url
+                        } .quickLookPreview($txt)
+                    
                     NavigationLink(destination:
-                                    
                         LawyerRegistrationScreen()) {
                         Text("Вход для адвокатов")
                             .modifier(TxtModifiers())

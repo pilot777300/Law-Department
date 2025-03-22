@@ -45,10 +45,15 @@
 		045135292B9D871200F3113D /* RowOfTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045135282B9D871100F3113D /* RowOfTemplate.swift */; };
 		045227532D4FC0CE006589BF /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045227522D4FC0CE006589BF /* Order.swift */; };
 		045227552D4FC9BF006589BF /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045227542D4FC9BF006589BF /* OrderView.swift */; };
+		045286782D81E9D800E8053C /* ListOfChats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045286772D81E9D800E8053C /* ListOfChats.swift */; };
+		0452867A2D81EB3200E8053C /* RowOfChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045286792D81EB3200E8053C /* RowOfChat.swift */; };
+		045B647A2D747B120003A080 /* CustomTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 045B64792D747B120003A080 /* CustomTextField */; };
 		045B84442BEE5017006AE761 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B84432BEE5017006AE761 /* Token.swift */; };
 		045B84462BEE8AA8006AE761 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B84452BEE8AA7006AE761 /* KeychainHelper.swift */; };
 		045F81062BB059EF00028F26 /* Razdel.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 045F81052BB0598400028F26 /* Razdel.docx */; };
 		0464951C2D50AB5300EEC269 /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0464951B2D50AB5300EEC269 /* Orders.swift */; };
+		0466DFE82D8EFB9000677BDF /* PrivatePolicy.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0466DFE72D8EFB9000677BDF /* PrivatePolicy.docx */; };
+		0466DFEC2D8F12C700677BDF /* TxtFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0466DFEB2D8F12C700677BDF /* TxtFile.swift */; };
 		046735002BCADD55001E1406 /* Network Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046734FF2BCADD55001E1406 /* Network Manager.swift */; };
 		046735022BCAE302001E1406 /* RequestForVoiceHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046735012BCAE302001E1406 /* RequestForVoiceHelp.swift */; };
 		046735042BCAF1DF001E1406 /* VoiceHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046735032BCAF1DF001E1406 /* VoiceHelp.swift */; };
@@ -58,6 +63,7 @@
 		046C6A522D1D939200F9D151 /* HeaderTxtModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C6A512D1D939200F9D151 /* HeaderTxtModifier.swift */; };
 		046CF08D2BE675A500B3029A /* SmsVerifNewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CF08C2BE675A500B3029A /* SmsVerifNewScreen.swift */; };
 		046E40022BAF524B00BE6F59 /* Divorce.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 046E40012BAF420F00BE6F59 /* Divorce.docx */; };
+		04732DA82D6E375700152257 /* LawyerSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04732DA72D6E375700152257 /* LawyerSettingsScreen.swift */; };
 		04770EE72D44D5FE000B7BE2 /* OrdersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770EE62D44D5FE000B7BE2 /* OrdersScreen.swift */; };
 		048625A02D6090EC00DB106C /* Skyblue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486259F2D6090EC00DB106C /* Skyblue.swift */; };
 		04A2CDE52B9EFBB1002CA7DE /* Appeal.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0422010E2B9CDD64008210F6 /* Appeal.docx */; };
@@ -70,6 +76,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
+				0466DFE82D8EFB9000677BDF /* PrivatePolicy.docx in CopyFiles */,
 				045F81062BB059EF00028F26 /* Razdel.docx in CopyFiles */,
 				046E40022BAF524B00BE6F59 /* Divorce.docx in CopyFiles */,
 				04A2CDE52B9EFBB1002CA7DE /* Appeal.docx in CopyFiles */,
@@ -118,10 +125,14 @@
 		045135282B9D871100F3113D /* RowOfTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowOfTemplate.swift; sourceTree = "<group>"; };
 		045227522D4FC0CE006589BF /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		045227542D4FC9BF006589BF /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
+		045286772D81E9D800E8053C /* ListOfChats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfChats.swift; sourceTree = "<group>"; };
+		045286792D81EB3200E8053C /* RowOfChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowOfChat.swift; sourceTree = "<group>"; };
 		045B84432BEE5017006AE761 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		045B84452BEE8AA7006AE761 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		045F81052BB0598400028F26 /* Razdel.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Razdel.docx; sourceTree = "<group>"; };
 		0464951B2D50AB5300EEC269 /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
+		0466DFE72D8EFB9000677BDF /* PrivatePolicy.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = PrivatePolicy.docx; sourceTree = "<group>"; };
+		0466DFEB2D8F12C700677BDF /* TxtFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxtFile.swift; sourceTree = "<group>"; };
 		046734FF2BCADD55001E1406 /* Network Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network Manager.swift"; sourceTree = "<group>"; };
 		046735012BCAE302001E1406 /* RequestForVoiceHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestForVoiceHelp.swift; sourceTree = "<group>"; };
 		046735032BCAF1DF001E1406 /* VoiceHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceHelp.swift; sourceTree = "<group>"; };
@@ -131,6 +142,7 @@
 		046C6A512D1D939200F9D151 /* HeaderTxtModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTxtModifier.swift; sourceTree = "<group>"; };
 		046CF08C2BE675A500B3029A /* SmsVerifNewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerifNewScreen.swift; sourceTree = "<group>"; };
 		046E40012BAF420F00BE6F59 /* Divorce.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Divorce.docx; sourceTree = "<group>"; };
+		04732DA72D6E375700152257 /* LawyerSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerSettingsScreen.swift; sourceTree = "<group>"; };
 		04770EE62D44D5FE000B7BE2 /* OrdersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersScreen.swift; sourceTree = "<group>"; };
 		0486259F2D6090EC00DB106C /* Skyblue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skyblue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -141,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0450CCA82BF101ED006B77A4 /* KeychainSwift in Frameworks */,
+				045B647A2D747B120003A080 /* CustomTextField in Frameworks */,
 				042200D12B9C910C008210F6 /* iPhoneNumberField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +227,7 @@
 				046C0EBB2D34172B00830070 /* RequestForHelp.swift */,
 				045227522D4FC0CE006589BF /* Order.swift */,
 				0464951B2D50AB5300EEC269 /* Orders.swift */,
+				0466DFEB2D8F12C700677BDF /* TxtFile.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -250,6 +264,9 @@
 				046CF08C2BE675A500B3029A /* SmsVerifNewScreen.swift */,
 				046AF4162D3FD764001C121B /* LawyerStartigScreen.swift */,
 				04770EE62D44D5FE000B7BE2 /* OrdersScreen.swift */,
+				04732DA72D6E375700152257 /* LawyerSettingsScreen.swift */,
+				045286772D81E9D800E8053C /* ListOfChats.swift */,
+				045286792D81EB3200E8053C /* RowOfChat.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -257,6 +274,7 @@
 		0422010B2B9CA1AC008210F6 /* TxtFiles */ = {
 			isa = PBXGroup;
 			children = (
+				0466DFE72D8EFB9000677BDF /* PrivatePolicy.docx */,
 				046E40012BAF420F00BE6F59 /* Divorce.docx */,
 				045F81052BB0598400028F26 /* Razdel.docx */,
 				0422010E2B9CDD64008210F6 /* Appeal.docx */,
@@ -292,6 +310,7 @@
 			packageProductDependencies = (
 				042200D02B9C910C008210F6 /* iPhoneNumberField */,
 				0450CCA72BF101ED006B77A4 /* KeychainSwift */,
+				045B64792D747B120003A080 /* CustomTextField */,
 			);
 			productName = LawDepartment;
 			productReference = 042200BD2B9C8F02008210F6 /* LawDepartment.app */;
@@ -324,6 +343,7 @@
 			packageReferences = (
 				042200CF2B9C910C008210F6 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
 				0450CCA62BF101ED006B77A4 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				045B64782D747B120003A080 /* XCRemoteSwiftPackageReference "CustomTextField" */,
 			);
 			productRefGroup = 042200BE2B9C8F02008210F6 /* Products */;
 			projectDirPath = "";
@@ -377,13 +397,16 @@
 				04770EE72D44D5FE000B7BE2 /* OrdersScreen.swift in Sources */,
 				045227552D4FC9BF006589BF /* OrderView.swift in Sources */,
 				042200DA2B9C9390008210F6 /* ContentMessage.swift in Sources */,
+				04732DA82D6E375700152257 /* LawyerSettingsScreen.swift in Sources */,
 				0422010A2B9C9F07008210F6 /* UserAutorizationScreen.swift in Sources */,
 				045227532D4FC0CE006589BF /* Order.swift in Sources */,
+				0452867A2D81EB3200E8053C /* RowOfChat.swift in Sources */,
 				045B84442BEE5017006AE761 /* Token.swift in Sources */,
 				042201062B9C9E71008210F6 /* SmsVerificationScreen.swift in Sources */,
 				0464951C2D50AB5300EEC269 /* Orders.swift in Sources */,
 				045B84462BEE8AA8006AE761 /* KeychainHelper.swift in Sources */,
 				042200F02B9C9C39008210F6 /* AuthorizedUserMainScreen.swift in Sources */,
+				045286782D81E9D800E8053C /* ListOfChats.swift in Sources */,
 				048625A02D6090EC00DB106C /* Skyblue.swift in Sources */,
 				042200DE2B9C944D008210F6 /* OtpModifer.swift in Sources */,
 				042201082B9C9EE0008210F6 /* TemplatesScreen.swift in Sources */,
@@ -396,6 +419,7 @@
 				042200EE2B9C95EF008210F6 /* OnBoardingObserver.swift in Sources */,
 				045135272B9D851700F3113D /* TemplateOfDocument.swift in Sources */,
 				042200EA2B9C9593008210F6 /* Message.swift in Sources */,
+				0466DFEC2D8F12C700677BDF /* TxtFile.swift in Sources */,
 				042200FE2B9C9DAA008210F6 /* OnBoardingScreen.swift in Sources */,
 				042200E82B9C954E008210F6 /* Instructions.swift in Sources */,
 			);
@@ -630,6 +654,14 @@
 				minimumVersion = 24.0.0;
 			};
 		};
+		045B64782D747B120003A080 /* XCRemoteSwiftPackageReference "CustomTextField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MAAlsaleh0/CustomTextField.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -642,6 +674,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 0450CCA62BF101ED006B77A4 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		045B64792D747B120003A080 /* CustomTextField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 045B64782D747B120003A080 /* XCRemoteSwiftPackageReference "CustomTextField" */;
+			productName = CustomTextField;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

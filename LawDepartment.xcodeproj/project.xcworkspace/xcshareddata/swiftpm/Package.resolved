@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "customtextfield",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MAAlsaleh0/CustomTextField.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "19e28c97363ecc85b10a270a8a7fa598a358681b"
+      }
+    },
+    {
       "identity" : "iphonenumberfield",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/MojtabaHs/iPhoneNumberField.git",

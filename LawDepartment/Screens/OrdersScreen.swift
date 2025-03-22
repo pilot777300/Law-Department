@@ -5,56 +5,78 @@ struct OrdersScreen: View {
  
      private var orders = ["Новые", "Все заявки"]
     @State private var selectedItem = "Новые"
+    @State private var showNewOrders = true
     var body: some View {
-        ZStack {
-         //   .background(Color.white)
-          //  Image("backgroundVector")
-           //     .ignoresSafeArea()
-            VStack(alignment: .center, spacing: 5) {
+        NavigationStack {
+            VStack {
+                Text("Мои Заявки")
+                    .font(.title3)
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .padding(30)
                 Spacer()
-                Spacer()
-                Spacer()
-            Text("Мои Заявки")
-                .font(.title3)
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                .padding(30)
-            
-                ScrollViewReader { proxy in
-                        Picker("", selection: $selectedItem) {
-                            ForEach(orders, id: \.self) {
-                                Text($0).tag($0)
-                                       }
-                        }
-                        .onChange(of: selectedItem){ value in
-                            if selectedItem == orders[0] {
-                                proxy.scrollTo(0, anchor: .leading)        } else if selectedItem == orders[1] {
-                                    proxy.scrollTo(1, anchor: .leading)
-                                }
-                        }
-                        .pickerStyle(.segmented)
-                        //.background(.gray .opacity(0.1))
-                      //  .foregroundColor(.blue)
-                        .padding(5)
-
-                VStack {
-                    ScrollView(.horizontal) {
-                        HStack {
-                            ForEach(0..<2) { i in
-                                    OrderView(orderData: Order(date: "22/54/2323", time: "12/56", userName: "", phoneNumber: "", typeOfHelp: ""))
-                                
-                                                            //Text("Example \(i)")
-                                   // .font(.title)
-                                    .frame(width: 400, height: 600)
-                                   // .background(Color.red)
-                                    .cornerRadius(20)
-                                    .clipShape(UnevenRoundedRectangle(topLeadingRadius: 20, bottomLeadingRadius: 20, bottomTrailingRadius: 20, topTrailingRadius: 20))
-                                    .id(i)
-                                
+            Picker("", selection: $selectedItem) {
+            ForEach(orders, id: \.self) {
+            Text($0).tag($0)
+                    }
+                }
+            .onChange(of: selectedItem){ value in
+            if selectedItem == orders[0] {
+                showNewOrders = true
+            } else if
+                selectedItem == orders[1] {
+                showNewOrders = false
+                    }
+            }
+            .pickerStyle(.segmented)
+            .padding(5)
+            Spacer()
+                if showNewOrders {
+                    List(0..<5) { item in
+                        NavigationLink() {
+                            OrderDetailScreen(orderData: Order(date: "", time: "", userName: "", phoneNumber: "", typeOfHelp: ""))
+                        } label:{
+                            OrderView(orderData: Order(date: "22/54/2323", time: "12/56", userName: "", phoneNumber: "", typeOfHelp: ""))
+                                .padding(1)
+                                .background(skyBlue)
+                                        }
+                        .listRowBackground(
+                        RoundedRectangle(cornerRadius: 15)
+                                        .background(.clear)
+                                        .foregroundColor(skyBlue)
+                                        .padding(
+                                        EdgeInsets(
+                                        top: 2,
+                                        leading: 5,
+                                        bottom: 2,
+                                        trailing: 5
+                                        )
+                                    )
+                                )
                             }
+                    .scrollContentBackground(.hidden)
+                    .background(Color.white)
+                } else {
+                    List(0..<5) { item in
+                            OrderView(orderData: Order(date: "24.12.2025", time: "18/00", userName: "", phoneNumber: "", typeOfHelp: "уголовное"))
+                                .padding(5)
+                                .background(Color.white)
+                                .listRowBackground(
+                                RoundedRectangle(cornerRadius: 15)
+                                                .background(.clear)
+                                                .foregroundColor(.white)
+                                                .padding(
+                                                EdgeInsets(
+                                                top: 5,
+                                                leading: 5,
+                                                bottom: 5,
+                                                trailing: 5
+                                                )
+                                            )
+                                        )
                         }
-                        Spacer()
-                      }
-                   }
+                    .scrollContentBackground(.hidden)
+                    .background(Color.init(uiColor: .systemGray6))
+                    
                 }
             }
         }

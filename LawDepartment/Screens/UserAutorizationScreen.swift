@@ -25,7 +25,7 @@ struct UserAutorizationScreen: View {
                     .font(.title3)
                     .bold()
                     .padding(5)
-                Text("Авторизация необходима чтобы адвокат мог с вами связаться")
+                Text("Авторизация необходима чтобы адвокат мог с вами связаться по номеру телефона")
                     .position(x: 190,y:-320)
                     .font(.footnote)
                     .padding(5)
@@ -72,7 +72,7 @@ struct UserAutorizationScreen: View {
                 Image("AutorizeButton")
                     .position(x:190, y: 430)
                     .onTapGesture {
-                        print("TAPPED")
+                       // print("TAPPED")
                         isVerificationScreenTapped.toggle()
                         sender.sendSms(ApiURL: "https://api.6709.ru/v1/user/client/sign-up", Name: userName, City: "", Phone: userPhoneNumber)
                     }

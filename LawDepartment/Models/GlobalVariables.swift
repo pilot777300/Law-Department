@@ -6,4 +6,4 @@ var userCity: String = ""
 var userPhone: String = ""
 var userToken = ""
 
-
+var markOrderAsCompleted = false
