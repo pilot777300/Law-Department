@@ -47,6 +47,7 @@
 		045227552D4FC9BF006589BF /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045227542D4FC9BF006589BF /* OrderView.swift */; };
 		045286782D81E9D800E8053C /* ListOfChats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045286772D81E9D800E8053C /* ListOfChats.swift */; };
 		0452867A2D81EB3200E8053C /* RowOfChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045286792D81EB3200E8053C /* RowOfChat.swift */; };
+		0457B5762D99C8410095EF2C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0457B5752D99C8410095EF2C /* Launch Screen.storyboard */; };
 		045B647A2D747B120003A080 /* CustomTextField in Frameworks */ = {isa = PBXBuildFile; productRef = 045B64792D747B120003A080 /* CustomTextField */; };
 		045B84442BEE5017006AE761 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B84432BEE5017006AE761 /* Token.swift */; };
 		045B84462BEE8AA8006AE761 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B84452BEE8AA7006AE761 /* KeychainHelper.swift */; };
@@ -127,6 +128,7 @@
 		045227542D4FC9BF006589BF /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		045286772D81E9D800E8053C /* ListOfChats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfChats.swift; sourceTree = "<group>"; };
 		045286792D81EB3200E8053C /* RowOfChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowOfChat.swift; sourceTree = "<group>"; };
+		0457B5752D99C8410095EF2C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		045B84432BEE5017006AE761 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		045B84452BEE8AA7006AE761 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		045F81052BB0598400028F26 /* Razdel.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Razdel.docx; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				042200EF2B9C9C39008210F6 /* AuthorizedUserMainScreen.swift */,
+				0457B5752D99C8410095EF2C /* Launch Screen.storyboard */,
 				042200F12B9C9C83008210F6 /* ChatScreen.swift */,
 				042200F32B9C9CC5008210F6 /* ChoiseScreen.swift */,
 				042200F52B9C9CEC008210F6 /* InstructionDetailScreen.swift */,
@@ -359,6 +362,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0457B5762D99C8410095EF2C /* Launch Screen.storyboard in Resources */,
 				042200C92B9C8F04008210F6 /* Preview Assets.xcassets in Resources */,
 				042200C52B9C8F04008210F6 /* Assets.xcassets in Resources */,
 			);
@@ -551,6 +555,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LawDepartment/Preview Content\"";
+				DEVELOPMENT_TEAM = B5A349F7RQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -559,6 +564,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -571,7 +577,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AK.LawDepartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -587,6 +594,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LawDepartment/Preview Content\"";
+				DEVELOPMENT_TEAM = B5A349F7RQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -595,6 +603,7 @@
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -607,7 +616,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = AK.LawDepartment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -35,10 +35,9 @@ final class NetworkManager: ObservableObject {
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         let newData = Registration(name: Name, patronymic: "", surname: "", city: City, phone: Phone, password: "", verificationCode: "", signUpStage: "SEND_SMS")
-        userName = Name // ?
-        userCity = City // ?
-        userPhone = Phone //?
-        
+        userName = Name
+        userCity = City
+        userPhone = Phone
         do {
             let jsonData = try JSONEncoder().encode(newData)
             request.httpBody = jsonData
@@ -93,11 +92,11 @@ final class NetworkManager: ObservableObject {
     func checkResponce(Token:String) {
         let url = URL(string: "https://api.6709.ru/v1/user/token-status?token=\(Token)")!
         var request = URLRequest(url: url)
-        request.httpMethod = "GET"  
+        request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) { ( data, response, _) in
             do {
                 let object = try? JSONDecoder().decode(TokenStatus.self, from: data!)
-             
+                
             } catch let jsonError {
                 print("FAILED to DECODE", jsonError)
             }
@@ -107,14 +106,14 @@ final class NetworkManager: ObservableObject {
                 print("VALID: \(isValidToken)")
             }
         }
-       task.resume()
+        task.resume()
     }
     
     func deleteUser() {
         let keychain = KeychainSwift()
         let token = keychain.get("token")
-       // keychain.delete("username")
-      //  keychain.delete("token")
+        // keychain.delete("username")
+        //  keychain.delete("token")
         self.appState = .notAutorized
         let url = URL(string: "https://api.6709.ru/v1/client")!
         var request = URLRequest(url: url)
@@ -132,28 +131,28 @@ final class NetworkManager: ObservableObject {
                 return
             }
             guard let response = response as? HTTPURLResponse, (200 ..< 299) ~= response.statusCode else {
-                          print("Error: HTTP request failed")
-                          return
-                      }
+                print("Error: HTTP request failed")
+                return
+            }
             do {
-                          guard let jsonObject = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
-                              print("Error: Cannot convert data to JSON")
-                              return
-                          }
-                          guard let prettyJsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted) else {
-                              print("Error: Cannot convert JSON object to Pretty JSON data")
-                              return
-                          }
-                          guard let prettyPrintedJson = String(data: prettyJsonData, encoding: .utf8) else {
-                              print("Error: Could print JSON in String")
-                              return
-                          }
-                          
-                          print(prettyPrintedJson)
-                      } catch {
-                          print("Error: Trying to convert JSON data to string")
-                          return
-                      }
+                guard let jsonObject = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+                    print("Error: Cannot convert data to JSON")
+                    return
+                }
+                guard let prettyJsonData = try? JSONSerialization.data(withJSONObject: jsonObject, options: .prettyPrinted) else {
+                    print("Error: Cannot convert JSON object to Pretty JSON data")
+                    return
+                }
+                guard let prettyPrintedJson = String(data: prettyJsonData, encoding: .utf8) else {
+                    print("Error: Could print JSON in String")
+                    return
+                }
+                
+                print(prettyPrintedJson)
+            } catch {
+                print("Error: Trying to convert JSON data to string")
+                return
+            }
         }
         task.resume()
         keychain.delete("username")
@@ -191,5 +190,30 @@ final class NetworkManager: ObservableObject {
             }
         }
         task.resume()
+    }
+    
+    func registerNewLawyer (Name: String, Patronymic: String, Surname: String, PhoneNumber: String) {
+        let url = URL(string: "https://api.6709.ru/v1/user/lawyer/sign-up")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        let newData = Lawyer(name: Name, patronymic: Patronymic, surname: Surname, city: "", phone: PhoneNumber)
+        do {
+            let jsonData = try JSONEncoder().encode(newData)
+            request.httpBody = jsonData
+        } catch let error{
+            debugPrint(error.localizedDescription)
+        }
+        let task = URLSession.shared.dataTask(with: request) {
+            (data, response, error) in
+            if let error = error {
+                print("ERROR: \(error)")
+            }
+            else if let data = data {
+                let str = String(data: data, encoding: .utf8)
+                print("Received data:\n\(str ?? "")")
+                
+            }
+            
+        }
     }
 }

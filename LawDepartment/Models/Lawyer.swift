@@ -2,7 +2,7 @@
 
 import Foundation
 
-struct Lawyer {
+struct Lawyer: Codable {
     var name: String
     var patronymic: String
     var surname: String

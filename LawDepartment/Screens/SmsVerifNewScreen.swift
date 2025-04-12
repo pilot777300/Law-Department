@@ -11,7 +11,7 @@ struct SmsVerifNewScreen: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                Color.init(uiColor: .systemGray6)
+                Color.init(uiColor: .white)
                     .ignoresSafeArea()
                 VStack {
                     Text("Введите код из смс")

@@ -8,7 +8,7 @@ struct FirstAutorizationScreen: View {
     @State var isShowSmsScr = false
     @State private var userName: String = ""
     @State private var userCity: String = ""
-    @State private var userPhoneNumber: String = ""
+    @State private var userPhoneNumber: String = "+7"
     @State var isEditing: Bool = false
     private let sender = NetworkManager()
     @State private var showAlert = false
@@ -16,16 +16,16 @@ struct FirstAutorizationScreen: View {
     var body: some View {
       NavigationStack {
             ZStack {
-                Color(UIColor.systemGray6)
+                Color(UIColor.white)
                     .ignoresSafeArea()
                 VStack(alignment: .center, spacing: 10){
                     Image("appLabel")
-                        .padding(-20)
+                       // .padding(-20)
                     Text("Необходимо авторизоваться")
                         .font(.title3)
                         .bold()
                         .padding(15)
-                    Text("Авторизация необходима чтобы адвокат мог с вами связаться. Все поля обязательны для заполнения.")
+                    Text("Авторизация необходима чтобы адвокат мог с вами связаться по телефону. Все поля обязательны для заполнения.")
                         .font(.footnote)
                         .padding(5)
                     
@@ -43,7 +43,7 @@ struct FirstAutorizationScreen: View {
                               .onClear { _ in isEditing.toggle() }
                               .prefixHidden(false)
                               .padding()
-                              .background(Color.init(uiColor: .systemGray6))
+                              .background(Color.init(uiColor: .white))
                               .overlay(
                                      RoundedRectangle(cornerRadius: 18)
                                          .stroke(Color.black, lineWidth: 1)
@@ -56,9 +56,13 @@ struct FirstAutorizationScreen: View {
                         if userName == "" || userCity == "" || userPhoneNumber == "" {
                             showAlert = true
                         } else {
-                 //   sender.sendSms(ApiURL: "https://api.6709.ru/v1/user/client/sign-up", Name: userName, City: "", Phone: userPhoneNumber)
+                            let notFormattedPhoneNumber = userPhoneNumber.replacingOccurrences(of: " ", with: "")
+                            let intermediateFormatting = notFormattedPhoneNumber.replacingOccurrences(of: "+", with: "")
+                            let formattedPhoneNumber = intermediateFormatting.replacingOccurrences(of: "-", with: "")
+                    sender.sendSms(ApiURL: "https://api.6709.ru/v1/user/client/sign-up", Name: userName, City: userCity, Phone: formattedPhoneNumber)
                             showConfirmSmsScreen = true
-                        }                   
+                            
+                        }
                         }) {
                             Image("AutorizeButton")}
                         .navigationDestination(isPresented: $showConfirmSmsScreen) {

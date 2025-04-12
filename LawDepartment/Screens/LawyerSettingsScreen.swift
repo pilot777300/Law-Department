@@ -28,5 +28,5 @@ struct LawyerSettingsScreen: View {
 }
 
 #Preview {
-    LawyerSettingsScreen(lawyer: Lawyer(name: "ddd", patronymic: "kkkk", surname: "llll", city: "", phone: ""))
+    LawyerSettingsScreen(lawyer: Lawyer(name: "Игорь", patronymic: "Валентинович", surname: "Круглов", city: "", phone: ""))
 }

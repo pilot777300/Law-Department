@@ -6,13 +6,15 @@ struct OtpFormFieldView: View {
     private let confirmator = NetworkManager()
    @State var codeFromSms: String = ""
     enum FocusPin {
-        case  pinOne, pinTwo, pinThree, pinFour
+        case  pinOne, pinTwo, pinThree, pinFour, pinFive, pinSix
                     }
     @FocusState private var pinFocusState : FocusPin?
     @State var pinOne: String = ""
     @State var pinTwo: String = ""
     @State var pinThree: String = ""
     @State var pinFour: String = ""
+    @State var pinFive: String = ""
+    @State var pinSix: String = ""
     @State private var showAlert = false
     var body: some View {
         NavigationStack {
@@ -62,22 +64,43 @@ struct OtpFormFieldView: View {
                         
                         TextField("", text:$pinFour)
                             .modifier(OtpModifer(pin:$pinFour))
+                            .onChange(of:pinFour){newVal in
+                                if (newVal.count == 1) {
+                                    pinFocusState = .pinFive
+                                }
+                            }
                             .focused($pinFocusState, equals: .pinFour)
                             .textContentType(.oneTimeCode)
+                        
+                        TextField("", text: $pinFive)
+                            .modifier(OtpModifer(pin:$pinFive))
+                            .onChange(of:pinFive){newVal in
+                                if (newVal.count == 1) {
+                                    pinFocusState = .pinSix
+                                }
+                            }
+                            .focused($pinFocusState, equals: .pinFive)
+                            .textContentType(.oneTimeCode)
+                        
+                        TextField("", text: $pinSix)
+                            .modifier(OtpModifer(pin:$pinSix))
+                            .focused($pinFocusState, equals: .pinSix)
+                            .textContentType(.oneTimeCode)
+                        
                     })
                     .padding(.vertical)
                     Button ("Подтвердить") {
-                        if pinOne == "" || pinTwo  == "" || pinThree == ""  || pinFour == "" {
+                        if pinOne == "" || pinTwo  == "" || pinThree == ""  || pinFour == "" || pinFive == "" || pinSix == "" {
                             showAlert = true
                         } else {
-                            codeFromSms = pinOne + pinTwo + pinThree + pinFour
+                            codeFromSms = pinOne + pinTwo + pinThree + pinFour + pinFive + pinSix
+                            confirmator.confirmCode(VerificationCode: codeFromSms)
                             isShowChoiseScreen = true
-                          //  confirmator.confirmCode(VerificationCode: codeFromSms)
+                            }
                         }
-                                }
                     .navigationDestination(isPresented: $isShowChoiseScreen) {
                         ChoiseScreen()
-                                    }
+                            }
                     .alert(isPresented: $showAlert) {
                     Alert(title: Text("Не все поля заполнены!"),
                     message: nil)

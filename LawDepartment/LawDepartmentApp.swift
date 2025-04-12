@@ -8,12 +8,13 @@ struct LawDepartmentApp: App {
         WindowGroup {
           //  FirstAutorizationScreen()
           // AuthorizedUserMainScreen()
-          //  OnBoardingScreen(state: .onbrd)
+      //      OnBoardingScreen(state: .onbrd)
           //  UserAutorizationScreen()
            // LawyerMainScreen()
-            LawyerStartigScreen()
+          //  LawyerStartigScreen()
           //  OrdersScreen()
           //  OtpFormFieldView()
+            OtpFormFieldView()
         }
     }
 }

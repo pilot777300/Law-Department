@@ -21,7 +21,7 @@ struct InstructionDetailScreen: View {
                 Button (action: {
                     dismiss()
                 }) {
-                    Label("Back", systemImage: "chevron.left.circle")
+                    Label("Back", systemImage: "chevron.left")
                 }
             }
         }

@@ -81,13 +81,15 @@ struct AuthorizedUserMainScreen: View {
         }
         .onAppear{
             let tokenInKeychain = keychain.get("token")
-            print("Keychain Token = \(tokenInKeychain ?? "00000")")
+          //  print("Keychain Token = \(tokenInKeychain ?? "00000")")
            // print(".........END OF TOKEN..........")
             //print(state)
             let usernameInKeychain = keychain.get("username")
             name = usernameInKeychain ?? "0000"
-            internet.checkResponce(Token: tokenInKeychain ?? "")
-            print(state)
+            if tokenInKeychain != nil {
+                internet.checkResponce(Token: tokenInKeychain ?? "")
+            }
+          //  print(state)
 
         }
     }

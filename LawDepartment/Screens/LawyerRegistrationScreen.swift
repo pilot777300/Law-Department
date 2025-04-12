@@ -1,6 +1,8 @@
 
 
 import SwiftUI
+import CustomTextField
+
 
 struct LawyerRegistrationScreen: View {
     
@@ -11,7 +13,7 @@ struct LawyerRegistrationScreen: View {
     var body: some View {
         NavigationStack {
         ZStack {
-            Color(UIColor.systemGray6)
+            Color(UIColor.white)
                 .ignoresSafeArea()
             VStack(alignment: .center, spacing: 10) {
                 Text("Вы адвокат и хотите к нам присоединиться?")
@@ -22,37 +24,19 @@ struct LawyerRegistrationScreen: View {
                     .padding(.top, -50)
                     .padding(15)
                 
-                TextField(
-                    "Имя",text: $person.name)
-                .disableAutocorrection(true)
-                .frame(height: 5)
-                .font(.footnote)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
+                CustomTF(text: $person.name, placeholder: "Имя", ImageTF: Image(systemName: "person"), isPassword: false, StylesType: .Style1, KeyboardType: .default, color: nil)
+                    .padding(5)
+
+                CustomTF(text: $person.patronymic, placeholder: "Отчество", ImageTF: Image(systemName: "person"), isPassword: false, StylesType: .Style1, KeyboardType: .default, color: nil)
+                    .padding(5)
+
                 
-                TextField(
-                    "Отчество",text: $person.patronymic)
-                .disableAutocorrection(true)
-                .frame(height: 5)
-                .font(.footnote)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-                
-                TextField(
-                    "Фамилия",text: $person.surname)
-                .disableAutocorrection(true)
-                .frame(height: 5)
-                .font(.footnote)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-                
-                TextField(
-                    "Номер телефона",text: $person.phone)
-                .disableAutocorrection(true)
-                .frame(height: 5)
-                .font(.footnote)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
+                CustomTF(text: $person.surname, placeholder: "Фамилия", ImageTF: Image(systemName: "person"), isPassword: false, StylesType: .Style1, KeyboardType: .default, color: nil)
+                    .padding(5)
+
+                CustomTF(text: $person.phone, placeholder: "Телефон", ImageTF: Image(systemName: "phone"), isPassword: false, StylesType: .Style1, KeyboardType: .default, color: nil)
+                    .padding(5)
+
                 
                 Button {
                     print("")
