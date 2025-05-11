@@ -15,16 +15,16 @@ struct OrderDetailScreen: View {
                 Text("№ заявки: \(orderData.id)")
                     .padding(.leading, 10)
                 HStack {
-                    Text("Дата: \(orderData.date)")
+                    Text("Дата: \(orderData.sentAt)")
                         .padding(.leading, 10)
-                    Text("Время: \(orderData.time)")
-                        .padding(.leading, 10)
+                   // Text("Время: \(orderData.time)")
+                     //   .padding(.leading, 10)
                 }
-                Text("Имя клиента: \(orderData.userName)")
+                Text("Имя клиента: \(orderData.clientName)")
                     .padding(.leading, 10)
-                Text("Телефон клиента: \(orderData.phoneNumber)")
+                Text("Телефон клиента: \(orderData.clientPhone)")
                     .padding(.leading, 10)
-                Text("Нужна помощь по делу: \(orderData.typeOfHelp)")
+                Text("Нужна помощь по делу: \(orderData.adviceType)")
                     .padding(.leading, 10)
                 Button {
                     print("rrrr")
@@ -43,5 +43,5 @@ struct OrderDetailScreen: View {
 }
 
 #Preview {
-    OrderDetailScreen(orderData: Order(date: "", time: "", userName: "", phoneNumber: "", typeOfHelp: ""))
+    OrderDetailScreen(orderData: Order(clientRequestId: "", adviceType: "", sentAt: "", clientName: "", clientPhone: "", isNew: false, takenToWork: false, serviceProvided: false, closed: false))
 }

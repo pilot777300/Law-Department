@@ -33,9 +33,9 @@ struct OrdersScreen: View {
                 if showNewOrders {
                     List(0..<5) { item in
                         NavigationLink() {
-                            OrderDetailScreen(orderData: Order(date: "", time: "", userName: "", phoneNumber: "", typeOfHelp: ""))
+                            OrderDetailScreen(orderData: Order(id: UUID(), clientRequestId: "", adviceType: "", sentAt: "", clientName: "", clientPhone: "", isNew: false, takenToWork: false, serviceProvided: false, closed: false))
                         } label:{
-                            OrderView(orderData: Order(date: "22/54/2323", time: "12/56", userName: "", phoneNumber: "", typeOfHelp: ""))
+                            OrderView(orderData: Order(clientRequestId: "", adviceType: "", sentAt: "", clientName: "", clientPhone: "", isNew: false, takenToWork: false, serviceProvided: false, closed: false))
                                 .padding(1)
                                 .background(skyBlue)
                                         }
@@ -57,7 +57,7 @@ struct OrdersScreen: View {
                     .background(Color.white)
                 } else {
                     List(0..<5) { item in
-                            OrderView(orderData: Order(date: "24.12.2025", time: "18/00", userName: "", phoneNumber: "", typeOfHelp: "уголовное"))
+                            OrderView(orderData: Order(clientRequestId: "", adviceType: "", sentAt: "", clientName: "", clientPhone: "", isNew: false, takenToWork: false, serviceProvided: false, closed: false))
                                 .padding(5)
                                 .background(Color.white)
                                 .listRowBackground(

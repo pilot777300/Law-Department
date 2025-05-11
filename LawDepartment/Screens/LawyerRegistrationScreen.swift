@@ -6,8 +6,15 @@ import CustomTextField
 
 struct LawyerRegistrationScreen: View {
     
-    @State var person = Lawyer(name: "", patronymic: "", surname: "", city: "", phone: "")
+    @State private var lawyerName: String = ""
+    @State private var lawyerPatronymic: String = ""
+    @State private var lawyerSurname: String = ""
+    @State private var lawyerPhone: String = "+7"
+    @State private var lawyerPassword: String = ""
+    @State private var showAlertEmptyFields = false
+    @State private var showOnboardigForLawyer = false
     @Environment(\.dismiss) var dismiss
+    private var internet = NetworkManager()
 
     
     var body: some View {
@@ -24,22 +31,33 @@ struct LawyerRegistrationScreen: View {
                     .padding(.top, -50)
                     .padding(15)
                 
-                CustomTF(text: $person.name, placeholder: "Имя", ImageTF: Image(systemName: "person"), isPassword: false, StylesType: .Style1, KeyboardType: .default, color: nil)
+                CustomTF(text: $lawyerName, placeholder: "Имя", ImageTF: Image(systemName: "person"), isPassword: false, StylesType: .Style1, KeyboardType: .default, color: nil)
                     .padding(5)
 
-                CustomTF(text: $person.patronymic, placeholder: "Отчество", ImageTF: Image(systemName: "person"), isPassword: false, StylesType: .Style1, KeyboardType: .default, color: nil)
-                    .padding(5)
-
-                
-                CustomTF(text: $person.surname, placeholder: "Фамилия", ImageTF: Image(systemName: "person"), isPassword: false, StylesType: .Style1, KeyboardType: .default, color: nil)
-                    .padding(5)
-
-                CustomTF(text: $person.phone, placeholder: "Телефон", ImageTF: Image(systemName: "phone"), isPassword: false, StylesType: .Style1, KeyboardType: .default, color: nil)
+                CustomTF(text: $lawyerPatronymic, placeholder: "Отчество", ImageTF: Image(systemName: "person"), isPassword: false, StylesType: .Style1, KeyboardType: .default, color: nil)
                     .padding(5)
 
                 
+                CustomTF(text: $lawyerSurname, placeholder: "Фамилия", ImageTF: Image(systemName: "person"), isPassword: false, StylesType: .Style1, KeyboardType: .default, color: nil)
+                    .padding(5)
+
+                CustomTF(text: $lawyerPhone, placeholder: "+7", ImageTF: Image(systemName: "phone"), isPassword: false, StylesType: .Style1, KeyboardType: .phonePad, color: nil)
+                    .padding(5)
+
+                CustomTF(text: $lawyerPassword, placeholder: "Придумайте пароль", ImageTF: Image(systemName: "lock"), isPassword: true, StylesType: .Style1, KeyboardType: .default, color: nil)
+                    .padding(5)
+    
                 Button {
-                    print("")
+                    
+                    if lawyerName == "" || lawyerPatronymic == "" || lawyerSurname == "" || lawyerPhone == "" {
+                        showAlertEmptyFields = true
+                    } else {
+                        let formattedLawyerPhone = lawyerPhone.replacingOccurrences(of: "+", with: "")
+                        internet.registerNewLawyer(Name: lawyerName, Patronymic: lawyerPatronymic, Surname: lawyerSurname, PhoneNumber: formattedLawyerPhone, Password: lawyerPassword)
+                       showOnboardigForLawyer = true
+                   
+
+                    }
                 } label: {
                     Text("Отправить")
                         .frame(maxWidth: .infinity)
@@ -48,7 +66,14 @@ struct LawyerRegistrationScreen: View {
                 .controlSize(.large)
                 .buttonBorderShape(.roundedRectangle(radius: 20))
                 .padding(15)
-            }
+                .alert(isPresented: $showAlertEmptyFields) {
+                Alert(title: Text("Все поля должны быть заполнены!"),
+                message: nil)
+                   } 
+                .navigationDestination(isPresented: $showOnboardigForLawyer) {
+                    OnBoardingForLawyerScreen()
+                        }
+               }
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {

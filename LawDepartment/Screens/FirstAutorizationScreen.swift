@@ -10,7 +10,7 @@ struct FirstAutorizationScreen: View {
     @State private var userCity: String = ""
     @State private var userPhoneNumber: String = "+7"
     @State var isEditing: Bool = false
-    private let sender = NetworkManager()
+    @ObservedObject var sender = NetworkManager()
     @State private var showAlert = false
     @State private var showConfirmSmsScreen = false
     var body: some View {
@@ -59,9 +59,8 @@ struct FirstAutorizationScreen: View {
                             let notFormattedPhoneNumber = userPhoneNumber.replacingOccurrences(of: " ", with: "")
                             let intermediateFormatting = notFormattedPhoneNumber.replacingOccurrences(of: "+", with: "")
                             let formattedPhoneNumber = intermediateFormatting.replacingOccurrences(of: "-", with: "")
-                    sender.sendSms(ApiURL: "https://api.6709.ru/v1/user/client/sign-up", Name: userName, City: userCity, Phone: formattedPhoneNumber)
-                            showConfirmSmsScreen = true
-                            
+                           
+                            sender.sendSms(ApiURL: "https://api.6709.ru/v1/user/client/sign-up", Name: userName, City: userCity, Phone: formattedPhoneNumber)
                         }
                         }) {
                             Image("AutorizeButton")}
@@ -71,7 +70,7 @@ struct FirstAutorizationScreen: View {
                         .alert(isPresented: $showAlert) {
                         Alert(title: Text("Все поля должны быть заполнены!"),
                         message: nil)
-                           }
+                           }                    
                         .padding(20)
                     Spacer()
             }

@@ -3,6 +3,7 @@ import SwiftUI
 import KeychainSwift
 
 struct AuthorizedUserMainScreen: View {
+    
     @State private var isUserWriting = false
     @State private var showAlert = false
     @StateObject private var internet = NetworkManager()
@@ -10,6 +11,7 @@ struct AuthorizedUserMainScreen: View {
     @State private var name = ""
     @State private var  state: AppState = .notAutorized
     @State var txt: URL?
+   
 
     var body: some View {
         NavigationStack {
@@ -38,7 +40,7 @@ struct AuthorizedUserMainScreen: View {
                             Button("Удалить", role: .destructive) {
                                 internet.deleteUser()
                                 state = internet.appState
-
+                                
                             }
                         } message: {
                             Text("Все данные будут удалены с сервера")
@@ -49,22 +51,22 @@ struct AuthorizedUserMainScreen: View {
                             Image("instructions")
                                 .padding()
                         }
-                            NavigationLink(destination: RowOfTemplate()) {
-                                Image("templates")
-                            }
+                        NavigationLink(destination: RowOfTemplate()) {
+                            Image("templates")
+                        }
                     }
                     .padding(5)
                     
                     NavigationLink(destination: ChatScreen( isUserWriting: $isUserWriting))
-                            {
+                    {
                         Image("chatButton")
-                            }
-                        .padding(-60)
+                    }
+                    .padding(-60)
                     NavigationLink(destination: ChoiseScreen())
-                            {
+                    {
                         Image("mainButton")
-                            }
-                        
+                    }
+                    
                     Text("О приложении")
                         .modifier(TxtModifiers())
                         .onTapGesture {
@@ -72,7 +74,7 @@ struct AuthorizedUserMainScreen: View {
                         } .quickLookPreview($txt)
                     
                     NavigationLink(destination:
-                        LawyerRegistrationScreen()) {
+                                    LawyerRegistrationScreen()) {
                         Text("Вход для адвокатов")
                             .modifier(TxtModifiers())
                     }
@@ -81,17 +83,18 @@ struct AuthorizedUserMainScreen: View {
         }
         .onAppear{
             let tokenInKeychain = keychain.get("token")
-          //  print("Keychain Token = \(tokenInKeychain ?? "00000")")
-           // print(".........END OF TOKEN..........")
+            //  print("Keychain Token = \(tokenInKeychain ?? "00000")")
+            // print(".........END OF TOKEN..........")
             //print(state)
             let usernameInKeychain = keychain.get("username")
             name = usernameInKeychain ?? "0000"
             if tokenInKeychain != nil {
                 internet.checkResponce(Token: tokenInKeychain ?? "")
             }
-          //  print(state)
-
+             // print(showAlertNoInternetConnection)
+            
         }
+  
     }
 }
 

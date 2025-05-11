@@ -1,6 +1,7 @@
 
 
 import SwiftUI
+import KeychainSwift
 
 struct LawyerStartigScreen: View {
     var body: some View {
@@ -20,7 +21,7 @@ struct LawyerStartigScreen: View {
                             Text("Заявки")
                         }
                 NavigationStack {
-                    LawyerSettingsScreen(lawyer: Lawyer(name: "ANTON", patronymic: "Sergeevich", surname: "Kolsov", city: "", phone: ""))
+                    LawyerSettingsScreen()
                         }
                         .tabItem {
                         Image(systemName: "person.fill")
@@ -28,6 +29,7 @@ struct LawyerStartigScreen: View {
             }
         }
     }
+        
 }
 
 #Preview {

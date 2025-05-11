@@ -8,4 +8,7 @@ struct Lawyer: Codable {
     var surname: String
     var city: String
     var phone: String
+    var password: String
+   // var token: String
+  //  var status: String
 }

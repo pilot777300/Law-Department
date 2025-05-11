@@ -1,11 +1,15 @@
 
 import Foundation
 
-struct Order: Identifiable {
-    let id = UUID()
-    var date: String
-    var time: String
-    var userName: String
-    var phoneNumber: String
-    var typeOfHelp: String
+struct Order: Codable, Identifiable {
+    var id = UUID()
+    var clientRequestId: String
+    var adviceType: String
+    var sentAt: String
+    var clientName: String
+    var clientPhone: String
+    var isNew: Bool
+    var takenToWork: Bool
+    var serviceProvided: Bool
+    var closed: Bool
 }
