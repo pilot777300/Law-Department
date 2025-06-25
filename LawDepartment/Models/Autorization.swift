@@ -2,7 +2,7 @@
 
 import Foundation
 
-struct Registration: Codable {
+struct UserRegistration: Codable {
     var name: String
     var patronymic: String
     var surname: String

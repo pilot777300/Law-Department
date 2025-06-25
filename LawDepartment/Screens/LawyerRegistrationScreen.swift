@@ -3,21 +3,83 @@
 import SwiftUI
 import CustomTextField
 
-
 struct LawyerRegistrationScreen: View {
     
-    @State private var lawyerName: String = ""
-    @State private var lawyerPatronymic: String = ""
-    @State private var lawyerSurname: String = ""
-    @State private var lawyerPhone: String = "+7"
-    @State private var lawyerPassword: String = ""
+    @StateObject private var viewModel: LawyerRegistrationViewModel = .init(service: LawyerRegistrationImplementation())
+
     @State private var showAlertEmptyFields = false
     @State private var showOnboardigForLawyer = false
+    @State private var showAlertRequestFailed = false
+    @State private var showAlertSuccessRegistration = false
     @Environment(\.dismiss) var dismiss
-    private var internet = NetworkManager()
 
-    
     var body: some View {
+        NavigationStack {
+            switch viewModel.screenState {
+            case .default:
+               content
+            case .loading:
+                  content
+                    .overlay {
+                        ProgressView()
+                    }
+            case .success:
+                content
+                    .onAppear{
+                        showOnboardigForLawyer = true
+                        showAlertSuccessRegistration = true
+                    }
+                    .alert(isPresented: $showAlertSuccessRegistration){
+                        Alert(title: Text("Данные отправлены для верификации"),
+                              message: nil)
+                    }
+            case .failure:
+                errorView()
+                
+            case .invalidForm:
+                invalidFormView
+            }
+        }
+    }
+    
+    private func errorView() -> some View {
+        let error = viewModel.error ?? .unknown
+        let title = "Ошибка выполнения запроса"
+        var message = "Повторите попытку позже"
+        switch error {
+        case .unknown:
+            break
+        case .internetConnectiomProblem:
+            break
+        case .parsingError:
+            break
+        case .serverError(let error):
+            message = error.error
+        default:
+            break
+        }
+        return content
+            .onAppear{
+                showAlertRequestFailed = true
+            }
+            .alert(isPresented: $showAlertRequestFailed) {
+                Alert(title: Text(title),
+                      message: Text(message))
+            }
+    }
+    
+    private var invalidFormView: some View {
+        content
+            .onAppear{
+                showAlertEmptyFields = true
+            }
+            .alert(isPresented: $showAlertEmptyFields) {
+                Alert(title: Text("Все поля должны быть заполнены!"),
+                      message: nil)
+            }
+    }
+    
+  private  var content: some View {
         NavigationStack {
         ZStack {
             Color(UIColor.white)
@@ -31,33 +93,24 @@ struct LawyerRegistrationScreen: View {
                     .padding(.top, -50)
                     .padding(15)
                 
-                CustomTF(text: $lawyerName, placeholder: "Имя", ImageTF: Image(systemName: "person"), isPassword: false, StylesType: .Style1, KeyboardType: .default, color: nil)
+                CustomTF(text: $viewModel.lawyerName, placeholder: "Имя", ImageTF: Image(systemName: "person"), isPassword: false, StylesType: .Style1, KeyboardType: .default, color: nil)
                     .padding(5)
 
-                CustomTF(text: $lawyerPatronymic, placeholder: "Отчество", ImageTF: Image(systemName: "person"), isPassword: false, StylesType: .Style1, KeyboardType: .default, color: nil)
+                CustomTF(text: $viewModel.lawyerPatronymic, placeholder: "Отчество", ImageTF: Image(systemName: "person"), isPassword: false, StylesType: .Style1, KeyboardType: .default, color: nil)
                     .padding(5)
 
                 
-                CustomTF(text: $lawyerSurname, placeholder: "Фамилия", ImageTF: Image(systemName: "person"), isPassword: false, StylesType: .Style1, KeyboardType: .default, color: nil)
+                CustomTF(text: $viewModel.lawyerSurname, placeholder: "Фамилия", ImageTF: Image(systemName: "person"), isPassword: false, StylesType: .Style1, KeyboardType: .default, color: nil)
                     .padding(5)
 
-                CustomTF(text: $lawyerPhone, placeholder: "+7", ImageTF: Image(systemName: "phone"), isPassword: false, StylesType: .Style1, KeyboardType: .phonePad, color: nil)
+                CustomTF(text: $viewModel.lawyerPhone, placeholder: "+7", ImageTF: Image(systemName: "phone"), isPassword: false, StylesType: .Style1, KeyboardType: .phonePad, color: nil)
                     .padding(5)
 
-                CustomTF(text: $lawyerPassword, placeholder: "Придумайте пароль", ImageTF: Image(systemName: "lock"), isPassword: true, StylesType: .Style1, KeyboardType: .default, color: nil)
+                CustomTF(text: $viewModel.lawyerPassword, placeholder: "Придумайте пароль", ImageTF: Image(systemName: "lock"), isPassword: true, StylesType: .Style1, KeyboardType: .default, color: nil)
                     .padding(5)
     
                 Button {
-                    
-                    if lawyerName == "" || lawyerPatronymic == "" || lawyerSurname == "" || lawyerPhone == "" {
-                        showAlertEmptyFields = true
-                    } else {
-                        let formattedLawyerPhone = lawyerPhone.replacingOccurrences(of: "+", with: "")
-                        internet.registerNewLawyer(Name: lawyerName, Patronymic: lawyerPatronymic, Surname: lawyerSurname, PhoneNumber: formattedLawyerPhone, Password: lawyerPassword)
-                       showOnboardigForLawyer = true
-                   
-
-                    }
+                    viewModel.submitForm()
                 } label: {
                     Text("Отправить")
                         .frame(maxWidth: .infinity)
@@ -66,13 +119,10 @@ struct LawyerRegistrationScreen: View {
                 .controlSize(.large)
                 .buttonBorderShape(.roundedRectangle(radius: 20))
                 .padding(15)
-                .alert(isPresented: $showAlertEmptyFields) {
-                Alert(title: Text("Все поля должны быть заполнены!"),
-                message: nil)
-                   } 
                 .navigationDestination(isPresented: $showOnboardigForLawyer) {
-                    OnBoardingForLawyerScreen()
+                    WaitingVerificationScreen(data: OnboardingForLawyerData(id: 1, backgroundImage: "backgroundVector", objectImage: "lawyer", primaryText: "Вы напрямую общаетесь с клиентами", secondaryText: "После верификации вы сможете получать заявки"))
                         }
+                                              
                }
         }
         .navigationBarBackButtonHidden(true)

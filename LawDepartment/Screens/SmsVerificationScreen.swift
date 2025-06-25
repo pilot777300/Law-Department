@@ -2,19 +2,20 @@ import SwiftUI
 
 struct OtpFormFieldView: View {
     @Environment(\.dismiss) var dismiss
-    @State var isShowChoiseScreen = false
-    private let confirmator = NetworkManager()
-   @State var codeFromSms: String = ""
+    // @State var isShowChoiseScreen = false
+    //  private let confirmator = NetworkManager()
+    @StateObject private var viewModel: ConfirmCodeViewModel = .init(service: UserRegistrationService())
+    // @State var codeFromSms: String = ""
     enum FocusPin {
         case  pinOne, pinTwo, pinThree, pinFour, pinFive, pinSix
-                    }
+    }
     @FocusState private var pinFocusState : FocusPin?
-    @State var pinOne: String = ""
-    @State var pinTwo: String = ""
-    @State var pinThree: String = ""
-    @State var pinFour: String = ""
-    @State var pinFive: String = ""
-    @State var pinSix: String = ""
+    //    @State var pinOne: String = ""
+    //    @State var pinTwo: String = ""
+    //    @State var pinThree: String = ""
+    //    @State var pinFour: String = ""
+    //    @State var pinFive: String = ""
+    //    @State var pinSix: String = ""
     @State private var showAlert = false
     var body: some View {
         NavigationStack {
@@ -32,9 +33,9 @@ struct OtpFormFieldView: View {
                         .padding(.top)
                     
                     HStack(spacing:15, content: {
-                        TextField("", text: $pinOne)
-                            .modifier(OtpModifer(pin:$pinOne))
-                            .onChange(of:pinOne){newVal in
+                        TextField("", text: $viewModel.pinOne)
+                            .modifier(OtpModifer(pin:$viewModel.pinOne))
+                            .onChange(of:viewModel.pinOne){newVal in
                                 if (newVal.count == 1) {
                                     pinFocusState = .pinTwo
                                 }
@@ -42,9 +43,9 @@ struct OtpFormFieldView: View {
                             .focused($pinFocusState, equals: .pinOne)
                             .textContentType(.oneTimeCode)
                         
-                        TextField("", text:  $pinTwo)
-                            .modifier(OtpModifer(pin:$pinTwo))
-                            .onChange(of:pinTwo){newVal in
+                        TextField("", text:  $viewModel.pinTwo)
+                            .modifier(OtpModifer(pin:$viewModel.pinTwo))
+                            .onChange(of:viewModel.pinTwo){newVal in
                                 if (newVal.count == 1) {
                                     pinFocusState = .pinThree
                                 }
@@ -52,9 +53,9 @@ struct OtpFormFieldView: View {
                             .focused($pinFocusState, equals: .pinTwo)
                             .textContentType(.oneTimeCode)
                         
-                        TextField("", text:$pinThree)
-                            .modifier(OtpModifer(pin:$pinThree))
-                            .onChange(of:pinThree){newVal in
+                        TextField("", text:$viewModel.pinThree)
+                            .modifier(OtpModifer(pin:$viewModel.pinThree))
+                            .onChange(of:viewModel.pinThree){newVal in
                                 if (newVal.count == 1) {
                                     pinFocusState = .pinFour
                                 }
@@ -62,9 +63,9 @@ struct OtpFormFieldView: View {
                             .focused($pinFocusState, equals: .pinThree)
                             .textContentType(.oneTimeCode)
                         
-                        TextField("", text:$pinFour)
-                            .modifier(OtpModifer(pin:$pinFour))
-                            .onChange(of:pinFour){newVal in
+                        TextField("", text:$viewModel.pinFour)
+                            .modifier(OtpModifer(pin:$viewModel.pinFour))
+                            .onChange(of:viewModel.pinFour){newVal in
                                 if (newVal.count == 1) {
                                     pinFocusState = .pinFive
                                 }
@@ -72,9 +73,9 @@ struct OtpFormFieldView: View {
                             .focused($pinFocusState, equals: .pinFour)
                             .textContentType(.oneTimeCode)
                         
-                        TextField("", text: $pinFive)
-                            .modifier(OtpModifer(pin:$pinFive))
-                            .onChange(of:pinFive){newVal in
+                        TextField("", text: $viewModel.pinFive)
+                            .modifier(OtpModifer(pin:$viewModel.pinFive))
+                            .onChange(of:viewModel.pinFive){newVal in
                                 if (newVal.count == 1) {
                                     pinFocusState = .pinSix
                                 }
@@ -82,29 +83,30 @@ struct OtpFormFieldView: View {
                             .focused($pinFocusState, equals: .pinFive)
                             .textContentType(.oneTimeCode)
                         
-                        TextField("", text: $pinSix)
-                            .modifier(OtpModifer(pin:$pinSix))
+                        TextField("", text: $viewModel.pinSix)
+                            .modifier(OtpModifer(pin:$viewModel.pinSix))
                             .focused($pinFocusState, equals: .pinSix)
                             .textContentType(.oneTimeCode)
                         
                     })
                     .padding(.vertical)
                     Button ("Подтвердить") {
-                        if pinOne == "" || pinTwo  == "" || pinThree == ""  || pinFour == "" || pinFive == "" || pinSix == "" {
-                            showAlert = true
-                        } else {
-                            codeFromSms = pinOne + pinTwo + pinThree + pinFour + pinFive + pinSix
-                            confirmator.confirmCode(VerificationCode: codeFromSms)
-                            isShowChoiseScreen = true
-                            }
-                        }
-                    .navigationDestination(isPresented: $isShowChoiseScreen) {
+                        viewModel.confirmSmsCode()
+                        //                        if pinOne == "" || pinTwo  == "" || pinThree == ""  || pinFour == "" || pinFive == "" || pinSix == "" {
+                        //                            showAlert = true
+                        //                        } else {
+                        //                            codeFromSms = pinOne + pinTwo + pinThree + pinFour + pinFive + pinSix
+                        //                            confirmator.confirmCode(VerificationCode: codeFromSms)
+                        //                            isShowChoiseScreen = true
+                        //                            }
+                    }
+                    .navigationDestination(isPresented: $viewModel.isShowChoiseScreen) {
                         ChoiseScreen()
-                            }
+                    }
                     .alert(isPresented: $showAlert) {
-                    Alert(title: Text("Не все поля заполнены!"),
-                    message: nil)
-                       }
+                        Alert(title: Text("Не все поля заполнены!"),
+                              message: nil)
+                    }
                     .font(.system(.title3, design: .rounded))
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
@@ -112,7 +114,7 @@ struct OtpFormFieldView: View {
                     .background(Color.blue)
                     .cornerRadius(15)
                     .padding()
-                    }
+                }
                 .navigationBarBackButtonHidden(true)
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
@@ -127,8 +129,8 @@ struct OtpFormFieldView: View {
         }
     }
 }
+    #Preview {
+        OtpFormFieldView()
+    }
+    
 
-
-#Preview {
-    OtpFormFieldView()
-}

@@ -5,9 +5,7 @@ import SwiftUI
 struct ChoiseScreen: View {
     @Environment(\.dismiss) var dismiss
     @State private var isChoiseBtnPressed = false
-    @State var state: AppState = .notAutorized
-    private  let service = NetworkManager()
-    
+    @StateObject private var viewModel: UserViewModel = .init(service: UserVerificationCheck())
     
     var body: some View {
         NavigationStack {
@@ -26,17 +24,20 @@ struct ChoiseScreen: View {
                     HStack(spacing: -70) {
                         Image("forCivil")
                             .onTapGesture {
-                                if state == .autorized {
-                                    service.sendRequestForHelp(AdviceType: "Гражданское")
-                                }
-                                isChoiseBtnPressed.toggle()
-                                print("Гражданское нажато")
-                                
+                              //  viewModel.fetchRequests()
+
+                              //  if viewModel.appState == .autorized {
+                                  //  viewModel.sendRequestForHelp(type: "Гражданское")
+                                  //  print("Гражданское нажато")
+                              //  }
+                             //   isChoiseBtnPressed.toggle()
+                                print(viewModel.appState)
+
                             }
                         Image("forCriminal")
                             .onTapGesture {
-                                if state == .autorized {
-                                    service.sendRequestForHelp(AdviceType: "Уголовное")
+                                if viewModel.appState == .autorized {
+                                    viewModel.sendRequests(adviceType: "Уголовное")
                                 }
                                 print("Уголовное нажато")
                                 isChoiseBtnPressed.toggle()
@@ -47,8 +48,8 @@ struct ChoiseScreen: View {
                         
                         Image("forBusiness")
                             .onTapGesture {
-                                if state == .autorized {
-                                    service.sendRequestForHelp(AdviceType: "Для бизнеса")
+                                if viewModel.appState == .autorized {
+                               //     viewModel.sendRequestForHelp(type: "Для бизнеса")
                                 }
                                 print("Для бизнеса нажато")
                                 isChoiseBtnPressed.toggle()
@@ -56,19 +57,18 @@ struct ChoiseScreen: View {
                         
                         Image("forFamily")
                             .onTapGesture {
-                                if state == .autorized {
-                                    service.sendRequestForHelp(AdviceType: "Семейное")
+                                if viewModel.appState == .autorized {
+                                 //   viewModel.sendRequestForHelp(type: "Семейное")
                                 }
                                 print("Семейное нажато")
                                 isChoiseBtnPressed.toggle()
                             }
                     }
-                    //  .padding(-20)
                     HStack(spacing: -70) {
                         Image("forDTP")
                             .onTapGesture {
-                                if state == .autorized {
-                                    service.sendRequestForHelp(AdviceType: "По ДТП")
+                                if viewModel.appState == .autorized {
+                               //     viewModel.sendRequestForHelp(type: "По ДТП")
                                 }
                                 print("По ДТП нажато")
                                 isChoiseBtnPressed.toggle()
@@ -76,8 +76,8 @@ struct ChoiseScreen: View {
                         
                         Image("forAnother")
                             .onTapGesture {
-                                if state == .autorized {
-                                    service.sendRequestForHelp(AdviceType: "Другое")
+                                if viewModel.appState == .autorized {
+                                //    viewModel.sendRequestForHelp(type: "Другое")
                                 }
                                 print("Иное нажато")
                                 isChoiseBtnPressed.toggle()
@@ -96,13 +96,17 @@ struct ChoiseScreen: View {
                     }
                 }
                 .navigationDestination(isPresented: $isChoiseBtnPressed) {
-                    if state == .autorized {
+                    if viewModel.appState == .autorized {
                                            RequestHasSentScreen()
                                        } else {
                                            FirstAutorizationScreen()
                                        }
                 }
             }
+        }
+        .onAppear{
+            viewModel.checkIfUserRegistered()
+
         }
     }
 }

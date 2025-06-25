@@ -3,18 +3,15 @@ import SwiftUI
 import KeychainSwift
 
 struct LawyerSettingsScreen: View {
-   // @State  var lawyer: Lawyer
-    let keychain = KeychainSwift()
-    @State private var lawyerName = ""
-    @State private var lawyerPatronymic = ""
-    @State private var lawyerSurname = ""
+    
+    @StateObject private var viewModel = LawyerSettingsViewModel()
+
     @State private var isActive = false
     @State private var showAlert = false
     @State private var isLawyerVerificated = false
-    @ObservedObject var internet = NetworkManager()
     var body: some View {
         NavigationStack {
-            Text("\(lawyerName) \(lawyerPatronymic) \(lawyerSurname)")
+            Text("\(viewModel.name) \(viewModel.patronymic) \(viewModel.surname)")
                 .font(.title3)
                 .padding(15)
             Spacer()
@@ -35,7 +32,6 @@ struct LawyerSettingsScreen: View {
                             print("toggled to OFF")
                         }
                     }
-                //   Spacer()
                 Button(action: {
                     showAlert = true
                 })
@@ -51,8 +47,8 @@ struct LawyerSettingsScreen: View {
                 .alert("Внимание!", isPresented: $showAlert) {
                     Button("Отменить", role: .cancel) {}
                     Button("Удалить", role: .destructive) {
-                        internet.deleteLawyer()
-                        isLawyerVerificated = true 
+                       viewModel.deleteLawyer()
+                        isLawyerVerificated = true
                     }
 
                 } message: {
@@ -61,9 +57,7 @@ struct LawyerSettingsScreen: View {
                 Spacer()
             }
             .onAppear(perform: {
-                lawyerName = keychain.get("lawyerName") ?? "Пользователь"
-                lawyerPatronymic = keychain.get("lawyerPatronymic") ?? "не"
-                lawyerSurname = keychain.get("lawyerSurname") ?? "авторизован"
+                viewModel.fillLawyerSettings()
             })
         }
   }

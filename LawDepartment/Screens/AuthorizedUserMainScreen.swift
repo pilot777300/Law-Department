@@ -1,18 +1,14 @@
 
 import SwiftUI
-import KeychainSwift
 
 struct AuthorizedUserMainScreen: View {
     
     @State private var isUserWriting = false
-    @State private var showAlert = false
-    @StateObject private var internet = NetworkManager()
-    private let keychain = KeychainSwift()
-    @State private var name = ""
-    @State private var  state: AppState = .notAutorized
-    @State var txt: URL?
+   // @State private var showAlert = false
+    @StateObject  var viewModel: UserViewModel = .init(service: UserVerificationCheck())
+   //  @State private var  state: AppState = .notAutorized
+  //  @State var txt: URL?
    
-
     var body: some View {
         NavigationStack {
             ZStack {
@@ -20,27 +16,26 @@ struct AuthorizedUserMainScreen: View {
                     .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                 
                 VStack(alignment: .center, spacing: -10) {
-                    switch state {
+                    switch viewModel.appState {
                     case .notAutorized, .onbrd:
                         Text("Здравствуйте")
                             .modifier(HeaderTxtModifier())
                     case .autorized:
-                        Text("Здравствуйте, \(name)")
+                        Text("Здравствуйте, \(viewModel.userName)")
                             .modifier(HeaderTxtModifier())
                         Button(action: {
-                            showAlert = true
-                            print(state)
+                            viewModel.showAlert = true
+                         //   print(state)
                         })  {
                             Text("Выйти")
                                 .frame(maxWidth: 300, alignment: .trailing)
                                 .padding(5)
                         }
-                        .alert("Внимание!", isPresented: $showAlert) {
+                        .alert("Внимание!", isPresented: $viewModel.showAlert) {
                             Button("Отменить", role: .cancel) {}
                             Button("Удалить", role: .destructive) {
-                                internet.deleteUser()
-                                state = internet.appState
-                                
+                                viewModel.deleteUser()
+                                viewModel.deleteUserFromPhone()
                             }
                         } message: {
                             Text("Все данные будут удалены с сервера")
@@ -70,8 +65,8 @@ struct AuthorizedUserMainScreen: View {
                     Text("О приложении")
                         .modifier(TxtModifiers())
                         .onTapGesture {
-                            txt = txtFile[0].url
-                        } .quickLookPreview($txt)
+                            viewModel.txt = txtFile[0].url
+                        } .quickLookPreview($viewModel.txt)
                     
                     NavigationLink(destination:
                                     LawyerRegistrationScreen()) {
@@ -82,19 +77,19 @@ struct AuthorizedUserMainScreen: View {
             }
         }
         .onAppear{
-            let tokenInKeychain = keychain.get("token")
+            viewModel.checkIfUserRegistered()
+          //  let tokenInKeychain = keychain.get("token")
             //  print("Keychain Token = \(tokenInKeychain ?? "00000")")
             // print(".........END OF TOKEN..........")
             //print(state)
-            let usernameInKeychain = keychain.get("username")
-            name = usernameInKeychain ?? "0000"
-            if tokenInKeychain != nil {
-                internet.checkResponce(Token: tokenInKeychain ?? "")
-            }
+           // let usernameInKeychain = keychain.get("username")
+         //   name = usernameInKeychain ?? "0000"
+         //   if tokenInKeychain != nil {
+          //      internet.checkResponce(token: tokenInKeychain ?? "")
+        //    }
              // print(showAlertNoInternetConnection)
             
         }
-  
     }
 }
 

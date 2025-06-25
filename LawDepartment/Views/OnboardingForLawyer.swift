@@ -1,6 +1,6 @@
 
 import SwiftUI
-import KeychainSwift //
+import KeychainSwift
 
 struct OnBoardingForLayerView: View {
     var data: OnboardingForLawyerData
@@ -42,13 +42,21 @@ struct OnBoardingForLayerView: View {
                 
                 
                 Button(action: {
-                        internet.checkIfLawyerIsVerificated()
-                        showLawyerStartingscreen = internet.isLawyerAlreadyVerificated
-                    
-                    if showLawyerStartingscreen == false {
-                        showAlertNotVericatedLawyer = true
-                    }
-                    print(showLawyerStartingscreen)
+                    let keychain = KeychainSwift()
+                    keychain.delete("roleLawyer")
+                    keychain.delete("lawyerToken")
+                    keychain.delete("lawyerName")
+                    keychain.delete("lawyerPatronymic")
+                    keychain.delete("lawyerSurname")
+                    keychain.delete("lawyerPhoneNumber")
+                    keychain.delete("lawyerPassword")
+//                        internet.checkIfLawyerIsVerificated()
+//                        showLawyerStartingscreen = internet.isLawyerAlreadyVerificated
+//                    
+//                    if showLawyerStartingscreen == false {
+//                        showAlertNotVericatedLawyer = true
+//                    }
+//                    print(showLawyerStartingscreen)
                 }, label: {
                     Text("Начать")
                         .font(.headline)
@@ -78,9 +86,6 @@ struct OnBoardingForLayerView: View {
                 Spacer()
             }
             .onAppear(perform: {
-//                let k = KeychainSwift()
-//                let x = k.get("lawyerToken")
-//                print("LAWYER TOREN = \(String(describing: x))")
                 isAnimating = false
                 withAnimation(.easeOut(duration: 0.5)) {
                     self.isAnimating = true
