@@ -1,6 +1,6 @@
 
 import Foundation
 
-var orders = [
-    Order
-]()
+//var orders = [
+//    Order
+//]()

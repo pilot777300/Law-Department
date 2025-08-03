@@ -43,6 +43,54 @@ final class NetworkManager: ObservableObject {
         }.resume()
     }
     
+    func sendSmsToConfirm(model: UserRegistration, completion: @escaping (Result <UserTokenStatus, AppError>) -> Void) {
+        let url = URL(string: "https://api.6709.ru/v1/user/client/sign-up")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        do {
+            let jsonData = try JSONEncoder().encode(model)
+            request.httpBody = jsonData
+        } catch let error{
+            debugPrint(error.localizedDescription)
+        }
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print("ERROR: \(error)")
+                switch error {
+                case URLError.timedOut,
+                    URLError.notConnectedToInternet,
+                    URLError.networkConnectionLost,
+                    URLError.cannotFindHost:
+                    completion(.failure(AppError.internetConnectiomProblem))
+                case URLError.cancelled:
+                    completion(.failure(AppError.unknown))
+                default:
+                    completion(.failure(AppError.unknown))
+                }
+                return
+            }
+            if let data = data {
+                let str = String(data: data, encoding: .utf8)
+                print("Received data:\n\(str ?? "")")
+                if let error = try? JSONDecoder().decode(ErrorModel.self, from: data) {
+                    completion(.failure(AppError.serverError(error)))
+                    return
+                }
+                
+                guard let token = try? JSONDecoder().decode(UserTokenStatus.self, from: data) else {
+                    completion(.failure(.parsingError))
+                    return
+                }
+                completion(.success(token))
+            }
+        }
+        task.resume()
+    }
+    
+    
     func sendSms (model: UserRegistration)  {
         let url = URL(string: "https://api.6709.ru/v1/user/client/sign-up")!
         var request = URLRequest(url: url)
@@ -184,7 +232,7 @@ final class NetworkManager: ObservableObject {
     }
     
     
-    func sendReq (model: AdviceType, adviceType:String, token: String,  completion: @escaping(Result<RequestForHelp, AppError>) -> Void)  {
+func sendReq (model: AdviceType, adviceType:String, token: String,  completion: @escaping(Result<RequestForHelp, AppError>) -> Void)  {
         let url = URL(string: "https://api.6709.ru/v1/client/requests")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -454,35 +502,151 @@ final class NetworkManager: ObservableObject {
 
     }
     
-    func fetchAllResponces() {
-        let url = URL(string: "https://api.6709.ru/v1/client/requests")!
+    
+    func fetchNewOrders(token: String, completion: @escaping (Result <[NewOrder], AppError>) -> Void) {
+        let url = URL(string: "https://api.6709.ru/v1/lawyer/client-requests?showNew=true")!
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        let task = URLSession.shared.dataTask(with: request) { ( data, response, error) in
-            do {
-                let object = try? JSONDecoder().decode(RequestForHelp.self, from: data!)
-                
-            } catch let error {
-              //  completion(.failure(AppError.parsingError))
-               print("FAILED to DECODE", error)
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(String(describing: token))", forHTTPHeaderField: "Authorization")
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                switch error {
+                case URLError.timedOut,
+                    URLError.notConnectedToInternet,
+                    URLError.networkConnectionLost,
+                    URLError.cannotFindHost:
+                    completion(.failure(AppError.internetConnectiomProblem))
+                case URLError.cancelled:
+                    completion(.failure(AppError.unknown))
+                default:
+                    completion(.failure(AppError.unknown))
+                }
+                return
             }
-            if let response = response {
-                          guard let requests = try? JSONDecoder().decode(RequestForHelp.self, from: data!) else {
-                              print("NO DATA")
-                              return}
-           //                print("ADVICETYPE: \(temporaryInformation.adviceType)")
-           //                print("DATE: \(temporaryInformation.requestId)")
-           //                print("ID: \(temporaryInformation.requestId)")
-                print(requests)
-                print("++++++++++++")
-                print(requests.adviceType , requests.requestId, requests.sentAt)
-                print("++++++++++++")
-
-//                }
-            }
+            if let data = data {
+                if let error = try? JSONDecoder().decode(ErrorModel.self, from: data) {
+                    completion(.failure(AppError.serverError(error)))
+                    return
+                }
+                guard let order = try? JSONDecoder().decode([NewOrder].self, from: data) else {
+                completion(.failure(AppError.parsingError))
+                     return
+                 }
+                completion(.success(order))
+             }
         }
         task.resume()
     }
+    
+    func fetchAllOrders(token: String, completion: @escaping (Result<[NewOrder], AppError>) -> Void) {
+        let url = URL(string: "https://api.6709.ru/v1/lawyer/client-requests")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+       // request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(String(describing: token))", forHTTPHeaderField: "Authorization")
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                switch error {
+                case URLError.timedOut,
+                    URLError.notConnectedToInternet,
+                    URLError.networkConnectionLost,
+                    URLError.cannotFindHost:
+                    completion(.failure(AppError.internetConnectiomProblem))
+                case URLError.cancelled:
+                    completion(.failure(AppError.unknown))
+                default:
+                    completion(.failure(AppError.unknown))
+                }
+                return
+            }
+            if let data = data {
+                if let error = try? JSONDecoder().decode(ErrorModel.self, from: data) {
+                    completion(.failure(AppError.serverError(error)))
+                    return
+                }
+            guard let order = try? JSONDecoder().decode([NewOrder].self, from: data) else {
+                completion(.failure(AppError.parsingError))
+                     return
+                 }
+                completion(.success(order))
+               // print(order)
+             }
+        }
+        task.resume()
+    }
+    
+    func markOrderAsNotNew(token: String, requestID: String, completion: @escaping(Result<OrderStatus, AppError>) -> Void) {
+        let token = token
+        let requestId = requestID
+        let url = URL(string: "https://api.6709.ru/v1/lawyer/client-requests/\(requestId)/is-not-new")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "PATCH"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(String(describing: token))", forHTTPHeaderField: "Authorization")
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                switch error {
+                case URLError.timedOut,
+                    URLError.notConnectedToInternet,
+                    URLError.networkConnectionLost,
+                    URLError.cannotFindHost:
+                    completion(.failure(AppError.internetConnectiomProblem))
+                case URLError.cancelled:
+                    completion(.failure(AppError.unknown))
+                default:
+                    completion(.failure(AppError.unknown))
+                }
+                return
+            }
+            if let data = data {
+                if let error = try? JSONDecoder().decode(ErrorModel.self, from: data) {
+                    completion(.failure(AppError.serverError(error)))
+                    return
+                }
+            guard let status = try? JSONDecoder().decode(OrderStatus.self, from: data) else {
+                completion(.failure(AppError.parsingError))
+                     return
+                 }
+                completion(.success(status))
+             }
+        }
+        task.resume()
+        
+    }
+    
+//    func fetchAllResponces() {
+//        let url = URL(string: "https://api.6709.ru/v1/client/requests")!
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "GET"
+//        let task = URLSession.shared.dataTask(with: request) { ( data, response, error) in
+//            do {
+//                let object = try? JSONDecoder().decode(RequestForHelp.self, from: data!)
+//                
+//            } catch let error {
+//              //  completion(.failure(AppError.parsingError))
+//               print("FAILED to DECODE", error)
+//            }
+//            if let response = response {
+//                          guard let requests = try? JSONDecoder().decode(RequestForHelp.self, from: data!) else {
+//                              print("NO DATA")
+//                              return}
+//           //                print("ADVICETYPE: \(temporaryInformation.adviceType)")
+//           //                print("DATE: \(temporaryInformation.requestId)")
+//           //                print("ID: \(temporaryInformation.requestId)")
+//                print(requests)
+//                print("++++++++++++")
+//                print(requests.adviceType , requests.requestId, requests.sentAt)
+//                print("++++++++++++")
+//
+////                }
+//            }
+//        }
+//        task.resume()
+//    }
     
     
 //    func checkIfLawyerIsVerificated() {

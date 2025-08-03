@@ -25,7 +25,6 @@ struct AuthorizedUserMainScreen: View {
                             .modifier(HeaderTxtModifier())
                         Button(action: {
                             viewModel.showAlert = true
-                         //   print(state)
                         })  {
                             Text("Выйти")
                                 .frame(maxWidth: 300, alignment: .trailing)
@@ -35,7 +34,6 @@ struct AuthorizedUserMainScreen: View {
                             Button("Отменить", role: .cancel) {}
                             Button("Удалить", role: .destructive) {
                                 viewModel.deleteUser()
-                                viewModel.deleteUserFromPhone()
                             }
                         } message: {
                             Text("Все данные будут удалены с сервера")
@@ -78,17 +76,6 @@ struct AuthorizedUserMainScreen: View {
         }
         .onAppear{
             viewModel.checkIfUserRegistered()
-          //  let tokenInKeychain = keychain.get("token")
-            //  print("Keychain Token = \(tokenInKeychain ?? "00000")")
-            // print(".........END OF TOKEN..........")
-            //print(state)
-           // let usernameInKeychain = keychain.get("username")
-         //   name = usernameInKeychain ?? "0000"
-         //   if tokenInKeychain != nil {
-          //      internet.checkResponce(token: tokenInKeychain ?? "")
-        //    }
-             // print(showAlertNoInternetConnection)
-            
         }
     }
 }

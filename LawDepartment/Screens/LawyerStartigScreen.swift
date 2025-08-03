@@ -4,6 +4,8 @@ import SwiftUI
 import KeychainSwift
 
 struct LawyerStartigScreen: View {
+    @StateObject var viewModel: OrderViewModel = .init()
+
     var body: some View {
         TabView {
                 NavigationStack {

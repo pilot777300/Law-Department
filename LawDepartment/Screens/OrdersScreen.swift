@@ -2,10 +2,11 @@
 import SwiftUI
 
 struct OrdersScreen: View {
- 
+    @StateObject var viewModel: OrderViewModel = .init()
      private var orders = ["Новые", "Все заявки"]
     @State private var selectedItem = "Новые"
     @State private var showNewOrders = true
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -31,11 +32,13 @@ struct OrdersScreen: View {
             .padding(5)
             Spacer()
                 if showNewOrders {
-                    List(0..<5) { item in
+                    List(viewModel.newOrders, id: \.self) { item in
+                        let date = Date().formatDate(dateFromServer: item.sentAt)
                         NavigationLink() {
-                            OrderDetailScreen(orderData: Order(id: UUID(), clientRequestId: "", adviceType: "", sentAt: "", clientName: "", clientPhone: "", isNew: false, takenToWork: false, serviceProvided: false, closed: false))
+                            OrderDetailScreen(number: item.clientRequestId, date: date, name: item.clientName, city: item.clientCity, phone: item.clientPhone, adviceType: item.adviceType)
+
                         } label:{
-                            OrderView(orderData: Order(clientRequestId: "", adviceType: "", sentAt: "", clientName: "", clientPhone: "", isNew: false, takenToWork: false, serviceProvided: false, closed: false))
+                            NewOrderView(number: item.clientRequestId, date: date, name: item.clientName, city: item.clientCity, adviceType: item.adviceType)
                                 .padding(1)
                                 .background(skyBlue)
                                         }
@@ -55,9 +58,13 @@ struct OrdersScreen: View {
                             }
                     .scrollContentBackground(.hidden)
                     .background(Color.white)
+                    .onAppear {
+                        viewModel.fetchNewOrders()
+                    }
                 } else {
-                    List(0..<5) { item in
-                            OrderView(orderData: Order(clientRequestId: "", adviceType: "", sentAt: "", clientName: "", clientPhone: "", isNew: false, takenToWork: false, serviceProvided: false, closed: false))
+                    List(viewModel.allOrders, id: \.self) { item in
+                        let date = Date().formatDate(dateFromServer: item.sentAt)
+                        OrderView(number: item.clientRequestId, date: date, name: item.clientName, city: item.clientCity, phone: item.clientPhone, adviceType: item.adviceType)
                                 .padding(5)
                                 .background(Color.white)
                                 .listRowBackground(
@@ -76,10 +83,14 @@ struct OrdersScreen: View {
                         }
                     .scrollContentBackground(.hidden)
                     .background(Color.init(uiColor: .systemGray6))
-                    
+                    .onAppear {
+                        viewModel.fetchAllOrders()
+                    }
                 }
+                  
             }
         }
+        
     }
 }
 

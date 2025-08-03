@@ -2,11 +2,11 @@
 import Foundation
 
 struct RequestForHelp: Codable {
-   var requestId: String
+  // var requestId: String
     var adviceType: String
-    var takenToWork: Bool
-    var serviceProvided: Bool
-    var closed: Bool
+  //  var takenToWork: Bool
+   // var serviceProvided: Bool
+   // var closed: Bool
     var sentAt: String
 //    var lawyerName: String
 //    var lawyerPatronymic: String

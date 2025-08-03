@@ -3,31 +3,36 @@
 import SwiftUI
 
 struct OrderDetailScreen: View {
-    var orderData: Order
+    @StateObject var viewModel: OrderViewModel = .init()
+    @State var number: String
+    @State var date: String
+    @State var name: String
+    @State var city: String
+    @State var phone: String
+    @State var adviceType: String
     var body: some View {
         ZStack {
-
-            VStack(alignment:.leading, spacing: 5){
-                Text("Сведения о заявке ")
+            VStack(alignment:.leading, spacing: 5) {
+                Text("Сведения из заявки ")
                     .padding(.leading, 80)
                     .padding(20)
                     .font(.title2)
-                Text("№ заявки: \(orderData.id)")
+                Text("№ заявки:  \(number)" )
                     .padding(.leading, 10)
                 HStack {
-                    Text("Дата: \(orderData.sentAt)")
+                    Text("Дата:  \(date)")
                         .padding(.leading, 10)
-                   // Text("Время: \(orderData.time)")
-                     //   .padding(.leading, 10)
                 }
-                Text("Имя клиента: \(orderData.clientName)")
+                Text("Имя клиента:  \(name)")
                     .padding(.leading, 10)
-                Text("Телефон клиента: \(orderData.clientPhone)")
+                Text("Город:  \(city)")
                     .padding(.leading, 10)
-                Text("Нужна помощь по делу: \(orderData.adviceType)")
+                Text("Телефон клиента:  +\(phone)")
+                    .padding(.leading, 10)
+                Text("Нужна помощь по делу:  \(adviceType)")
                     .padding(.leading, 10)
                 Button {
-                    print("rrrr")
+                  //  print("rrrr")
                 } label: {
                     Text("Завершить работу по заявке")
                         .frame(maxWidth: .infinity)
@@ -38,10 +43,13 @@ struct OrderDetailScreen: View {
                 .padding(15)
 
             }
+//            .onAppear{
+//                viewModel.markOrderAsNotNew(requestID: number)
+//            }
         }
     }
 }
 
 #Preview {
-    OrderDetailScreen(orderData: Order(clientRequestId: "", adviceType: "", sentAt: "", clientName: "", clientPhone: "", isNew: false, takenToWork: false, serviceProvided: false, closed: false))
+  //  OrderDetailScreen()
 }
