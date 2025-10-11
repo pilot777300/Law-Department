@@ -2,9 +2,12 @@
 
 import SwiftUI
 import KeychainSwift
+import FirebaseMessaging
+
 
 struct ListOfChats: View {
-    
+    @StateObject var notificationManager = NotificationManager()
+
     var body: some View {
         NavigationStack {
             
@@ -29,8 +32,22 @@ struct ListOfChats: View {
             .scrollContentBackground(.hidden)
             .background(Color.white)
         }
+        .onAppear{
+            Task{
+                               await notificationManager.request()
+                           }
+//            Messaging.messaging().subscribe(toTopic: "newOrder") { error in
+//                print("Subscribed to  topic", error?.localizedDescription ?? "NO ERROR")
+//            }
+        }
+        .disabled(notificationManager.hasPermission)
+        .task {
+                        await notificationManager.getAuthStatus()
+            
+                    }
     }
 }
+
 
 #Preview {
     ListOfChats()

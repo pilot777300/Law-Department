@@ -2,25 +2,29 @@
 
 import SwiftUI
 import KeychainSwift
+//import FirebaseMessaging
+
 
 struct LawyerStartigScreen: View {
-    @StateObject var viewModel: OrderViewModel = .init()
+  //  @StateObject var notificationManager = NotificationManager()
+  //  @StateObject var delegate: AppDelegate = .init()//OrderViewModel = .init()
+
 
     var body: some View {
         TabView {
+            NavigationStack {
+            OrdersScreen()
+                    }
+                    .tabItem {
+                        Image(systemName: "folder.fill.badge.plus")
+                        Text("Заявки")
+                    }
                 NavigationStack {
                     ListOfChats()
                         }
                         .tabItem {
                             Image(systemName: "message.fill")
                             Text("Чат")
-                        }
-                NavigationStack {
-                OrdersScreen()
-                        }
-                        .tabItem {
-                            Image(systemName: "folder.fill.badge.plus")
-                            Text("Заявки")
                         }
                 NavigationStack {
                     LawyerSettingsScreen()
@@ -31,7 +35,6 @@ struct LawyerStartigScreen: View {
             }
         }
     }
-        
 }
 
 #Preview {

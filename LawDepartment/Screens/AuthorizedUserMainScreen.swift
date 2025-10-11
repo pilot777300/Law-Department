@@ -1,6 +1,7 @@
 
 import SwiftUI
 
+
 struct AuthorizedUserMainScreen: View {
     
     @State private var isUserWriting = false

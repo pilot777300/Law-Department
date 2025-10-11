@@ -25,20 +25,16 @@ final class OrderViewModel: ObservableObject {
     @Published var newOrders = [NewOrder]()
     @Published var allOrders = [NewOrder]()
     var error: AppError?
-   // @Published var requestID = ""
     
     func fetchNewOrders() {
-        Task{
             let token = keychain.get("lawyerToken")
-            network.fetchNewOrders(token: token!) { [weak self] result in
-                switch result {
-                case .success(let newOrder):
-                    guard let self = self else {return}
-                    DispatchQueue.main.async {
-                        self.newOrders = newOrder
-                    }
-                case .failure(let error):
-                    self?.error = error
+        network.fetchNewOrders(token: token!) { [weak self] result in
+            Task { @MainActor in
+            switch result {
+            case .success(let newOrder):
+                self!.newOrders = newOrder
+            case .failure(let error):
+                self?.error = error
                 }
             }
         }
@@ -65,7 +61,7 @@ final class OrderViewModel: ObservableObject {
         let token = keychain.get("lawyerToken")
         network.markOrderAsNotNew(token: token!, requestID: requestID) { [weak self] result in
             switch result {
-            case .success(let status):
+            case .success(_):
                 return
             case .failure(let error):
                 self?.error = error

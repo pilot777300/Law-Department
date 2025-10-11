@@ -20,7 +20,7 @@ struct OrdersScreen: View {
             Text($0).tag($0)
                     }
                 }
-            .onChange(of: selectedItem){ value in
+            .onChange(of: selectedItem) { 
             if selectedItem == orders[0] {
                 showNewOrders = true
             } else if
@@ -32,35 +32,39 @@ struct OrdersScreen: View {
             .padding(5)
             Spacer()
                 if showNewOrders {
-                    List(viewModel.newOrders, id: \.self) { item in
-                        let date = Date().formatDate(dateFromServer: item.sentAt)
-                        NavigationLink() {
-                            OrderDetailScreen(number: item.clientRequestId, date: date, name: item.clientName, city: item.clientCity, phone: item.clientPhone, adviceType: item.adviceType)
-
-                        } label:{
-                            NewOrderView(number: item.clientRequestId, date: date, name: item.clientName, city: item.clientCity, adviceType: item.adviceType)
-                                .padding(1)
-                                .background(skyBlue)
-                                        }
-                        .listRowBackground(
-                        RoundedRectangle(cornerRadius: 15)
-                                        .background(.clear)
-                                        .foregroundColor(skyBlue)
-                                        .padding(
+//                    if viewModel.newOrders.isEmpty {
+//                        EmptyOrderView()
+//                    } else {
+                        List(viewModel.newOrders, id: \.self) { item in
+                            let date = Date().formatDate(dateFromServer: item.sentAt)
+                            NavigationLink() {
+                                OrderDetailScreen(number: item.clientRequestId, date: date, name: item.clientName, city: item.clientCity, phone: item.clientPhone, adviceType: item.adviceType)
+                                
+                            } label:{
+                                NewOrderView(number: item.clientRequestId, date: date, name: item.clientName, city: item.clientCity, adviceType: item.adviceType)
+                                    .padding(1)
+                                    .background(skyBlue)
+                            }
+                            .listRowBackground(
+                                RoundedRectangle(cornerRadius: 15)
+                                    .background(.clear)
+                                    .foregroundColor(skyBlue)
+                                    .padding(
                                         EdgeInsets(
-                                        top: 2,
-                                        leading: 5,
-                                        bottom: 2,
-                                        trailing: 5
-                                        )
+                                            top: 2,
+                                            leading: 5,
+                                            bottom: 2,
+                                            trailing: 5
                                     )
                                 )
-                            }
-                    .scrollContentBackground(.hidden)
-                    .background(Color.white)
-                    .onAppear {
-                        viewModel.fetchNewOrders()
-                    }
+                            )
+                        }
+                        .scrollContentBackground(.hidden)
+                        .background(Color.white)
+                        .onAppear {
+                            viewModel.fetchNewOrders()
+                        }
+                //    }
                 } else {
                     List(viewModel.allOrders, id: \.self) { item in
                         let date = Date().formatDate(dateFromServer: item.sentAt)
@@ -77,9 +81,9 @@ struct OrdersScreen: View {
                                                 leading: 5,
                                                 bottom: 5,
                                                 trailing: 5
-                                                )
-                                            )
-                                        )
+                                    )
+                                )
+                            )
                         }
                     .scrollContentBackground(.hidden)
                     .background(Color.init(uiColor: .systemGray6))
@@ -87,10 +91,8 @@ struct OrdersScreen: View {
                         viewModel.fetchAllOrders()
                     }
                 }
-                  
             }
         }
-        
     }
 }
 

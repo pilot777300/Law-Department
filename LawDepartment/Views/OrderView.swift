@@ -22,13 +22,24 @@ struct OrderView: View {
                                 .padding(.leading, 5)
                         Text("Город: \(city)")
                             .padding(.leading, 5)
-                            Text("Телефон клиента: +\(phone)")
+                        HStack {
+                            Text("Телефон клиента:")
                                 .padding(.leading, 5)
+                            Button(action: {
+                                         let link = "tel://+"
+                                         let phoneNumberformatted = link + phone
+                                         guard let url = URL(string: phoneNumberformatted) else { return }
+                                         UIApplication.shared.open(url)
+                                        }) {
+                                        Text("+\(phone)")
+                                         .foregroundColor(.blue)
+                           }
+                        }
                             Text("Нужна помощь по делу: \(adviceType)")
                                 .padding(.leading, 5)
         }
     }
 }
 #Preview {
-  //  OrderView()
+    OrderView(number: "11", date: "45643", name: "aaaa", city: "fffffff", phone: "79263463295", adviceType: "desdf")
 }

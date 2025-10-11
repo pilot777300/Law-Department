@@ -43,9 +43,9 @@ struct OrderDetailScreen: View {
                 .padding(15)
 
             }
-//            .onAppear{
-//                viewModel.markOrderAsNotNew(requestID: number)
-//            }
+            .onAppear{
+                viewModel.markOrderAsNotNew(requestID: number)
+            }
         }
     }
 }
