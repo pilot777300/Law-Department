@@ -13,6 +13,7 @@ final class LawyerRegistrationImplementation: LawyerRegistrationService {
             switch result {
             case .success(let tokenModel):
                 self?.setKeychain(model: model)
+                self?.setLawyerIdForPushNotifications(model: tokenModel)
                 completion(.success(tokenModel))
             case .failure(let error):
                 completion(.failure(error))
@@ -30,6 +31,10 @@ final class LawyerRegistrationImplementation: LawyerRegistrationService {
         keychain.set(model.password, forKey: "lawyerPassword")
     }
  
+    private func setLawyerIdForPushNotifications(model: LawyerTokenStatus) {
+       let keychain = KeychainSwift()
+        keychain.set(model.newRequestTopic, forKey: "PushNotificationId")
+    }
     
     
 }

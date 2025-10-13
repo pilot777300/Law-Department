@@ -1,6 +1,7 @@
 
 
 import SwiftUI
+import KeychainSwift
 import Firebase
 import FirebaseMessaging
 import FirebaseCore
@@ -10,6 +11,7 @@ import UserNotifications
 @available(iOS 17.0, *)
 
 class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate{
+    let keychain = KeychainSwift()
     let gcmMessageIDKey = "gcm.message_id"
     let clientRequest = "clientRequest"
     let type = "adviceType"
@@ -47,9 +49,11 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
           Messaging.messaging().apnsToken = deviceToken
+        let lawyerId = keychain.get("PushNotificationId") ?? ""
         DispatchQueue.main.async{
-            Messaging.messaging().subscribe(toTopic: "newOrder") { error in
-              //  print("Subscribed to  topic", error?.localizedDescription ?? "NO ERROR")
+            Messaging.messaging().subscribe(toTopic: "\(lawyerId)") { error in
+              // print("Subscribed to  topic", error?.localizedDescription ?? "NO ERROR")
+              //  print("\(lawyerId)" ?? "NO ERROR")
             }
         }
       }

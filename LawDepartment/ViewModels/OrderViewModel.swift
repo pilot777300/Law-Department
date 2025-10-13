@@ -2,6 +2,13 @@
 import Foundation
 import KeychainSwift
 
+enum FetchOrdersScreenState {
+    case `default`
+    case loading
+    case success
+    case failure
+}
+
 
 extension Date {
     func formatDate(dateFromServer:String) -> String {

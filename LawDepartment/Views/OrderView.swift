@@ -9,7 +9,6 @@ struct OrderView: View {
     @State  var phone: String
     @State  var adviceType: String
 
-    
     var body: some View {
                     VStack (alignment: .leading, spacing: 7) {
                             Text("№ заявки: \(number)")

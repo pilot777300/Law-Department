@@ -2,13 +2,8 @@
 
 import SwiftUI
 import KeychainSwift
-//import FirebaseMessaging
-
 
 struct LawyerStartigScreen: View {
-  //  @StateObject var notificationManager = NotificationManager()
-  //  @StateObject var delegate: AppDelegate = .init()//OrderViewModel = .init()
-
 
     var body: some View {
         TabView {

@@ -25,16 +25,17 @@ struct OrdersScreen: View {
                 showNewOrders = true
             } else if
                 selectedItem == orders[1] {
+                viewModel.fetchAllOrders()
                 showNewOrders = false
-                    }
+               }
             }
             .pickerStyle(.segmented)
             .padding(5)
             Spacer()
                 if showNewOrders {
-//                    if viewModel.newOrders.isEmpty {
-//                        EmptyOrderView()
-//                    } else {
+                    if viewModel.newOrders.isEmpty {
+                        EmptyNewOrderView()
+                   } else {
                         List(viewModel.newOrders, id: \.self) { item in
                             let date = Date().formatDate(dateFromServer: item.sentAt)
                             NavigationLink() {
@@ -61,12 +62,12 @@ struct OrdersScreen: View {
                         }
                         .scrollContentBackground(.hidden)
                         .background(Color.white)
-                        .onAppear {
-                            viewModel.fetchNewOrders()
-                        }
-                //    }
+                  }
                 } else {
-                    List(viewModel.allOrders, id: \.self) { item in
+                    if viewModel.allOrders.isEmpty{
+                        EmptyAllOrdersView()
+                    } else {
+                List(viewModel.allOrders.reversed(), id: \.self) { item in
                         let date = Date().formatDate(dateFromServer: item.sentAt)
                         OrderView(number: item.clientRequestId, date: date, name: item.clientName, city: item.clientCity, phone: item.clientPhone, adviceType: item.adviceType)
                                 .padding(5)
@@ -87,10 +88,14 @@ struct OrdersScreen: View {
                         }
                     .scrollContentBackground(.hidden)
                     .background(Color.init(uiColor: .systemGray6))
-                    .onAppear {
-                        viewModel.fetchAllOrders()
+//                    .onAppear {
+//                        viewModel.fetchAllOrders()
+                        // }
                     }
                 }
+            }
+            .onAppear {
+            viewModel.fetchNewOrders()
             }
         }
     }

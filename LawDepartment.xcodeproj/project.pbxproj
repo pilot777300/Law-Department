@@ -68,6 +68,7 @@
 		045DD6802DEC4CF0005E099C /* ChekVerificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045DD67F2DEC4CF0005E099C /* ChekVerificationService.swift */; };
 		045DD6822DEC751F005E099C /* CheeckVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045DD6812DEC751F005E099C /* CheeckVerificationViewModel.swift */; };
 		045DD6842DECA794005E099C /* WaitingVerificationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045DD6832DECA794005E099C /* WaitingVerificationScreen.swift */; };
+		045EB2E52E9BD4F400E4495E /* EmptyAllOrdersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045EB2E42E9BD4F400E4495E /* EmptyAllOrdersView.swift */; };
 		045F81062BB059EF00028F26 /* Razdel.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 045F81052BB0598400028F26 /* Razdel.docx */; };
 		0461481A2DFD55D900922E15 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046148192DFD55D900922E15 /* UserService.swift */; };
 		0461481C2DFD562D00922E15 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461481B2DFD562D00922E15 /* UserViewModel.swift */; };
@@ -99,7 +100,7 @@
 		047AFA8B2E10432500D3A38E /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AFA8A2E10432500D3A38E /* OrderViewModel.swift */; };
 		047B21602DE34B91001A934B /* LawyerRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B215F2DE34B91001A934B /* LawyerRegistrationService.swift */; };
 		048625A02D6090EC00DB106C /* Skyblue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486259F2D6090EC00DB106C /* Skyblue.swift */; };
-		0488ED2C2E8FCF4300042CA9 /* EmptyOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488ED2B2E8FCF4300042CA9 /* EmptyOrderView.swift */; };
+		0488ED2C2E8FCF4300042CA9 /* EmptyNewOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488ED2B2E8FCF4300042CA9 /* EmptyNewOrderView.swift */; };
 		0499FD612E4C715000A68025 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0499FD602E4C715000A68025 /* GoogleService-Info.plist */; };
 		049F34522E687DE90033D3B8 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F34512E687DE90033D3B8 /* NotificationHandler.swift */; };
 		04A2CDE52B9EFBB1002CA7DE /* Appeal.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0422010E2B9CDD64008210F6 /* Appeal.docx */; };
@@ -178,6 +179,7 @@
 		045DD67F2DEC4CF0005E099C /* ChekVerificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekVerificationService.swift; sourceTree = "<group>"; };
 		045DD6812DEC751F005E099C /* CheeckVerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheeckVerificationViewModel.swift; sourceTree = "<group>"; };
 		045DD6832DECA794005E099C /* WaitingVerificationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaitingVerificationScreen.swift; sourceTree = "<group>"; };
+		045EB2E42E9BD4F400E4495E /* EmptyAllOrdersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAllOrdersView.swift; sourceTree = "<group>"; };
 		045F81052BB0598400028F26 /* Razdel.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Razdel.docx; sourceTree = "<group>"; };
 		046148192DFD55D900922E15 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		0461481B2DFD562D00922E15 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -470,7 +472,7 @@
 		047AFA8A2E10432500D3A38E /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		047B215F2DE34B91001A934B /* LawyerRegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerRegistrationService.swift; sourceTree = "<group>"; };
 		0486259F2D6090EC00DB106C /* Skyblue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skyblue.swift; sourceTree = "<group>"; };
-		0488ED2B2E8FCF4300042CA9 /* EmptyOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyOrderView.swift; sourceTree = "<group>"; };
+		0488ED2B2E8FCF4300042CA9 /* EmptyNewOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyNewOrderView.swift; sourceTree = "<group>"; };
 		0499FD602E4C715000A68025 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		049F34512E687DE90033D3B8 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -592,7 +594,8 @@
 				045227542D4FC9BF006589BF /* OrderView.swift */,
 				046F99D12DCCE11A00F04A19 /* OnboardingForLawyer.swift */,
 				0452106D2E3F84F100EC5973 /* NewOrderView.swift */,
-				0488ED2B2E8FCF4300042CA9 /* EmptyOrderView.swift */,
+				0488ED2B2E8FCF4300042CA9 /* EmptyNewOrderView.swift */,
+				045EB2E42E9BD4F400E4495E /* EmptyAllOrdersView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1270,7 +1273,7 @@
 				044FA9A92BE107110097E4F2 /* Autorization.swift in Sources */,
 				042200FC2B9C9D80008210F6 /* LawyerRegistrationScreen.swift in Sources */,
 				0461481A2DFD55D900922E15 /* UserService.swift in Sources */,
-				0488ED2C2E8FCF4300042CA9 /* EmptyOrderView.swift in Sources */,
+				0488ED2C2E8FCF4300042CA9 /* EmptyNewOrderView.swift in Sources */,
 				046735042BCAF1DF001E1406 /* VoiceHelp.swift in Sources */,
 				042200F42B9C9CC5008210F6 /* ChoiseScreen.swift in Sources */,
 				042200C12B9C8F02008210F6 /* LawDepartmentApp.swift in Sources */,
@@ -1307,6 +1310,7 @@
 				042200EE2B9C95EF008210F6 /* OnBoardingObserver.swift in Sources */,
 				0470FA442DE618A10079C64A /* LawyerRegistrationViewModel.swift in Sources */,
 				047B21602DE34B91001A934B /* LawyerRegistrationService.swift in Sources */,
+				045EB2E52E9BD4F400E4495E /* EmptyAllOrdersView.swift in Sources */,
 				043AFA532E0043DD003E567F /* ChoiseViewModel.swift in Sources */,
 				045135272B9D851700F3113D /* TemplateOfDocument.swift in Sources */,
 				046F99D02DCC95C900F04A19 /* AppLauncher.swift in Sources */,

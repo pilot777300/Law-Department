@@ -1,7 +1,7 @@
 
 import SwiftUI
 
-struct EmptyOrderView: View {
+struct EmptyNewOrderView: View {
     var body: some View {
         ZStack {
             VStack(alignment: .center, spacing: 20) {
@@ -18,5 +18,5 @@ struct EmptyOrderView: View {
 
 
 #Preview {
-    EmptyOrderView()
+    EmptyNewOrderView()
 }
