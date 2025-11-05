@@ -12,6 +12,7 @@ struct EmptyNewOrderView: View {
                 Text("Пока что нет новых заявок")
                 Spacer()
             }
+            .offset(y: -110)
         }
     }
 }

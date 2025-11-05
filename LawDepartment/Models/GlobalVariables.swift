@@ -1,9 +1,11 @@
 
 import Foundation
 
-var userName: String = ""
-var userCity: String = ""
-var userPhone: String = ""
-var userToken = ""
+//var userName: String = ""
+//var userCity: String = ""
+//var userPhone: String = ""
+//var userToken = ""
+//
+//var markOrderAsCompleted = false
 
-var markOrderAsCompleted = false
+//var isLawyerRegistered = false 

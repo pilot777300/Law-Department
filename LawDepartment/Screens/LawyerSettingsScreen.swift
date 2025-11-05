@@ -10,7 +10,7 @@ struct LawyerSettingsScreen: View {
     @State private var showAlert = false
     @State private var isLawyerVerificated = false
     var body: some View {
-        NavigationStack {
+      //  NavigationStack {
             Text("\(viewModel.name) \(viewModel.patronymic) \(viewModel.surname)")
                 .font(.title3)
                 .padding(15)
@@ -43,6 +43,7 @@ struct LawyerSettingsScreen: View {
                 }
                 .navigationDestination(isPresented: $isLawyerVerificated) {
                     AuthorizedUserMainScreen()
+                      //  .navigationBarBackButtonHidden(true)
                 }
                 .alert("Внимание!", isPresented: $showAlert) {
                     Button("Отменить", role: .cancel) {}
@@ -59,7 +60,7 @@ struct LawyerSettingsScreen: View {
             .onAppear(perform: {
                 viewModel.fillLawyerSettings()
             })
-        }
+    //    }
   }
 }
 

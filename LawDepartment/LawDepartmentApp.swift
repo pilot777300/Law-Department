@@ -15,11 +15,12 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
     let gcmMessageIDKey = "gcm.message_id"
     let clientRequest = "clientRequest"
     let type = "adviceType"
+  
     
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
       application.registerForRemoteNotifications()
-              FirebaseApp.configure()
+            //  FirebaseApp.configure()
               Messaging.messaging().delegate = self
               UNUserNotificationCenter.current().delegate = self
       return true
@@ -29,11 +30,23 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                         fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
        Messaging.messaging().appDidReceiveMessage(userInfo)
-
         let content = UNMutableNotificationContent()
-          content.title = "Новая заявка"
-          content.body = "Поступила новая заявка на консультацию"
-          content.sound = .default
+  
+        if let myData = userInfo["status"] as? String {
+        if myData == "\"ACTIVATED\"" {
+            content.title =  "Вы авторизованы"
+                content.body = "Можете начинать работу в системе"
+            }
+        }
+        
+        if let myData1 = userInfo["clientRequest"] as? String {
+            if myData1 != "" {
+                content.title = "Новая заявка"
+              content.body = "Поступила новая заявка на консультацию"
+            }
+        }
+            content.sound = .default
+        
           let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 3, repeats: false)
           let request = UNNotificationRequest(identifier: "testNotification", content: content, trigger: trigger)
           UNUserNotificationCenter.current().add(request) { error in
@@ -41,7 +54,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
                   print("Error sending notification: \(error.localizedDescription)")
               }
           }
-
         completionHandler(UIBackgroundFetchResult.newData)
     }
     
@@ -49,13 +61,18 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
           Messaging.messaging().apnsToken = deviceToken
-        let lawyerId = keychain.get("PushNotificationId") ?? ""
-        DispatchQueue.main.async{
-            Messaging.messaging().subscribe(toTopic: "\(lawyerId)") { error in
-              // print("Subscribed to  topic", error?.localizedDescription ?? "NO ERROR")
-              //  print("\(lawyerId)" ?? "NO ERROR")
-            }
-        }
+    //    let lawyerId = keychain.get("PushNotificationId") ?? ""
+   //     let lawyerActivatedTopic = keychain.get("LawyerActivatedTopic") ?? ""
+//            DispatchQueue.main.async{
+//                Messaging.messaging().subscribe(toTopic: "\(lawyerId)") { error in
+//                    print("Subscribed to  topic \(lawyerId)", error?.localizedDescription ?? "NO ERROR")
+//                 
+//                }
+//                Messaging.messaging().subscribe(toTopic: "\(lawyerActivatedTopic)") { error in
+//                               print("Subscribed to  topic \(lawyerActivatedTopic)", error?.localizedDescription ?? "NO ERROR")
+//                              
+//                              }
+//           }
       }
       
       
@@ -65,6 +82,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
           }
       }
     
+    
 }
 
 @main
@@ -72,17 +90,19 @@ struct LawDepartmentApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @State private var launcher = AppLauncher()
     
-//    init() {
-//        let notificationHandler = NotificationHandler()
-//        UNUserNotificationCenter.current().delegate = notificationHandler
-//            FirebaseApp.configure()
-//            registerForPushNotifications()
-//        }
+    init() {
+        let notificationHandler = NotificationHandler()
+        UNUserNotificationCenter.current().delegate = notificationHandler
+            FirebaseApp.configure()
+            registerForPushNotifications()
+        }
     
     var body: some Scene {
         WindowGroup {
             bodyContentView(launchState: launcher.launchState)
-                .onAppear{ launcher.load()}
+                .onAppear{
+                    launcher.load()
+                }
             
         //    FirstAutorizationScreen()
         //   AuthorizedUserMainScreen()
@@ -109,17 +129,20 @@ struct LawDepartmentApp: App {
         }
     }
     
-//    private func registerForPushNotifications() {
-//         let center = UNUserNotificationCenter.current()
-//         center.requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
-//             if granted {
-//                 DispatchQueue.main.async {
-//                     UIApplication.shared.registerForRemoteNotifications()
-//                 }
-//                 let string = "80a84e6cfdb4d25f23cfc02f925445b3f14b059e5466a674620fb43592c499b0d721868705a3f3521af8c5ca82e89332e95b3c26a75f1e4b13c8ece96acdd4b97158ee9f7625b94b91bc06a409621662"
-//                      let unicode = string.data(using: .unicode)
-//                      Messaging.messaging().apnsToken = unicode
-//             }
-//         }
-//     }
+    private func registerForPushNotifications() {
+         let center = UNUserNotificationCenter.current()
+         center.requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+             if granted {
+                 DispatchQueue.main.async {
+                     UIApplication.shared.registerForRemoteNotifications()
+                 }
+                 let string = "80a84e6cfdb4d25f23cfc02f925445b3f14b059e5466a674620fb43592c499b0d721868705a3f3521af8c5ca82e89332e95b3c26a75f1e4b13c8ece96acdd4b97158ee9f7625b94b91bc06a409621662"
+                      let unicode = string.data(using: .unicode)
+                      Messaging.messaging().apnsToken = unicode
+             }
+         }
+     }
+
+    
+    
 }

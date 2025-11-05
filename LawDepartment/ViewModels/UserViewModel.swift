@@ -14,6 +14,7 @@ final class UserViewModel: ObservableObject {
     private var network = NetworkManager()
     @Published var screenState: UserscreenState = .default
     @Published var appState: AppState = .notAutorized
+     var launcher = AppLauncher() //????????
     @Published var userName = ""
     @Published var showAlert = false
     @Published var  txt: URL?
@@ -52,6 +53,52 @@ final class UserViewModel: ObservableObject {
             }
         }
     }
+    
+    func checkWhoIsRegistered() {
+        Task {
+            let keychain = KeychainSwift()
+            let tokenInKeychain = keychain.get("token")
+            let usernameInKeychain = keychain.get("username")
+            let login = keychain.get("lawyerPhoneNumber") ?? ""
+            let password = keychain.get("lawyerPassword") ?? ""
+            let model = LawyerInfo(login: login, password: password, token: "", role: "")
+            network.checkResponce(token: tokenInKeychain ?? "") { [weak self] result in
+               guard let self = self else { return }
+                switch result {
+                case .success(let tokenStatus):
+                    let status = tokenStatus.valid
+                    if status == true {
+                        DispatchQueue.main.async {
+                            self.userName = usernameInKeychain!
+                        }
+                        appState = .autorized
+                        screenState = .success
+                    }
+                  //  print("STATUS TOKEN = \(status)")
+                  //  print(usernameInKeychain!)
+                  //  print(self.userName)
+                  //  print(self.appState)
+                case .failure(_):
+                   // screenState = .
+                    print("ERROR FROM COMPLETION")
+                }
+            }
+            network.chekVerificationOfLawyer(model: model) { [weak self] result in
+                Task { @MainActor in
+                    switch result {
+                    case .success(let token):
+                         print(token.token)
+                        self?.launcher.launchState = .verificatedLawyer
+                    case .failure(let error):
+                        self?.error = error
+                       // self?.screenstate = .failure
+                    }
+                }
+            }
+        }
+    }
+    
+    
     func deleteUser() {
         Task {
             screenState = .loadind

@@ -11,6 +11,7 @@ enum LawyerRegistrationScreenState {
 
 @MainActor
 final class LawyerRegistrationViewModel: ObservableObject {
+
     @Published var screenState: LawyerRegistrationScreenState = .default
     var error: AppError?
     
@@ -19,7 +20,7 @@ final class LawyerRegistrationViewModel: ObservableObject {
     @Published var lawyerSurname: String = ""
     @Published var lawyerPhone: String = "+7"
     @Published var lawyerPassword: String = ""
-    
+  //  @Published var isLawyerRegistered = false  ///?
     private let service: LawyerRegistrationService
     
     init (service: LawyerRegistrationService) {
@@ -34,12 +35,16 @@ final class LawyerRegistrationViewModel: ObservableObject {
                         surname: lawyerSurname, city: "", phone: formattedLawyerPhone,
                                password: lawyerPassword)
             service.registerLawyer(model: model) { [weak self] result in
-                switch result {
-                case .success:
-                    self?.screenState = .success
-                case .failure(let error):
-                    self?.error = error
-                    self?.screenState = .failure
+                Task { @MainActor in
+                    switch result {
+                    case .success:
+                        self?.screenState = .success
+                      //  isLawyerRegistered = true //
+                    case .failure(let error):
+                        self?.error = error
+                        self?.screenState = .failure
+                    }
+                    
                 }
             }
         }

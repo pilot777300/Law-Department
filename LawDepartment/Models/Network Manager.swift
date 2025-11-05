@@ -416,6 +416,7 @@ func sendReq (model: AdviceType, adviceType:String, token: String,  completion: 
             guard let token = try? JSONDecoder().decode(LawyerToken.self, from: data) else {
                      completion(.failure(.parsingError))
                      return
+                print("ERROR PARSING MODEL LAWYERTOKEN!!!!!!!!")
                  }
                  completion(.success(token))
              }

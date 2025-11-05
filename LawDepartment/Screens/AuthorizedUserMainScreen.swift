@@ -75,6 +75,8 @@ struct AuthorizedUserMainScreen: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
+        .toolbar(.hidden, for: .tabBar)
         .onAppear{
             viewModel.checkIfUserRegistered()
         }

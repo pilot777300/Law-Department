@@ -120,9 +120,9 @@ struct LawyerRegistrationScreen: View {
                 .buttonBorderShape(.roundedRectangle(radius: 20))
                 .padding(15)
                 .navigationDestination(isPresented: $showOnboardigForLawyer) {
-                    WaitingVerificationScreen(data: OnboardingForLawyerData(id: 1, backgroundImage: "backgroundVector", objectImage: "lawyer", primaryText: "Вы напрямую общаетесь с клиентами", secondaryText: "После верификации вы сможете получать заявки"))
+                    OnBoardingForLayerView(data: OnboardingForLawyerData.list[0])
                         }
-                                              
+              
                }
         }
         .navigationBarBackButtonHidden(true)
@@ -136,7 +136,7 @@ struct LawyerRegistrationScreen: View {
             }
         }
     }
-    }
+  }
 }
 
 #Preview {

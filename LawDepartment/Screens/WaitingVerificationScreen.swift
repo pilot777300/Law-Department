@@ -30,6 +30,7 @@ struct WaitingVerificationScreen: View {
                     .onAppear{
                        // isLawyerVerificated = true
                         showLawyerStartingscreen = true
+                     //   viewModel.subscribeToFirebaseTopics()  //???
                         let x = KeychainSwift()
                         let y = x.get("lawyerToken")
                         print ("TOOOKEEENN: \(y!)")
@@ -39,6 +40,7 @@ struct WaitingVerificationScreen: View {
                // showAlertNotVericatedLawyer = true
             }
         }
+        
     }
     
     private func errorView() -> some View {
@@ -99,8 +101,9 @@ struct WaitingVerificationScreen: View {
                     
                     
                     Button(action: {
-                        viewModel.checkVerivication()
-                        print(viewModel.screenstate)
+                        print("BUTTON TAPPPEDDDD")
+                    //   viewModel.checkVerivication()
+                       // print(viewModel.screenstate)
               
                     }, label: {
                         Text("Начать")
@@ -130,16 +133,11 @@ struct WaitingVerificationScreen: View {
                     
                     Spacer()
                 }
-                .onAppear(perform: {
-                    isAnimating = false
-                    withAnimation(.easeOut(duration: 0.5)) {
-                    self.isAnimating = true
-                    }
-                }
-                )
+
             }
+   
         }
-    
+        
     
 }
 

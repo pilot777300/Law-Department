@@ -8,6 +8,7 @@ final class LawyerSettingsViewModel: ObservableObject {
     @Published  var name = ""
     @Published  var patronymic = ""
     @Published  var surname = ""
+
     
     func deleteLawyer() {
             let network = NetworkManager()
@@ -25,6 +26,8 @@ final class LawyerSettingsViewModel: ObservableObject {
         keychain.delete("lawyerSurname")
         keychain.delete("lawyerPhoneNumber")
         keychain.delete("lawyerPassword")
+        keychain.delete("PushNotificationId")
+        keychain.delete("LawyerActivatedTopic")
     }
        
     func fillLawyerSettings() {

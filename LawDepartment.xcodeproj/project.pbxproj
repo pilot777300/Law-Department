@@ -45,6 +45,8 @@
 		043780D82E55FAF3001E5DD1 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 043780D72E55FAF3001E5DD1 /* FirebaseMessaging */; };
 		043AFA532E0043DD003E567F /* ChoiseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043AFA522E0043DD003E567F /* ChoiseViewModel.swift */; };
 		04470E472BB997BE00F4E299 /* TxtModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04470E462BB997BE00F4E299 /* TxtModifiers.swift */; };
+		04471C952EA4C91500589CD1 /* NewOrdersTxtModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04471C942EA4C91500589CD1 /* NewOrdersTxtModifiers.swift */; };
+		0449F1462EABEE890097AA37 /* SubscribingToTopics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449F1452EABEE890097AA37 /* SubscribingToTopics.swift */; };
 		044F2BDE2E19504400EB0EF7 /* UserTokenStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F2BDD2E19504400EB0EF7 /* UserTokenStatus.swift */; };
 		044F8D542BE174160072E344 /* FirstAutorizationScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044F8D532BE174150072E344 /* FirstAutorizationScreen.swift */; };
 		044FA9A92BE107110097E4F2 /* Autorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044FA9A82BE107110097E4F2 /* Autorization.swift */; };
@@ -99,11 +101,15 @@
 		04770EE72D44D5FE000B7BE2 /* OrdersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770EE62D44D5FE000B7BE2 /* OrdersScreen.swift */; };
 		047AFA8B2E10432500D3A38E /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AFA8A2E10432500D3A38E /* OrderViewModel.swift */; };
 		047B21602DE34B91001A934B /* LawyerRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B215F2DE34B91001A934B /* LawyerRegistrationService.swift */; };
+		048499122EA50DFE0012AE93 /* AllOrdersListTxtModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048499112EA50DFE0012AE93 /* AllOrdersListTxtModifier.swift */; };
+		048499142EA50ED30012AE93 /* NewOrdersListTxtModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048499132EA50ED30012AE93 /* NewOrdersListTxtModifiers.swift */; };
 		048625A02D6090EC00DB106C /* Skyblue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486259F2D6090EC00DB106C /* Skyblue.swift */; };
 		0488ED2C2E8FCF4300042CA9 /* EmptyNewOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488ED2B2E8FCF4300042CA9 /* EmptyNewOrderView.swift */; };
 		0499FD612E4C715000A68025 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0499FD602E4C715000A68025 /* GoogleService-Info.plist */; };
 		049F34522E687DE90033D3B8 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F34512E687DE90033D3B8 /* NotificationHandler.swift */; };
 		04A2CDE52B9EFBB1002CA7DE /* Appeal.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0422010E2B9CDD64008210F6 /* Appeal.docx */; };
+		04BF7AE72EA8E10500C71AA7 /* TxtModifierForOrders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BF7AE62EA8E10500C71AA7 /* TxtModifierForOrders.swift */; };
+		04F8ACDD2EA3E99C006880F4 /* AllOrdersTxtModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F8ACDC2EA3E99C006880F4 /* AllOrdersTxtModifiers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -157,6 +163,8 @@
 		04373E7F2E3E08D4003798A0 /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
 		043AFA522E0043DD003E567F /* ChoiseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseViewModel.swift; sourceTree = "<group>"; };
 		04470E462BB997BE00F4E299 /* TxtModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxtModifiers.swift; sourceTree = "<group>"; };
+		04471C942EA4C91500589CD1 /* NewOrdersTxtModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrdersTxtModifiers.swift; sourceTree = "<group>"; };
+		0449F1452EABEE890097AA37 /* SubscribingToTopics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribingToTopics.swift; sourceTree = "<group>"; };
 		044F2BDD2E19504400EB0EF7 /* UserTokenStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTokenStatus.swift; sourceTree = "<group>"; };
 		044F8D532BE174150072E344 /* FirstAutorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstAutorizationScreen.swift; sourceTree = "<group>"; };
 		044FA9A82BE107110097E4F2 /* Autorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Autorization.swift; sourceTree = "<group>"; };
@@ -471,10 +479,14 @@
 		04770EE62D44D5FE000B7BE2 /* OrdersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersScreen.swift; sourceTree = "<group>"; };
 		047AFA8A2E10432500D3A38E /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		047B215F2DE34B91001A934B /* LawyerRegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerRegistrationService.swift; sourceTree = "<group>"; };
+		048499112EA50DFE0012AE93 /* AllOrdersListTxtModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllOrdersListTxtModifier.swift; sourceTree = "<group>"; };
+		048499132EA50ED30012AE93 /* NewOrdersListTxtModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrdersListTxtModifiers.swift; sourceTree = "<group>"; };
 		0486259F2D6090EC00DB106C /* Skyblue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skyblue.swift; sourceTree = "<group>"; };
 		0488ED2B2E8FCF4300042CA9 /* EmptyNewOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyNewOrderView.swift; sourceTree = "<group>"; };
 		0499FD602E4C715000A68025 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		049F34512E687DE90033D3B8 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
+		04BF7AE62EA8E10500C71AA7 /* TxtModifierForOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxtModifierForOrders.swift; sourceTree = "<group>"; };
+		04F8ACDC2EA3E99C006880F4 /* AllOrdersTxtModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllOrdersTxtModifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -581,6 +593,11 @@
 				04373E7F2E3E08D4003798A0 /* OrderStatus.swift */,
 				049F34512E687DE90033D3B8 /* NotificationHandler.swift */,
 				0455D8F52E6C52A800F786C2 /* NotificationManager.swift */,
+				04F8ACDC2EA3E99C006880F4 /* AllOrdersTxtModifiers.swift */,
+				04471C942EA4C91500589CD1 /* NewOrdersTxtModifiers.swift */,
+				048499112EA50DFE0012AE93 /* AllOrdersListTxtModifier.swift */,
+				048499132EA50ED30012AE93 /* NewOrdersListTxtModifiers.swift */,
+				04BF7AE62EA8E10500C71AA7 /* TxtModifierForOrders.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1124,6 +1141,7 @@
 				046148192DFD55D900922E15 /* UserService.swift */,
 				0461481D2DFDA29200922E15 /* UserRegistrationService.swift */,
 				046148232DFDC1CB00922E15 /* ConfirmCodeService.swift */,
+				0449F1452EABEE890097AA37 /* SubscribingToTopics.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1248,6 +1266,7 @@
 				046735022BCAE302001E1406 /* RequestForVoiceHelp.swift in Sources */,
 				042201002B9C9DDB008210F6 /* OnBoardingView.swift in Sources */,
 				042200FA2B9C9D4A008210F6 /* LawyerMainScreen.swift in Sources */,
+				048499122EA50DFE0012AE93 /* AllOrdersListTxtModifier.swift in Sources */,
 				046F99D22DCCE11A00F04A19 /* OnboardingForLawyer.swift in Sources */,
 				046148222DFDC1B700922E15 /* ConfirmCodeViewModel.swift in Sources */,
 				046148202DFDA2AA00922E15 /* UserRegistrationViewModel.swift in Sources */,
@@ -1269,9 +1288,12 @@
 				042200E02B9C9492008210F6 /* OnBoardingData.swift in Sources */,
 				046148242DFDC1CB00922E15 /* ConfirmCodeService.swift in Sources */,
 				042201042B9C9E35008210F6 /* RequestHasSentScreen.swift in Sources */,
+				048499142EA50ED30012AE93 /* NewOrdersListTxtModifiers.swift in Sources */,
+				0449F1462EABEE890097AA37 /* SubscribingToTopics.swift in Sources */,
 				045DD6802DEC4CF0005E099C /* ChekVerificationService.swift in Sources */,
 				044FA9A92BE107110097E4F2 /* Autorization.swift in Sources */,
 				042200FC2B9C9D80008210F6 /* LawyerRegistrationScreen.swift in Sources */,
+				04471C952EA4C91500589CD1 /* NewOrdersTxtModifiers.swift in Sources */,
 				0461481A2DFD55D900922E15 /* UserService.swift in Sources */,
 				0488ED2C2E8FCF4300042CA9 /* EmptyNewOrderView.swift in Sources */,
 				046735042BCAF1DF001E1406 /* VoiceHelp.swift in Sources */,
@@ -1292,6 +1314,7 @@
 				045B84442BEE5017006AE761 /* Token.swift in Sources */,
 				042201062B9C9E71008210F6 /* SmsVerificationScreen.swift in Sources */,
 				0464951C2D50AB5300EEC269 /* Orders.swift in Sources */,
+				04BF7AE72EA8E10500C71AA7 /* TxtModifierForOrders.swift in Sources */,
 				045B84462BEE8AA8006AE761 /* KeychainHelper.swift in Sources */,
 				042200F02B9C9C39008210F6 /* AuthorizedUserMainScreen.swift in Sources */,
 				045286782D81E9D800E8053C /* ListOfChats.swift in Sources */,
@@ -1317,6 +1340,7 @@
 				047589182DF04C0D00690741 /* LawyerSettingsViewModel.swift in Sources */,
 				042200EA2B9C9593008210F6 /* Message.swift in Sources */,
 				0466DFEC2D8F12C700677BDF /* TxtFile.swift in Sources */,
+				04F8ACDD2EA3E99C006880F4 /* AllOrdersTxtModifiers.swift in Sources */,
 				042200FE2B9C9DAA008210F6 /* OnBoardingScreen.swift in Sources */,
 				045990902DCE404600CEDE4E /* LawyerInfo.swift in Sources */,
 				0452106E2E3F84F100EC5973 /* NewOrderView.swift in Sources */,

@@ -12,6 +12,7 @@ struct EmptyAllOrdersView: View {
                 Text("Здесь будут отображаться все заявки")
                 Spacer()
             }
+            .offset(y: -110)
         }
     }
 }
