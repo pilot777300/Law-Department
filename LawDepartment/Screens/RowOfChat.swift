@@ -2,20 +2,32 @@
 import SwiftUI
 
 struct RowOfChat: View {
-     var dataForChat: Message
+   //  var dataForChat: MessageFromUser
+  //  var dataForChat = LawyerChatViewModel()
+    @State var userName = ""
+    @State var text = ""
+    @State var time = ""
+
     var body: some View {
             VStack( alignment: .leading) {
-                Text("\(dataForChat.user.name)")
-                    .font(.callout)
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                 
-                Text("\(dataForChat.content)")
-                    .font(.caption)
+                HStack {
+                    Text("\(userName)")
+                        .font(.headline)
+                        .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    Spacer()
+                    Text("\(time)")
+                        .font(.subheadline)
+                }
+                
+                Text("\(text)")
+                    .font(.subheadline)
+                    .lineLimit(1)
             }
             Spacer()
     }
 }
 
 #Preview {
-    RowOfChat(dataForChat: Message(id: UUID.init(), user: User(name: "Olga", phoneNumber: ""), content: "Проконсультируйте по насущному вопросу, без которого жизнь не жизнь"))
+    RowOfChat(userName: "ALLA", text: "NEED HELP", time: "22.22")
 }

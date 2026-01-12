@@ -51,11 +51,26 @@ struct AuthorizedUserMainScreen: View {
                     }
                     .padding(5)
                     
-                    NavigationLink(destination: ChatScreen( isUserWriting: $isUserWriting))
-                    {
+                    switch viewModel.appState {
+                    case .autorized:
+                        NavigationLink(destination: ChatScreen( isUserWriting: $isUserWriting)) {
                         Image("chatButton")
+                            .padding(-60)
+
                     }
-                    .padding(-60)
+                    case .notAutorized, .onbrd:
+                        NavigationLink(destination: FirstAutorizationScreen()) {
+                            Image("chatButton")
+                                .padding(-60)
+
+                        }
+                   
+                    }
+//                    NavigationLink(destination: ChatScreen( isUserWriting: $isUserWriting))
+//                    {
+//                        Image("chatButton")
+//                    }
+    //                .padding(-60)
                     NavigationLink(destination: ChoiseScreen())
                     {
                         Image("mainButton")

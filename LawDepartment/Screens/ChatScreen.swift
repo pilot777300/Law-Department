@@ -1,26 +1,70 @@
 
 import SwiftUI
+import ExyteChat
 
 struct ChatScreen: View {
-    @State private  var typingMessage: String = ""
-    @ObservedObject var viewModel = ChatDataSouce()
-    @Binding var isUserWriting: Bool
+    @ObservedObject var viewModel = ChatViewModel()
+    @State private var showAlertRequestFailed = false
+   @Binding  var isUserWriting: Bool
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
-        Text("USERNAME")
         NavigationStack {
+            switch viewModel.screenState {
+            case .default:
+                content
+            case .loading:
+                content
+                    .overlay(
+                        ProgressView()
+                    )
+            case .success:
+                content
+            case .failure:
+                errorView()
+            }
+            
+        }
+    }
+    
+    private func errorView() -> some View {
+        let error = viewModel.error ?? .unknown
+        let title = "Внимание"
+        var message = " "
+        switch error {
+        case .internetConnectiomProblem:
+            break
+        case .parsingError:
+            break
+        case .serverError(let error):
+            message = error.error
+        case .unknown:
+            break
+        }
+        return content
+            .onAppear{
+                showAlertRequestFailed = true
+            }
+            .alert(isPresented: $showAlertRequestFailed) {
+                Alert(title: Text(title),
+                      message: Text(message))
+            }
+    }
+    
+    private var content: some View {
+         NavigationStack {
+                 Text(viewModel.userName)
             VStack {
                 List {
-                    ForEach(viewModel.DataSource, id: \.self) { msg in
-                        ContentMessage(contentMessage: msg, isUserWriting: isUserWriting)
+                    ForEach(viewModel.messages, id: \.self) { msg in
+                        ChatContentMessage(contentMessage: msg, isUserWriting: isUserWriting)
                     }
                 }
                 .listRowSeparator(.hidden)
             }
             .scrollContentBackground(.hidden)
             HStack {
-                TextEditor( text: $typingMessage)
+                TextEditor( text: $viewModel.typingMessage)
                     .scrollContentBackground(.hidden)
                     .overlay(
                         RoundedRectangle(cornerRadius: 14)
@@ -29,11 +73,10 @@ struct ChatScreen: View {
                     .frame(maxHeight: CGFloat(40))
                 
                 Button {
-                    print(isUserWriting)
-                    isUserWriting = true
-                    viewModel.SendMessage(chatMessage: typingMessage)
-                    typingMessage = ""
-                    print(isUserWriting)
+                 //   isUserWriting = true
+                   // viewModel.messages.append(viewModel.typingMessage)
+                    viewModel.sendMessage(message: viewModel.typingMessage)
+                    viewModel.typingMessage = ""
                 } label: {
                     Image(systemName: "arrow.right.circle")
                         .resizable()
@@ -52,6 +95,7 @@ struct ChatScreen: View {
                 }
             }
         }
+
     }
 }
 

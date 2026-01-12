@@ -44,7 +44,7 @@ final class OrderViewModel: ObservableObject {
     
     func fetchNewOrders() {
         newOrderScreenState = .loading
-            let token = keychain.get("lawyerToken") ?? "" // <-----проблема. краш при старте
+            let token = keychain.get("lawyerToken") ?? ""
         network.fetchNewOrders(token: token) { [weak self] result in
             Task { @MainActor in
             switch result {

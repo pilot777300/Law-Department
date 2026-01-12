@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,7 @@
 		042200C92B9C8F04008210F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 042200C82B9C8F04008210F6 /* Preview Assets.xcassets */; };
 		042200D12B9C910C008210F6 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 042200D02B9C910C008210F6 /* iPhoneNumberField */; };
 		042200D82B9C931E008210F6 /* LawyerAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200D72B9C931E008210F6 /* LawyerAvatarView.swift */; };
-		042200DA2B9C9390008210F6 /* ContentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200D92B9C9390008210F6 /* ContentMessage.swift */; };
+		042200DA2B9C9390008210F6 /* ChatContentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200D92B9C9390008210F6 /* ChatContentMessage.swift */; };
 		042200DE2B9C944D008210F6 /* OtpModifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200DD2B9C944D008210F6 /* OtpModifer.swift */; };
 		042200E02B9C9492008210F6 /* OnBoardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200DF2B9C9492008210F6 /* OnBoardingData.swift */; };
 		042200E22B9C94D6008210F6 /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200E12B9C94D6008210F6 /* GlobalVariables.swift */; };
@@ -20,7 +20,7 @@
 		042200E62B9C9523008210F6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200E52B9C9523008210F6 /* User.swift */; };
 		042200E82B9C954E008210F6 /* Instructions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200E72B9C954E008210F6 /* Instructions.swift */; };
 		042200EA2B9C9593008210F6 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200E92B9C9593008210F6 /* Message.swift */; };
-		042200EC2B9C95BE008210F6 /* ChatDataSouce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200EB2B9C95BE008210F6 /* ChatDataSouce.swift */; };
+		042200EC2B9C95BE008210F6 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200EB2B9C95BE008210F6 /* ChatViewModel.swift */; };
 		042200EE2B9C95EF008210F6 /* OnBoardingObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200ED2B9C95EE008210F6 /* OnBoardingObserver.swift */; };
 		042200F02B9C9C39008210F6 /* AuthorizedUserMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200EF2B9C9C39008210F6 /* AuthorizedUserMainScreen.swift */; };
 		042200F22B9C9C83008210F6 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042200F12B9C9C83008210F6 /* ChatScreen.swift */; };
@@ -44,6 +44,7 @@
 		043780D62E55F153001E5DD1 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 043780D52E55F153001E5DD1 /* FirebaseAppCheck */; };
 		043780D82E55FAF3001E5DD1 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 043780D72E55FAF3001E5DD1 /* FirebaseMessaging */; };
 		043AFA532E0043DD003E567F /* ChoiseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043AFA522E0043DD003E567F /* ChoiseViewModel.swift */; };
+		043F05972ECF4E1800D386B7 /* PageAndPagesize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F05962ECF4E1800D386B7 /* PageAndPagesize.swift */; };
 		04470E472BB997BE00F4E299 /* TxtModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04470E462BB997BE00F4E299 /* TxtModifiers.swift */; };
 		04471C952EA4C91500589CD1 /* NewOrdersTxtModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04471C942EA4C91500589CD1 /* NewOrdersTxtModifiers.swift */; };
 		0449F1462EABEE890097AA37 /* SubscribingToTopics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0449F1452EABEE890097AA37 /* SubscribingToTopics.swift */; };
@@ -59,6 +60,7 @@
 		045227552D4FC9BF006589BF /* OrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045227542D4FC9BF006589BF /* OrderView.swift */; };
 		045286782D81E9D800E8053C /* ListOfChats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045286772D81E9D800E8053C /* ListOfChats.swift */; };
 		0452867A2D81EB3200E8053C /* RowOfChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045286792D81EB3200E8053C /* RowOfChat.swift */; };
+		0454E6632ECA59BC002ABB79 /* UsserAndMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0454E6622ECA59BC002ABB79 /* UsserAndMessage.swift */; };
 		0455D8F62E6C52A800F786C2 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0455D8F52E6C52A800F786C2 /* NotificationManager.swift */; };
 		045742152DCBB9D5009AC3BC /* LawyerToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045742142DCBB9D5009AC3BC /* LawyerToken.swift */; };
 		0457B5762D99C8410095EF2C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0457B5752D99C8410095EF2C /* Launch Screen.storyboard */; };
@@ -88,6 +90,9 @@
 		0468A3512BA603720092087B /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0468A3502BA603720092087B /* AppState.swift */; };
 		046AF4172D3FD764001C121B /* LawyerStartigScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AF4162D3FD764001C121B /* LawyerStartigScreen.swift */; };
 		046C0EBC2D34172B00830070 /* RequestForHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C0EBB2D34172B00830070 /* RequestForHelp.swift */; };
+		046C3A182ED30C1900FFC305 /* ExyteChat in Frameworks */ = {isa = PBXBuildFile; productRef = 046C3A172ED30C1900FFC305 /* ExyteChat */; };
+		046C3A1A2ED337C700FFC305 /* LawyerChatContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C3A192ED337C700FFC305 /* LawyerChatContent.swift */; };
+		046C3A1C2ED34EB700FFC305 /* TxtModifiersForChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C3A1B2ED34EB700FFC305 /* TxtModifiersForChat.swift */; };
 		046C6A522D1D939200F9D151 /* HeaderTxtModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046C6A512D1D939200F9D151 /* HeaderTxtModifier.swift */; };
 		046CF08D2BE675A500B3029A /* SmsVerifNewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CF08C2BE675A500B3029A /* SmsVerifNewScreen.swift */; };
 		046E40022BAF524B00BE6F59 /* Divorce.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 046E40012BAF420F00BE6F59 /* Divorce.docx */; };
@@ -98,13 +103,19 @@
 		0470FA442DE618A10079C64A /* LawyerRegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0470FA432DE618A10079C64A /* LawyerRegistrationViewModel.swift */; };
 		04732DA82D6E375700152257 /* LawyerSettingsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04732DA72D6E375700152257 /* LawyerSettingsScreen.swift */; };
 		047589182DF04C0D00690741 /* LawyerSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047589172DF04C0D00690741 /* LawyerSettingsViewModel.swift */; };
+		0475BDBD2ECF0E02009D7F1C /* TotalMessagesInChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0475BDBC2ECF0E02009D7F1C /* TotalMessagesInChat.swift */; };
 		04770EE72D44D5FE000B7BE2 /* OrdersScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04770EE62D44D5FE000B7BE2 /* OrdersScreen.swift */; };
 		047AFA8B2E10432500D3A38E /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047AFA8A2E10432500D3A38E /* OrderViewModel.swift */; };
 		047B21602DE34B91001A934B /* LawyerRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B215F2DE34B91001A934B /* LawyerRegistrationService.swift */; };
+		047DDFF32EC76695002C2133 /* LawyerChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DDFF22EC76695002C2133 /* LawyerChatScreen.swift */; };
+		047DDFF52EC76F2C002C2133 /* LawyerChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DDFF42EC76F2C002C2133 /* LawyerChatViewModel.swift */; };
+		047DDFF72EC78971002C2133 /* MessageFromUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047DDFF62EC78971002C2133 /* MessageFromUser.swift */; };
 		048499122EA50DFE0012AE93 /* AllOrdersListTxtModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048499112EA50DFE0012AE93 /* AllOrdersListTxtModifier.swift */; };
 		048499142EA50ED30012AE93 /* NewOrdersListTxtModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048499132EA50ED30012AE93 /* NewOrdersListTxtModifiers.swift */; };
 		048625A02D6090EC00DB106C /* Skyblue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0486259F2D6090EC00DB106C /* Skyblue.swift */; };
 		0488ED2C2E8FCF4300042CA9 /* EmptyNewOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0488ED2B2E8FCF4300042CA9 /* EmptyNewOrderView.swift */; };
+		048F51842EBE32E9003AC446 /* UserChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048F51832EBE32E9003AC446 /* UserChatMessage.swift */; };
+		048F51862EBE34AE003AC446 /* UserChatMessageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048F51852EBE34AE003AC446 /* UserChatMessageResponse.swift */; };
 		0499FD612E4C715000A68025 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0499FD602E4C715000A68025 /* GoogleService-Info.plist */; };
 		049F34522E687DE90033D3B8 /* NotificationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049F34512E687DE90033D3B8 /* NotificationHandler.swift */; };
 		04A2CDE52B9EFBB1002CA7DE /* Appeal.docx in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0422010E2B9CDD64008210F6 /* Appeal.docx */; };
@@ -135,7 +146,7 @@
 		042200C62B9C8F04008210F6 /* LawDepartment.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LawDepartment.entitlements; sourceTree = "<group>"; };
 		042200C82B9C8F04008210F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		042200D72B9C931E008210F6 /* LawyerAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerAvatarView.swift; sourceTree = "<group>"; };
-		042200D92B9C9390008210F6 /* ContentMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMessage.swift; sourceTree = "<group>"; };
+		042200D92B9C9390008210F6 /* ChatContentMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatContentMessage.swift; sourceTree = "<group>"; };
 		042200DD2B9C944D008210F6 /* OtpModifer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtpModifer.swift; sourceTree = "<group>"; };
 		042200DF2B9C9492008210F6 /* OnBoardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingData.swift; sourceTree = "<group>"; };
 		042200E12B9C94D6008210F6 /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
@@ -143,7 +154,7 @@
 		042200E52B9C9523008210F6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		042200E72B9C954E008210F6 /* Instructions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instructions.swift; sourceTree = "<group>"; };
 		042200E92B9C9593008210F6 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		042200EB2B9C95BE008210F6 /* ChatDataSouce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataSouce.swift; sourceTree = "<group>"; };
+		042200EB2B9C95BE008210F6 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewModel.swift; sourceTree = "<group>"; };
 		042200ED2B9C95EE008210F6 /* OnBoardingObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingObserver.swift; sourceTree = "<group>"; };
 		042200EF2B9C9C39008210F6 /* AuthorizedUserMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizedUserMainScreen.swift; sourceTree = "<group>"; };
 		042200F12B9C9C83008210F6 /* ChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreen.swift; sourceTree = "<group>"; };
@@ -162,6 +173,7 @@
 		0422010E2B9CDD64008210F6 /* Appeal.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Appeal.docx; sourceTree = "<group>"; };
 		04373E7F2E3E08D4003798A0 /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
 		043AFA522E0043DD003E567F /* ChoiseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseViewModel.swift; sourceTree = "<group>"; };
+		043F05962ECF4E1800D386B7 /* PageAndPagesize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageAndPagesize.swift; sourceTree = "<group>"; };
 		04470E462BB997BE00F4E299 /* TxtModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxtModifiers.swift; sourceTree = "<group>"; };
 		04471C942EA4C91500589CD1 /* NewOrdersTxtModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrdersTxtModifiers.swift; sourceTree = "<group>"; };
 		0449F1452EABEE890097AA37 /* SubscribingToTopics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribingToTopics.swift; sourceTree = "<group>"; };
@@ -177,6 +189,7 @@
 		045227542D4FC9BF006589BF /* OrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderView.swift; sourceTree = "<group>"; };
 		045286772D81E9D800E8053C /* ListOfChats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfChats.swift; sourceTree = "<group>"; };
 		045286792D81EB3200E8053C /* RowOfChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowOfChat.swift; sourceTree = "<group>"; };
+		0454E6622ECA59BC002ABB79 /* UsserAndMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsserAndMessage.swift; sourceTree = "<group>"; };
 		0455D8F52E6C52A800F786C2 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		045742142DCBB9D5009AC3BC /* LawyerToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerToken.swift; sourceTree = "<group>"; };
 		0457B5752D99C8410095EF2C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -205,6 +218,8 @@
 		0468A3502BA603720092087B /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		046AF4162D3FD764001C121B /* LawyerStartigScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerStartigScreen.swift; sourceTree = "<group>"; };
 		046C0EBB2D34172B00830070 /* RequestForHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestForHelp.swift; sourceTree = "<group>"; };
+		046C3A192ED337C700FFC305 /* LawyerChatContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerChatContent.swift; sourceTree = "<group>"; };
+		046C3A1B2ED34EB700FFC305 /* TxtModifiersForChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxtModifiersForChat.swift; sourceTree = "<group>"; };
 		046C6A512D1D939200F9D151 /* HeaderTxtModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTxtModifier.swift; sourceTree = "<group>"; };
 		046CF08C2BE675A500B3029A /* SmsVerifNewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmsVerifNewScreen.swift; sourceTree = "<group>"; };
 		046CF0D32E5F62F0008904E5 /* Skyblue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skyblue.swift; sourceTree = "<group>"; };
@@ -476,18 +491,28 @@
 		0470FA432DE618A10079C64A /* LawyerRegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerRegistrationViewModel.swift; sourceTree = "<group>"; };
 		04732DA72D6E375700152257 /* LawyerSettingsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerSettingsScreen.swift; sourceTree = "<group>"; };
 		047589172DF04C0D00690741 /* LawyerSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerSettingsViewModel.swift; sourceTree = "<group>"; };
+		0475BDBC2ECF0E02009D7F1C /* TotalMessagesInChat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalMessagesInChat.swift; sourceTree = "<group>"; };
 		04770EE62D44D5FE000B7BE2 /* OrdersScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersScreen.swift; sourceTree = "<group>"; };
 		047AFA8A2E10432500D3A38E /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
 		047B215F2DE34B91001A934B /* LawyerRegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerRegistrationService.swift; sourceTree = "<group>"; };
+		047DDFF22EC76695002C2133 /* LawyerChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerChatScreen.swift; sourceTree = "<group>"; };
+		047DDFF42EC76F2C002C2133 /* LawyerChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerChatViewModel.swift; sourceTree = "<group>"; };
+		047DDFF62EC78971002C2133 /* MessageFromUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageFromUser.swift; sourceTree = "<group>"; };
 		048499112EA50DFE0012AE93 /* AllOrdersListTxtModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllOrdersListTxtModifier.swift; sourceTree = "<group>"; };
 		048499132EA50ED30012AE93 /* NewOrdersListTxtModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrdersListTxtModifiers.swift; sourceTree = "<group>"; };
 		0486259F2D6090EC00DB106C /* Skyblue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skyblue.swift; sourceTree = "<group>"; };
 		0488ED2B2E8FCF4300042CA9 /* EmptyNewOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyNewOrderView.swift; sourceTree = "<group>"; };
+		048F51832EBE32E9003AC446 /* UserChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatMessage.swift; sourceTree = "<group>"; };
+		048F51852EBE34AE003AC446 /* UserChatMessageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatMessageResponse.swift; sourceTree = "<group>"; };
 		0499FD602E4C715000A68025 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		049F34512E687DE90033D3B8 /* NotificationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHandler.swift; sourceTree = "<group>"; };
 		04BF7AE62EA8E10500C71AA7 /* TxtModifierForOrders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxtModifierForOrders.swift; sourceTree = "<group>"; };
 		04F8ACDC2EA3E99C006880F4 /* AllOrdersTxtModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllOrdersTxtModifiers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		046C3A1F2ED3780E00FFC305 /* ForNewChat */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ForNewChat; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		042200BA2B9C8F02008210F6 /* Frameworks */ = {
@@ -496,6 +521,7 @@
 			files = (
 				043780D82E55FAF3001E5DD1 /* FirebaseMessaging in Frameworks */,
 				043780D62E55F153001E5DD1 /* FirebaseAppCheck in Frameworks */,
+				046C3A182ED30C1900FFC305 /* ExyteChat in Frameworks */,
 				0450CCA82BF101ED006B77A4 /* KeychainSwift in Frameworks */,
 				043780D22E55F153001E5DD1 /* FirebaseAnalyticsCore in Frameworks */,
 				043780CE2E55F153001E5DD1 /* FirebaseAI in Frameworks */,
@@ -558,15 +584,15 @@
 		042200D42B9C9282008210F6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				046C3A1F2ED3780E00FFC305 /* ForNewChat */,
 				0486259E2D6090D000DB106C /* Colors */,
 				042200DD2B9C944D008210F6 /* OtpModifer.swift */,
 				042200DF2B9C9492008210F6 /* OnBoardingData.swift */,
 				042200E12B9C94D6008210F6 /* GlobalVariables.swift */,
+				042200E92B9C9593008210F6 /* Message.swift */,
 				042200E32B9C94F6008210F6 /* Lawyer.swift */,
 				042200E52B9C9523008210F6 /* User.swift */,
 				042200E72B9C954E008210F6 /* Instructions.swift */,
-				042200E92B9C9593008210F6 /* Message.swift */,
-				042200EB2B9C95BE008210F6 /* ChatDataSouce.swift */,
 				042200ED2B9C95EE008210F6 /* OnBoardingObserver.swift */,
 				045135262B9D851700F3113D /* TemplateOfDocument.swift */,
 				0468A3502BA603720092087B /* AppState.swift */,
@@ -598,6 +624,13 @@
 				048499112EA50DFE0012AE93 /* AllOrdersListTxtModifier.swift */,
 				048499132EA50ED30012AE93 /* NewOrdersListTxtModifiers.swift */,
 				04BF7AE62EA8E10500C71AA7 /* TxtModifierForOrders.swift */,
+				048F51832EBE32E9003AC446 /* UserChatMessage.swift */,
+				048F51852EBE34AE003AC446 /* UserChatMessageResponse.swift */,
+				047DDFF62EC78971002C2133 /* MessageFromUser.swift */,
+				0454E6622ECA59BC002ABB79 /* UsserAndMessage.swift */,
+				0475BDBC2ECF0E02009D7F1C /* TotalMessagesInChat.swift */,
+				043F05962ECF4E1800D386B7 /* PageAndPagesize.swift */,
+				046C3A1B2ED34EB700FFC305 /* TxtModifiersForChat.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -606,13 +639,14 @@
 			isa = PBXGroup;
 			children = (
 				042200D72B9C931E008210F6 /* LawyerAvatarView.swift */,
-				042200D92B9C9390008210F6 /* ContentMessage.swift */,
+				042200D92B9C9390008210F6 /* ChatContentMessage.swift */,
 				045135282B9D871100F3113D /* RowOfTemplate.swift */,
 				045227542D4FC9BF006589BF /* OrderView.swift */,
 				046F99D12DCCE11A00F04A19 /* OnboardingForLawyer.swift */,
 				0452106D2E3F84F100EC5973 /* NewOrderView.swift */,
 				0488ED2B2E8FCF4300042CA9 /* EmptyNewOrderView.swift */,
 				045EB2E42E9BD4F400E4495E /* EmptyAllOrdersView.swift */,
+				046C3A192ED337C700FFC305 /* LawyerChatContent.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -644,6 +678,7 @@
 				045286792D81EB3200E8053C /* RowOfChat.swift */,
 				046F99D52DCCE39500F04A19 /* OnBoardingForLawyerScreen.swift */,
 				045DD6832DECA794005E099C /* WaitingVerificationScreen.swift */,
+				047DDFF22EC76695002C2133 /* LawyerChatScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -1150,6 +1185,7 @@
 			isa = PBXGroup;
 			children = (
 				0470FA432DE618A10079C64A /* LawyerRegistrationViewModel.swift */,
+				042200EB2B9C95BE008210F6 /* ChatViewModel.swift */,
 				045DD6812DEC751F005E099C /* CheeckVerificationViewModel.swift */,
 				047589172DF04C0D00690741 /* LawyerSettingsViewModel.swift */,
 				0461481B2DFD562D00922E15 /* UserViewModel.swift */,
@@ -1157,6 +1193,7 @@
 				046148212DFDC1B700922E15 /* ConfirmCodeViewModel.swift */,
 				043AFA522E0043DD003E567F /* ChoiseViewModel.swift */,
 				047AFA8A2E10432500D3A38E /* OrderViewModel.swift */,
+				047DDFF42EC76F2C002C2133 /* LawyerChatViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -1185,6 +1222,9 @@
 			);
 			dependencies = (
 			);
+			fileSystemSynchronizedGroups = (
+				046C3A1F2ED3780E00FFC305 /* ForNewChat */,
+			);
 			name = LawDepartment;
 			packageProductDependencies = (
 				042200D02B9C910C008210F6 /* iPhoneNumberField */,
@@ -1196,6 +1236,7 @@
 				043780D32E55F153001E5DD1 /* FirebaseAnalyticsIdentitySupport */,
 				043780D52E55F153001E5DD1 /* FirebaseAppCheck */,
 				043780D72E55FAF3001E5DD1 /* FirebaseMessaging */,
+				046C3A172ED30C1900FFC305 /* ExyteChat */,
 			);
 			productName = LawDepartment;
 			productReference = 042200BD2B9C8F02008210F6 /* LawDepartment.app */;
@@ -1230,6 +1271,7 @@
 				0450CCA62BF101ED006B77A4 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				045B64782D747B120003A080 /* XCRemoteSwiftPackageReference "CustomTextField" */,
 				043780CC2E55F153001E5DD1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				046C3A162ED30C1900FFC305 /* XCRemoteSwiftPackageReference "Chat" */,
 			);
 			productRefGroup = 042200BE2B9C8F02008210F6 /* Products */;
 			projectDirPath = "";
@@ -1268,13 +1310,16 @@
 				042200FA2B9C9D4A008210F6 /* LawyerMainScreen.swift in Sources */,
 				048499122EA50DFE0012AE93 /* AllOrdersListTxtModifier.swift in Sources */,
 				046F99D22DCCE11A00F04A19 /* OnboardingForLawyer.swift in Sources */,
+				047DDFF32EC76695002C2133 /* LawyerChatScreen.swift in Sources */,
 				046148222DFDC1B700922E15 /* ConfirmCodeViewModel.swift in Sources */,
 				046148202DFDA2AA00922E15 /* UserRegistrationViewModel.swift in Sources */,
-				042200EC2B9C95BE008210F6 /* ChatDataSouce.swift in Sources */,
+				042200EC2B9C95BE008210F6 /* ChatViewModel.swift in Sources */,
 				04470E472BB997BE00F4E299 /* TxtModifiers.swift in Sources */,
 				045DD6842DECA794005E099C /* WaitingVerificationScreen.swift in Sources */,
 				0450CCAA2BF12E0D006B77A4 /* TokenStatus.swift in Sources */,
 				042200E22B9C94D6008210F6 /* GlobalVariables.swift in Sources */,
+				048F51842EBE32E9003AC446 /* UserChatMessage.swift in Sources */,
+				047DDFF52EC76F2C002C2133 /* LawyerChatViewModel.swift in Sources */,
 				046458142DEB20080093AD15 /* LawyerTokenStatus.swift in Sources */,
 				046C6A522D1D939200F9D151 /* HeaderTxtModifier.swift in Sources */,
 				044F8D542BE174160072E344 /* FirstAutorizationScreen.swift in Sources */,
@@ -1282,6 +1327,8 @@
 				042200E42B9C94F6008210F6 /* Lawyer.swift in Sources */,
 				046C0EBC2D34172B00830070 /* RequestForHelp.swift in Sources */,
 				046CF08D2BE675A500B3029A /* SmsVerifNewScreen.swift in Sources */,
+				043F05972ECF4E1800D386B7 /* PageAndPagesize.swift in Sources */,
+				046C3A1A2ED337C700FFC305 /* LawyerChatContent.swift in Sources */,
 				046AF4172D3FD764001C121B /* LawyerStartigScreen.swift in Sources */,
 				047AFA8B2E10432500D3A38E /* OrderViewModel.swift in Sources */,
 				049F34522E687DE90033D3B8 /* NotificationHandler.swift in Sources */,
@@ -1294,6 +1341,7 @@
 				044FA9A92BE107110097E4F2 /* Autorization.swift in Sources */,
 				042200FC2B9C9D80008210F6 /* LawyerRegistrationScreen.swift in Sources */,
 				04471C952EA4C91500589CD1 /* NewOrdersTxtModifiers.swift in Sources */,
+				0454E6632ECA59BC002ABB79 /* UsserAndMessage.swift in Sources */,
 				0461481A2DFD55D900922E15 /* UserService.swift in Sources */,
 				0488ED2C2E8FCF4300042CA9 /* EmptyNewOrderView.swift in Sources */,
 				046735042BCAF1DF001E1406 /* VoiceHelp.swift in Sources */,
@@ -1301,11 +1349,12 @@
 				042200C12B9C8F02008210F6 /* LawDepartmentApp.swift in Sources */,
 				04770EE72D44D5FE000B7BE2 /* OrdersScreen.swift in Sources */,
 				044F2BDE2E19504400EB0EF7 /* UserTokenStatus.swift in Sources */,
+				048F51862EBE34AE003AC446 /* UserChatMessageResponse.swift in Sources */,
 				045227552D4FC9BF006589BF /* OrderView.swift in Sources */,
 				045DD6822DEC751F005E099C /* CheeckVerificationViewModel.swift in Sources */,
 				0455D8F62E6C52A800F786C2 /* NotificationManager.swift in Sources */,
 				045742152DCBB9D5009AC3BC /* LawyerToken.swift in Sources */,
-				042200DA2B9C9390008210F6 /* ContentMessage.swift in Sources */,
+				042200DA2B9C9390008210F6 /* ChatContentMessage.swift in Sources */,
 				046F99D42DCCE1DE00F04A19 /* OnBoardingForLawyerModel.swift in Sources */,
 				04732DA82D6E375700152257 /* LawyerSettingsScreen.swift in Sources */,
 				0422010A2B9C9F07008210F6 /* UserAutorizationScreen.swift in Sources */,
@@ -1313,6 +1362,7 @@
 				0452867A2D81EB3200E8053C /* RowOfChat.swift in Sources */,
 				045B84442BEE5017006AE761 /* Token.swift in Sources */,
 				042201062B9C9E71008210F6 /* SmsVerificationScreen.swift in Sources */,
+				046C3A1C2ED34EB700FFC305 /* TxtModifiersForChat.swift in Sources */,
 				0464951C2D50AB5300EEC269 /* Orders.swift in Sources */,
 				04BF7AE72EA8E10500C71AA7 /* TxtModifierForOrders.swift in Sources */,
 				045B84462BEE8AA8006AE761 /* KeychainHelper.swift in Sources */,
@@ -1324,6 +1374,7 @@
 				042200DE2B9C944D008210F6 /* OtpModifer.swift in Sources */,
 				042201082B9C9EE0008210F6 /* TemplatesScreen.swift in Sources */,
 				042200F62B9C9CEC008210F6 /* InstructionDetailScreen.swift in Sources */,
+				0475BDBD2ECF0E02009D7F1C /* TotalMessagesInChat.swift in Sources */,
 				042200E62B9C9523008210F6 /* User.swift in Sources */,
 				0468A3512BA603720092087B /* AppState.swift in Sources */,
 				045135292B9D871200F3113D /* RowOfTemplate.swift in Sources */,
@@ -1340,6 +1391,7 @@
 				047589182DF04C0D00690741 /* LawyerSettingsViewModel.swift in Sources */,
 				042200EA2B9C9593008210F6 /* Message.swift in Sources */,
 				0466DFEC2D8F12C700677BDF /* TxtFile.swift in Sources */,
+				047DDFF72EC78971002C2133 /* MessageFromUser.swift in Sources */,
 				04F8ACDD2EA3E99C006880F4 /* AllOrdersTxtModifiers.swift in Sources */,
 				042200FE2B9C9DAA008210F6 /* OnBoardingScreen.swift in Sources */,
 				045990902DCE404600CEDE4E /* LawyerInfo.swift in Sources */,
@@ -1604,6 +1656,14 @@
 				kind = branch;
 			};
 		};
+		046C3A162ED30C1900FFC305 /* XCRemoteSwiftPackageReference "Chat" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/Chat.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1651,6 +1711,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 045B64782D747B120003A080 /* XCRemoteSwiftPackageReference "CustomTextField" */;
 			productName = CustomTextField;
+		};
+		046C3A172ED30C1900FFC305 /* ExyteChat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 046C3A162ED30C1900FFC305 /* XCRemoteSwiftPackageReference "Chat" */;
+			productName = ExyteChat;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

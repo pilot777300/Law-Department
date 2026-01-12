@@ -274,11 +274,6 @@ func sendReq (model: AdviceType, adviceType:String, token: String,  completion: 
                     return
                 }
                 completion(.success(request))
-                //   let lawyerToken = token.token
-                // let lawyerStatus = token.status
-                //   print("TOKEN: \(lawyerToken)")
-                // print("STATUS: \(lawyerStatus)")
-                // keychain.set(lawyerToken, forKey: "lawyerToken")
             }
         }
         task.resume()
@@ -619,6 +614,184 @@ func sendReq (model: AdviceType, adviceType:String, token: String,  completion: 
         
     }
     
+    func sendMessagetoLawyer (token: String, model: UserChatMessage,  completion: @escaping(Result<UserChatMessageResponse, AppError>) -> Void)  {
+            let url = URL(string: "https://api.6709.ru/v1/client/messages/text-messages")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("Bearer \(String(describing: token))", forHTTPHeaderField: "Authorization")
+            do {
+                let jsonData = try JSONEncoder().encode(model)
+                request.httpBody = jsonData
+            } catch let error{
+                debugPrint(error.localizedDescription)
+            }
+            
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if let error = error {
+                    print("ERROR: \(error)")
+                    switch error {
+                    case URLError.timedOut,
+                        URLError.notConnectedToInternet,
+                        URLError.networkConnectionLost,
+                        URLError.cannotFindHost:
+                        completion(.failure(AppError.internetConnectiomProblem))
+                    case URLError.cancelled:
+                        completion(.failure(AppError.unknown))
+                    default:
+                        completion(.failure(AppError.unknown))
+                    }
+                    return
+                }
+                if let data = data {
+                    let str = String(data: data, encoding: .utf8)
+                    print("Received data:\n\(str ?? "NO DATA")")
+                    if let error = try? JSONDecoder().decode(ErrorModel.self, from: data) {
+                        completion(.failure(AppError.serverError(error)))
+                        return
+                    }
+                    
+                    guard let request = try? JSONDecoder().decode(UserChatMessageResponse.self, from: data) else {
+                        completion(.failure(.parsingError))
+                        print ("ERROR DECODING", error?.localizedDescription)
+                        return
+                    }
+                    print("TEXT WAS SENT", request)
+                    completion(.success(request))
+                }
+            }
+            task.resume()
+        }
+    
+    func fetchMessagesFromUser(token: String, pageNumber: Int, pageSize: Int, completion: @escaping (Result<[MessageFromUser], AppError>) -> Void) {
+        let url = URL(string: "https://api.6709.ru/v1/lawyer/messages?page=\(pageNumber)&pageSize=\(pageSize)")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+       // request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(String(describing: token))", forHTTPHeaderField: "Authorization")
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                switch error {
+                case URLError.timedOut,
+                    URLError.notConnectedToInternet,
+                    URLError.networkConnectionLost,
+                    URLError.cannotFindHost:
+                    completion(.failure(AppError.internetConnectiomProblem))
+                case URLError.cancelled:
+                    completion(.failure(AppError.unknown))
+                default:
+                    completion(.failure(AppError.unknown))
+                }
+                return
+            }
+            if let data = data {
+                if let error = try? JSONDecoder().decode(ErrorModel.self, from: data) {
+                    completion(.failure(AppError.serverError(error)))
+                    print("SERVERERROD", error.localizedDescription)
+                    return
+                }
+            guard let message = try? JSONDecoder().decode([MessageFromUser].self, from: data) else {
+                completion(.failure(AppError.parsingError))
+                print("PARCING ERROR", error?.localizedDescription as Any)
+                     return
+                 }
+                completion(.success(message))
+             }
+        }
+        task.resume()
+    }
+    
+    
+    func sendMessageFromLawyertoUser (token: String, userId: Int,  model: UserChatMessage,  completion: @escaping(Result<UserChatMessageResponse, AppError>) -> Void)  {
+            let url = URL(string: "https://api.6709.ru/v1/lawyer/clients/\(userId)/text-messages")!
+            var request = URLRequest(url: url)
+            request.httpMethod = "POST"
+            request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            request.addValue("Bearer \(String(describing: token))", forHTTPHeaderField: "Authorization")
+            do {
+                let jsonData = try JSONEncoder().encode(model)
+                request.httpBody = jsonData
+            } catch let error{
+                debugPrint(error.localizedDescription)
+            }
+            
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                if let error = error {
+                    print("ERROR: \(error)")
+                    switch error {
+                    case URLError.timedOut,
+                        URLError.notConnectedToInternet,
+                        URLError.networkConnectionLost,
+                        URLError.cannotFindHost:
+                        completion(.failure(AppError.internetConnectiomProblem))
+                    case URLError.cancelled:
+                        completion(.failure(AppError.unknown))
+                    default:
+                        completion(.failure(AppError.unknown))
+                    }
+                    return
+                }
+                if let data = data {
+                    let str = String(data: data, encoding: .utf8)
+                    print("Received data:\n\(str ?? "NO DATA")")
+                    if let error = try? JSONDecoder().decode(ErrorModel.self, from: data) {
+                        completion(.failure(AppError.serverError(error)))
+                        return
+                    }
+                    
+                    guard let request = try? JSONDecoder().decode(UserChatMessageResponse.self, from: data) else {
+                        completion(.failure(.parsingError))
+                        print ("ERROR DECODING", error?.localizedDescription)
+                        return
+                    }
+                    print("TEXT WAS SENT", request) //???
+                    completion(.success(request))
+                }
+            }
+            task.resume()
+        }
+    
+    func fetchNumberOfMessages(token: String, completion: @escaping (Result<TotalMessagesInChat, AppError>) -> Void) {
+        let url = URL(string: "https://api.6709.ru/v1/lawyer/messages/total?countNewMessages=false")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+       // request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("Bearer \(String(describing: token))", forHTTPHeaderField: "Authorization")
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                switch error {
+                case URLError.timedOut,
+                    URLError.notConnectedToInternet,
+                    URLError.networkConnectionLost,
+                    URLError.cannotFindHost:
+                    completion(.failure(AppError.internetConnectiomProblem))
+                case URLError.cancelled:
+                    completion(.failure(AppError.unknown))
+                default:
+                    completion(.failure(AppError.unknown))
+                }
+                return
+            }
+            if let data = data {
+                if let error = try? JSONDecoder().decode(ErrorModel.self, from: data) {
+                    completion(.failure(AppError.serverError(error)))
+                    print("SERVERERROD", error.localizedDescription)
+                    return
+                }
+            guard let totalMessages = try? JSONDecoder().decode(TotalMessagesInChat.self, from: data) else {
+                completion(.failure(AppError.parsingError))
+                print("PARCING ERROR", error?.localizedDescription as Any)
+                     return
+                 }
+                completion(.success(totalMessages))
+             }
+        }
+        task.resume()
+    }
 //    func fetchAllResponces() {
 //        let url = URL(string: "https://api.6709.ru/v1/client/requests")!
 //        var request = URLRequest(url: url)
