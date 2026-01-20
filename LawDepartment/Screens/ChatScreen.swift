@@ -13,6 +13,9 @@ struct ChatScreen: View {
             switch viewModel.screenState {
             case .default:
                 content
+                    .onAppear {
+                        viewModel.fetchMessages()
+                    }
             case .loading:
                 content
                     .overlay(
@@ -29,8 +32,8 @@ struct ChatScreen: View {
     
     private func errorView() -> some View {
         let error = viewModel.error ?? .unknown
-        let title = "Внимание"
-        var message = " "
+        let title = "Внимание!"
+        var message = "Ошибка загрузки данных"
         switch error {
         case .internetConnectiomProblem:
             break
@@ -53,14 +56,22 @@ struct ChatScreen: View {
     
     private var content: some View {
          NavigationStack {
-                 Text(viewModel.userName)
+                 Text(viewModel.lawyerName)
             VStack {
                 List {
                     ForEach(viewModel.messages, id: \.self) { msg in
-                        ChatContentMessage(contentMessage: msg, isUserWriting: isUserWriting)
+                        let formattedDate =
+                        Date().formatDateForChat(dateFromServer: msg.sentAt)
+                        UserChatContentMessage(message: msg.text, isIncoming: !msg.sendByMe, sentAt: formattedDate)
+                            .listRowInsets(.init(top: 7,
+                                                leading: 2,
+                                                bottom: 4,
+                                                 trailing: 2))
                     }
+                    .listRowSeparator(.hidden)
                 }
-                .listRowSeparator(.hidden)
+                .scrollContentBackground(.hidden)
+                .listStyle(GroupedListStyle())
             }
             .scrollContentBackground(.hidden)
             HStack {
@@ -73,8 +84,6 @@ struct ChatScreen: View {
                     .frame(maxHeight: CGFloat(40))
                 
                 Button {
-                 //   isUserWriting = true
-                   // viewModel.messages.append(viewModel.typingMessage)
                     viewModel.sendMessage(message: viewModel.typingMessage)
                     viewModel.typingMessage = ""
                 } label: {
@@ -94,9 +103,12 @@ struct ChatScreen: View {
                     }
                 }
             }
+            .background(Color .white)
+
         }
 
     }
+       
 }
 
 #Preview {

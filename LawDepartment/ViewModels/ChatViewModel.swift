@@ -16,15 +16,14 @@ enum UserChatScreenState {
 final class ChatViewModel: ObservableObject {
     
     @Published var screenState: UserChatScreenState = .default
-    @Published var userName: String = "Задать вопрос адвокату"
-   // @Published var appState: AppState? //= .notAutorized
+    @Published var lawyerName: String = "Дежурный адвокат (г.Москва)"
+    @Published var pageNumber = 0
+    @Published var pageSize = 30
     @Published var appLauncher: AppLauncher?
     @Published var typingMessage: String = ""
     @Published var isUserTyping: Bool = false
-    @Published var messages = ["Добрый день! Я дежурный юрист Игорь Николаевич. Какой у вас вопрос? "]
-   // @Published var incomingMessagedg = [String]()
-   // @Published var outgoingMessage = [String]()
-    
+    @Published var messages = [MessageChatForUser]()  // = [MessageChatForUser(text: "Здравствуйте, сегодня я дежурный адвокат. Какой у вас вопрос?",
+                                                                       // sentAt: "", sendByMe: false)]
     var error: AppError?
     let keychain = KeychainSwift()
     let network = NetworkManager()
@@ -39,8 +38,6 @@ final class ChatViewModel: ObservableObject {
                     switch result {
                     case .success(let messaging):
                         self?.screenState = .success
-                       // self?.outgoingMessage.append(messaging.text)
-                        self?.messages.append(messaging.text)
                         self?.isUserTyping = true
                         print(messaging.text)
                     case .failure( let error):
@@ -52,24 +49,27 @@ final class ChatViewModel: ObservableObject {
         }
     }
     
-//    func checkIfUserRegistered() {
-//        Task {
-//            screenState = .loading
-//            let tokenInKeychain = keychain.get("token")
-//            let usernameInKeychain = keychain.get("username")
-//            network.checkResponce(token: tokenInKeychain ?? "") { [weak self] result in
-//               guard let self = self else { return }
-//                switch result {
-//                case .success(let tokenStatus):
-//                    let status = tokenStatus.valid
-//                    if status == true {
-//                        appState = .autorized
-//                        screenState = .success
-//                    }
-//                case .failure(_):
-//                    screenState = .failure
-//                }
-//            }
-//        }
-//    }
-}
+    func fetchMessages() {
+        Task {
+            screenState = .loading
+            let tokenInKeychain = keychain.get("token")
+            network.fetchMessagesFromLawyer(token: tokenInKeychain ?? "", pageNumber: self.pageNumber, pageSize: self.pageSize) { [weak self] result in
+                Task { @MainActor in
+                switch result {
+                case .success(let messages):
+                    var localArray: [MessageChatForUser] = []
+                    for i in messages {
+                        let model = MessageChatForUser(text: i.text, sentAt: i.sentAt, sendByMe: i.sendByMe)
+                        localArray.append(model)
+                        self?.messages = localArray
+                        self?.screenState = .success
+                    }
+                case .failure(let error):
+                    self?.screenState = .failure
+                    self?.error = error
+              }
+            }
+          }
+       }
+    }
+ }

@@ -1,8 +1,8 @@
-
-import Foundation
-
-struct MessageInChat: Identifiable {
-  let id: Int
-  let text: String
-  let contact: Contact
-}
+//
+//import Foundation
+//
+//struct MessageInChat: Identifiable {
+//  let id: Int
+//  let text: String
+//  let contact: Contact
+//}

@@ -2,7 +2,7 @@
 import SwiftUI
 
 
-struct ChatMessageRow: View {
+struct UserChatContentMessage: View {
   
   let message: String
   let isIncoming: Bool
@@ -78,6 +78,10 @@ struct ChatMessageRow: View {
                     }
                     Spacer()
                 } else {
+ //                   Spacer()
+//                    text
+//                    chatBubbleTriange(width: 15, height: 14, isIncoming: false)
+//                   time
                     
                     Spacer()
 
@@ -88,13 +92,12 @@ struct ChatMessageRow: View {
  
                     }
                         chatBubbleTriange(width: 15, height: 14, isIncoming: false)
-                    
                 }
             }
        }
 }
 
-struct ChatMessageRow_Previews: PreviewProvider {
+struct User_ChatContentMessage: PreviewProvider {
   
   private static let chatMessage =
   
@@ -120,3 +123,4 @@ struct ChatMessageRow_Previews: PreviewProvider {
     }
   }
 }
+

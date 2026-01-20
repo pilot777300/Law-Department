@@ -43,6 +43,7 @@
 		043780D42E55F153001E5DD1 /* FirebaseAnalyticsIdentitySupport in Frameworks */ = {isa = PBXBuildFile; productRef = 043780D32E55F153001E5DD1 /* FirebaseAnalyticsIdentitySupport */; };
 		043780D62E55F153001E5DD1 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 043780D52E55F153001E5DD1 /* FirebaseAppCheck */; };
 		043780D82E55FAF3001E5DD1 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 043780D72E55FAF3001E5DD1 /* FirebaseMessaging */; };
+		043A95452F152BF7002E5EA2 /* UserChatContentMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043A95442F152BF7002E5EA2 /* UserChatContentMessage.swift */; };
 		043AFA532E0043DD003E567F /* ChoiseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043AFA522E0043DD003E567F /* ChoiseViewModel.swift */; };
 		043F05972ECF4E1800D386B7 /* PageAndPagesize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043F05962ECF4E1800D386B7 /* PageAndPagesize.swift */; };
 		04470E472BB997BE00F4E299 /* TxtModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04470E462BB997BE00F4E299 /* TxtModifiers.swift */; };
@@ -172,6 +173,7 @@
 		042201092B9C9F07008210F6 /* UserAutorizationScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAutorizationScreen.swift; sourceTree = "<group>"; };
 		0422010E2B9CDD64008210F6 /* Appeal.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = Appeal.docx; sourceTree = "<group>"; };
 		04373E7F2E3E08D4003798A0 /* OrderStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStatus.swift; sourceTree = "<group>"; };
+		043A95442F152BF7002E5EA2 /* UserChatContentMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserChatContentMessage.swift; sourceTree = "<group>"; };
 		043AFA522E0043DD003E567F /* ChoiseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiseViewModel.swift; sourceTree = "<group>"; };
 		043F05962ECF4E1800D386B7 /* PageAndPagesize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageAndPagesize.swift; sourceTree = "<group>"; };
 		04470E462BB997BE00F4E299 /* TxtModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxtModifiers.swift; sourceTree = "<group>"; };
@@ -647,6 +649,7 @@
 				0488ED2B2E8FCF4300042CA9 /* EmptyNewOrderView.swift */,
 				045EB2E42E9BD4F400E4495E /* EmptyAllOrdersView.swift */,
 				046C3A192ED337C700FFC305 /* LawyerChatContent.swift */,
+				043A95442F152BF7002E5EA2 /* UserChatContentMessage.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1311,6 +1314,7 @@
 				048499122EA50DFE0012AE93 /* AllOrdersListTxtModifier.swift in Sources */,
 				046F99D22DCCE11A00F04A19 /* OnboardingForLawyer.swift in Sources */,
 				047DDFF32EC76695002C2133 /* LawyerChatScreen.swift in Sources */,
+				043A95452F152BF7002E5EA2 /* UserChatContentMessage.swift in Sources */,
 				046148222DFDC1B700922E15 /* ConfirmCodeViewModel.swift in Sources */,
 				046148202DFDA2AA00922E15 /* UserRegistrationViewModel.swift in Sources */,
 				042200EC2B9C95BE008210F6 /* ChatViewModel.swift in Sources */,
