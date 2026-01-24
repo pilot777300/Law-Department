@@ -48,7 +48,7 @@ struct ChatMessageRow: View {
             .font(.caption2)
             .padding(5)
             .foregroundColor(.black)
-            .offset(x: isIncoming ? 15 : -14, y: isIncoming ? 7 : +8)
+          //  .offset(x: isIncoming ? 15 : -14, y: isIncoming ? 7 : +8)
     }
     
     private var messageWasReadIcon: some View {
@@ -72,16 +72,17 @@ struct ChatMessageRow: View {
             HStack(alignment: .bottom, spacing: 0) {
                 if isIncoming {
                     chatBubbleTriange(width: 15, height: 14, isIncoming: true)
-                    ZStack(alignment: .bottom) {
+                    VStack(alignment: .trailing, spacing: -15) {
                         text
-                          time
-                    }
+                        
+                        time
+                }
                     Spacer()
                 } else {
                     
                     Spacer()
 
-                    ZStack(alignment: .bottomTrailing) {
+                    VStack(alignment: .trailing, spacing: -16) {
                             text
                             
                         time
